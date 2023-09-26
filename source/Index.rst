@@ -1,23 +1,26 @@
 .. documentation master file, created by
    Johannes by copying his own sphinx doc
    You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+   contain the root `toctree` directive.   
 Measurement of the prompt component of the atmospheric muon flux
-##############################################################################
+################################################################
 
 
-| Contact: pascal.gutjahr@tu-dortmund.de
+| Contact: pascal.gutjahr@tu-dortmund.de and ludwig.neste@tu-dortmund.de
 
 
 Previous analyses
 -----------------
-Tomasz Fuchs: `<https://wiki.icecube.wisc.edu/index.php/Analysis_of_Leading_Muons>`_
-
-Patrick Berghaus: `<https://arxiv.org/pdf/1506.07981.pdf>`_
+* Tomasz Fuchs: `<https://wiki.icecube.wisc.edu/index.php/Analysis_of_Leading_Muons>`_
+* Patrick Berghaus: `<https://arxiv.org/pdf/1506.07981.pdf>`_
 
 
 Useful links:
 -------------
+
+* DNN reconstructions: `<https://github.com/icecube/dnn_reco>`_
+* Labels and processing: `<https://github.com/icecube/dnn_selections>`_ 
+* CORSIKA standalone python package: `<https://github.com/the-ludwig/panama>`_
 
 
 List of presented talks:
@@ -45,11 +48,10 @@ List of presented talks:
    :glob:
 
    docs/Overview.rst
-   docs/EventSelection.rst
-   docs/Unfolding.rst
-   docs/SystematicChecks.rst
-   docs/Results.rst
+   docs/Simulation.rst
+   docs/PromptDefinition.rst
+   docs/Reconstructions.rst
+   docs/Analysis.rst
+   docs/NextSteps.rst
    docs/QA.rst
-   docs/UnblindingResults.rst
-   docs/PostUnblindingChecks.rst
-   docs/Pass1.rst
+   

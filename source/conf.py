@@ -60,16 +60,16 @@ source_suffix = '.rst'
 master_doc = 'Index'
 
 #  General information about the project.
-project = u'Seasonal Variations of the Unfolded Atmopsheric Neutrino Energy Spectrum'
+project = u'Measurement of the prompt component of the atmospheric muon flux'
 copyright = u'Johannes Werthebach since 2019'
-author = u'Karolin Hymon'
+author = u'Pascal Gutjahr'
 
 #  The version info for the project you're documenting, acts as replacement for
 #  |version| and |release|, also used in various other places throughout the
 #  built documents.
 #
 #  The short X.Y version.
-version = 'last updated: June 6, 2023'
+version = 'last updated: September 26, 2023'
 #  The full version, including alpha/beta/rc tags.
 release = 'latest'
 
