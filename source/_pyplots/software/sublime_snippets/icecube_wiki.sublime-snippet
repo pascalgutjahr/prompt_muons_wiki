@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+.. ${1:script_name}:
+
+${3:docufile_name}
+================
+::
+
+    Author : ${4:Givenname} ${5:Surname}
+    Date   : ${6:2016}-${7:06}-${8:28}
+
+${9:The corresponding author did not add a description for what this script does yet.}
+
+----
+
+.. literalinclude:: ../../_pyplots/${10:path/to/file.ending}
+   :caption: ${1:script_name}.${2:script_ending}
+   :linenos:
+
+]]></content>
+	<!-- Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>icwiki</tabTrigger>
+</snippet>

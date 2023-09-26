@@ -1,0 +1,6 @@
+#ParameterX #ParameterY #NameX  #NameY  #LogX   #LogY   #LogZ   #Cmin
+/data/confidence_true_  Confidence  /data/MC_Bundle_LeadingSurf_value    Esurf[GeV]    0   1   1   1.
+#/data/confidence_true_  Confidence  /data/MC_Bundle_Mult_value    Multiplicity    0   1   1   1.
+#/data/confidence_true_  Confidence  /data/MC_Bundle_Leading_value    leading_energy[GeV]    0   1   1   1.
+/data/confidence_true_  Confidence  /data/MCPrimary1_energy    primary_energy[GeV]    0   1   1   .1
+/data/confidence_true_  Confidence  /data/SplineMPE_zenith    zenith    0   0   1   1.

@@ -1,0 +1,36 @@
+<snippet>
+    <content><![CDATA[
+class ${1:SimpleModule}(icetray.I3ConditionalModule):
+    def __init__(self, context):
+        icetray.I3ConditionalModule.__init__(self, context)
+        self.AddParameter('${2:option1}',
+                          '${2:option1}',
+                          '${3:Help message for option 1}')
+        self.AddParameter('${4:option2}',
+                          '${4:option2}',
+                          '${5:Help message for option 2}',
+                          '${6:defaultValue}')
+
+
+    def Configure(self):
+        self._${2:option1} = self.GetParameter('${2:option1}')
+        self._${4:option2} = self.GetParameter('${4:option2}')
+
+
+    def Physics(self, frame):
+        self.PushFrame(frame)
+
+
+    def DAQ(self, frame):
+        self.PushFrame(frame)
+
+
+    def Finish(self):
+        pass
+
+]]></content>
+    <!-- Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>i3con</tabTrigger>
+    <!-- Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
