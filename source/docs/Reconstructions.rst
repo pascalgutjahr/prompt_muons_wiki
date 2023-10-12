@@ -45,3 +45,5 @@ Multiplicity reconstruction
 Networks optimization 
 +++++++++++++++++++++
 
+The network optimization is currently under investigation.
+

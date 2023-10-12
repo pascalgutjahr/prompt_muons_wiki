@@ -77,7 +77,11 @@ To start this simulation, the following questions need to be answered:
 
 * Shall we stay with Icetray 1.5.1? Were any bugs fixed in the latest versions? 
 
+* What are all the latest software releases and configs (ice model etc.)?
+
 * We haven't oversampled our showers yet. Which factor for oversampling is usual? 
+
+* How can we reduce the disc space?
 
 * How much disk storage do we need for the final simulation? 
 

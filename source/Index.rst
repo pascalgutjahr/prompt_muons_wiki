@@ -56,6 +56,5 @@ List of presented talks:
    docs/PromptDefinition.rst
    docs/Reconstructions.rst
    docs/Analysis.rst
-   docs/NextSteps.rst
    docs/QA.rst
    
