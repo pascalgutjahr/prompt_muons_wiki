@@ -29,9 +29,11 @@ List of presented talks:
 2023:
 +++++
 
-* 29 September: CR WG `Update on prompt analysis `<https://drive.google.com/drive/folders/1gtuqGix7GOvjgu_Ae05a_YfDi_aKFSXd>`_
+* 29 September: CR WG `Update on prompt analysis <https://drive.google.com/drive/folders/1gtuqGix7GOvjgu_Ae05a_YfDi_aKFSXd>`_
 
-* 15 March: Spring Collaboration Meeting Aachen `Updates on CORSIKA EHist simulations <https://events.icecube.wisc.edu/event/164/contributions/9251/attachments/7079/8945/pgutjahr_prompt_muons.pdf>`_
+* 15 March: Spring Collaboration Meeting Aachen `New CORSIKA EHIST simulations <https://events.icecube.wisc.edu/event/164/contributions/9295/attachments/7021/8889/main.pdf>`_
+
+* 15 March: Spring Collaboration Meeting Aachen `Ideas to measure the prompt component <https://events.icecube.wisc.edu/event/164/contributions/9251/attachments/7079/8945/pgutjahr_prompt_muons.pdf>`_
 
 * 27 January: CR WG `Simulation overview <https://drive.google.com/file/d/1zu5UHYsh4k8K9qmdpKuLKI0qLFvbE6jj/view>`_
 
