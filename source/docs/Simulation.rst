@@ -85,3 +85,5 @@ To start this simulation, the following questions need to be answered:
 
 * How much disk storage do we need for the final simulation? 
 
+* Which seasons do we want to simulate? 4 seasons?
+
