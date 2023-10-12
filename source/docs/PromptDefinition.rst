@@ -12,9 +12,11 @@ Final definition
 * Prompt muon: parent is not pion or kaon 
 
 A comparison between CORSIKA standalone and MCEq is shown:
+
 .. image:: images/CORSIKA_standalone_mceq.png 
 
 A comparison between CORSIKA in icetray step 0 and MCEq is shown:
+
 .. image:: images/CORSIKA_step_0_mceq.png 
 
 
