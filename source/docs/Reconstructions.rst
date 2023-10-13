@@ -55,6 +55,11 @@ appear as a more continuous energy loss in the detector. Hence, if there are ver
 If we extend this to high energies, the largest energy losses are caused by the most energetic muon in the bundle. In a bundle in which the muon energies are distributed more equally, also the losses 
 appear more continuously. The idea is to search for events that deposit their energy more stochastically to select and/or to improve the energy reconstruction of muons with a high leadingness. 
 
+A full notebook with all plots can be found `here <https://github.com/icecube/dnn_selections/blob/AnalysisPipeline/notebooks/atmospheric_muon_leading/selection_performance/stochasticity_check.py.ipynb>`_.
+
+Monte Carlo studies
+-------------------
+
 Some Monte Carlo studies are presented below. 
 
 .. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy.pdf
@@ -79,7 +84,8 @@ Some Monte Carlo studies are presented below.
 
 .. image:: images/plots/stochasticity_check/bundle_muon_energy_spectrum_stochasticity_cuts.pdf
 
-
+Impact on the energy reconstruction
+-----------------------------------
 
 
 Bundle radius 
@@ -88,3 +94,39 @@ Bundle radius
 Another idea to investigate muons with a high leadingness is to analyze the bundle radius. Depending on the fraction of the energy the most energetic muons carries, the projected radius of the 
 entire bundle should differ. Here, different radii for the fractional amount of energy inside the projected circle (first order approximation) are studied. 
 
+A full notebook with all plots can be found `here <https://github.com/icecube/dnn_selections/blob/AnalysisPipeline/notebooks/atmospheric_muon_leading/selection_performance/stochasticity_check_reco_bundle_radius.ipynb>`_.
+
+Monte Carlo studies
+-------------------
+
+Resulting bundle raddi:
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_scale_2.pdf
+
+Leadingness for different bundle radii:
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.500_leadingness_bundle_energy_cut_no_logscale.pdf 
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.800_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.900_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.950_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.990_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale.pdf
+
+Leading energy spectrum for different cuts:
+
+* 99% bundle radius cut:
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_0.990_cut_prompt.pdf
+
+* 100% bundle radius cut:
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_1.000_cut_prompt.pdf
+
+
+Impact on the energy reconstruction
+-----------------------------------
