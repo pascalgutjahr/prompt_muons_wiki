@@ -87,6 +87,19 @@ Some Monte Carlo studies are presented below.
 Impact on the energy reconstruction
 -----------------------------------
 
+Bundle energy reconstruction:
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
+
+Leading muon energy reconstruction:
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
+
+
 
 Bundle radius 
 -------------
@@ -130,3 +143,7 @@ Leading energy spectrum for different cuts:
 
 Impact on the energy reconstruction
 -----------------------------------
+
+Leading muon energy reconstruction, 100% bundle radius:
+
+.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut.pdf
