@@ -4,7 +4,7 @@ Definitions of the prompt component
 This work is based on the Master thesis of Ludwig Neste, which can be provided on request. 
 
 Whether a muon is prompt or not can be defined in different ways. The definition we choose is mentioned in the final definition.
-Furthermore, we have comparison between CORSIKA and MCEq for other possible prompt definitions.
+Furthermore, we have comparisons between CORSIKA and MCEq for other possible prompt definitions.
 
 Final definition 
 ++++++++++++++++

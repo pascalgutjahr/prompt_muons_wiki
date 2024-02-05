@@ -35,7 +35,14 @@ The following settings are used:
 
 * Ecuts4: 1020 GeV (photon min energy)
 
+* TrimShower: True 
+
+* Atmosphere: ``ratmo: 4`` (April) 
+
+* Spectrum : -1 (increase high energy statistics)
+
 This simulation is performed to test the extended history and prompt tagging software. Thus, the statistics are not yet sufficient.
+The built CORSIKA software is stored at: ``/data/user/pgutjahr/software/CORSIKA/corsika-77420/bin/``
 
 Verification
 ++++++++++++
@@ -74,16 +81,21 @@ The large scale simulation with sufficient statistics will be performed with Ice
 To start this simulation, the following questions need to be answered:
 
 * Does cutting of the electromagnetic shower component have any impact on our phase space (high energy muons)? This is done by `Ecuts3` and `Ecuts4`.
+    - 10% effect possible on the muon energy spectrum, but no significant effect on the runtime and disc space -> EM component will be turned on
 
 * Shall we stay with Icetray 1.5.1? Were any bugs fixed in the latest versions? 
-
-* What are all the latest software releases and configs (ice model etc.)?
+    - Use latest version of Icetray to include any possible bug fixes and up-to-date software + latest ice model
 
 * We haven't oversampled our showers yet. Which factor for oversampling is usual? 
+    - At low energies, oversampling up to 10 is common, but this should be decreased at higher energies. 
+    - Not yet decided! 
 
 * How can we reduce the disc space?
+    - For the final simulation, we will store step 0 and level 2 files. The extended I3MCTrees can be removed, since we can re-simulate them using PROPOSAL if needed.
 
 * How much disk storage do we need for the final simulation? 
+    - Not clear yet!
 
 * Which seasons do we want to simulate? 4 seasons?
+    - We want to simulate all 12 seasons, matched by the run number. This enables further studies of the seasonal variations in the future.
 
