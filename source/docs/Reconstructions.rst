@@ -1,13 +1,9 @@
 Reconstructions 
 ###############
 
-The reconstructions for the incoming direction and the energy of the muons are machine learning based using the `dnn_reco <https://github.com/icecube/dnn_reco>`_ framework.
-The performance of the reconstructions is currently under investigation. So far, we had two bachelor students Leander Flottau and Benjamin Brandt working on angular and 
-energy reconstructions. Their bachelor theses are provided on request. 
-The networks mentioned below are the networks used for the plots stated in the Analysis chapter. Further below, the latest networks currently under investigation 
-are presented
-
-The L2 muon filter is applied.
+The reconstructions used in this analysis are based on machine learning using the `dnn_reco <https://github.com/icecube/dnn_reco>`_ framework.
+We had two bachelor students Leander Flottau and Benjamin Brandt working on angular and 
+energy reconstructions. Their bachelor theses are provided on request. Afterwards, we further improved these reconstructions. 
 
 Input data 
 ++++++++++
@@ -23,6 +19,74 @@ For the following reconstructions, three input features are used. Each of those 
 * Relative time of first pulse: Relative to total time offset, calculated as the charge weighted mean time of all pulses
 
 * Standard deviation of first pulse: Charge weighted standard deviation of pulse times relative to total time offset
+
+
+
+Training data 
++++++++++++++
+
+Reconstructed properties 
+++++++++++++++++++++++++ 
+
+Physics motivation
+------------------
+
+Network evaluation 
+------------------ 
+
+SplineMPE vs. DNN 
+----------------- 
+
+The improvement of SplineMPE to the reconstructed direction is shown below. The DNN only reconstruction is shown 
+in red and the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03`` is used. On the one hand, 
+this network is used as a direction seed for SplineMPE. The center position and time are provided by the network 
+``DeepLearningReco_track_geometry_9inputs_uncleaned_01`` and the energy is given by 
+``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02`` as the muon entry energy.
+Furthermore, also the default OnlineL2 reconstructions are shown. :numref:`spline mpe all` shows the median angular resolution, 
+which is around :math:`1^\circ` for all reconstructions. The SplineMPE reconstructions are slightly better.
+
+.. _spline mpe all:
+.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_all.pdf 
+    :scale: 49%
+
+    : The median angular resolution with a 90% containment is shown for all reconstructions.
+
+
+The improvement of SplineMPE with the DNN seeds is shown in :numref:`spline mpe sub`. At energies around :math:`1\,\mathrm{PeV}` there 
+is a small improvement, but the :math:`90\,\%` containment is smallest for the DNN only reconstruction.
+
+.. _spline mpe sub:
+.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_sub.pdf 
+    :scale: 49%
+
+    : The median angular resolution with a 90% containment is shown for DNN seeds only.
+
+
+The duration of SplineMPE is shown in :numref:`spline mpe duration`. 
+
+.. _spline mpe duration:
+.. figure:: images/plots/evaluate_SplineMPE/duration_spline_mpe.pdf
+    :scale: 49%
+
+    : The duration of the SplineMPE reconstruction is shown.
+
+Since we are interested in an overall atmospheric muon flux, we are not interested in the best possible angular resolution, 
+which is necessary for example in a point source analysis. Given the additional time needed for the SplineMPE reconstruction
+and the wider contours, we decided to use the DNN only reconstructions for the directional reconstruction.
+
+Final networks for analysis
+--------------------------- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,9 +121,6 @@ Energy reconstruction: leading muon
 .. image:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_entry_energy.pdf
 
 .. image:: images/plots/data_mc/leading_energy.pdf
-
-Multiplicity reconstruction 
----------------------------
 
 
 Networks optimization 

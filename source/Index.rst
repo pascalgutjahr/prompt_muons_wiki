@@ -60,7 +60,10 @@ List of presented talks:
    docs/Simulation.rst
    docs/PromptDefinition.rst
    docs/Reconstructions.rst
+   docs/Selection.rst
+   docs/Data_MC.rst
    docs/Analysis_forward_fit.rst
    docs/Analysis_unfolding.rst
    docs/QA.rst
+   docs/NextSteps.rst
    
