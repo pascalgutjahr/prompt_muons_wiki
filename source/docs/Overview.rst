@@ -4,10 +4,17 @@ Overview
 Atmospheric muon flux 
 +++++++++++++++++++++
 When a cosmic particle hits our Earth's atmosphere, secondary particles are produced in cascades. Depending on the energy of the primary 
-particle, these cascades are very large and produce not only one but several particles. These cascades are called extensive 
+particle, these cascades are large and produce not only one but several particles. These cascades are called extensive 
 air showers. Since most of the produced particles are unstable, on Earth's surface mainly neutrinos and muons are detected. The amount of 
 muons arising per area per time interval per solid angle and per energy is called muon flux.
-This muon flux is divided into two different components, depending on their spectral index. One is the conventional component with a 
+This muon flux is divided into two different components, depending on their spectral index :math:`\gamma`, defined by 
+
+.. math::
+    \begin{equation}
+        \frac{dN}{dE} \propto \Phi_0 \cdot E^{-\gamma} \; .
+    \end{equation}
+
+One is the conventional component with a 
 spectral index :math:`\gamma = 3.7`. This flux contains muons arising from pions and kaons, which are the particles produced the most in the 
 first interactions, because they are the lightest hadrons. The other part is build by the prompt component, which are in general all 
 other muons that originate not from pions and kaons. The flux has a spectral index :math:`\gamma = 2.7`. Thus, it is shifted to higher energies 
@@ -17,16 +24,17 @@ an immediate decay. Hence, the muon energy correlates stronger to the primary pa
 live long enough to interact with the atmosphere. This causes energy losses and results to lower muon energies. The cross-over point is 
 around :math:`1\,\mathrm{PeV}`. This prompt flux was not significantly detected yet, due to the less amount of 
 muons expected for these high energies in a detector volume of 
-:math:`1\,\mathrm{km}^3` like IceCube. Figure :numref:`1` shows the different components of 
+:math:`1\,\mathrm{km}^3` like IceCube. Figure :numref:`mceq_flux` shows the different components of 
 the atmospheric muon flux created with `MCEq <https://github.com/afedynitch/MCEq>`_. More information to the hadronic interaction model SIBYLL 
 used to create these spectra are provided `here <https://arxiv.org/pdf/1806.04140.pdf>`_.
 
+.. _mceq_flux:
 .. figure:: images/mceq_flux.png
 
-    :numref:`1`
+    : The atmospheric muon and muon neutrino flux calculated with `MCEq`_ is shown.
+
+.. _MCEq: https://github.com/afedynitch/MCEq
     
-
-
 Previous analyses 
 +++++++++++++++++
 In the past, two analyses were performed focused on high energetic muons arising from our Earth's atmosphere by Thomasz Fuchs and Patrick Berghaus. 

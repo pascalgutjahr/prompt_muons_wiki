@@ -6,7 +6,11 @@ Measurement of the prompt component of the atmospheric muon flux
 ################################################################
 
 
-| Contact: pascal.gutjahr@tu-dortmund.de, ludwig.neste@tu-dortmund.de and mirco.huennefeld@tu-dortmund.de
+Contact:
+--------
+* pascal.gutjahr@tu-dortmund.de
+* ludwig.neste@tu-dortmund.de
+* mirco.huennefeld@tu-dortmund.de
 
 
 Previous analyses
@@ -19,7 +23,7 @@ Useful links:
 -------------
 
 * DNN reconstructions: `<https://github.com/icecube/dnn_reco>`_
-* Labels and processing: `<https://github.com/icecube/dnn_selections>`_ 
+* Labels and analysis: `<https://github.com/icecube/dnn_selections>`_ 
 * Processing software: `<https://github.com/mhuen/ic3-processing>`_
 * CORSIKA standalone python package: `<https://github.com/the-ludwig/panama>`_
 

@@ -69,7 +69,7 @@ author = u'Pascal Gutjahr'
 #  built documents.
 #
 #  The short X.Y version.
-version = 'last updated: September 26, 2023'
+version = 'last updated: February 14, 2024'
 #  The full version, including alpha/beta/rc tags.
 release = 'latest'
 
@@ -302,3 +302,5 @@ texinfo_documents = [
 
 #  Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+numfig = True
