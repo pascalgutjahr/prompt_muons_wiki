@@ -4,32 +4,302 @@ Reconstructions
 The reconstructions used in this analysis are based on machine learning using the `dnn_reco <https://github.com/icecube/dnn_reco>`_ framework.
 We had two bachelor students Leander Flottau and Benjamin Brandt working on angular and 
 energy reconstructions. Their bachelor theses are provided on request. Afterwards, we further improved these reconstructions. 
+In this chapter, the usage, training data, and network evaluation are presented.
+
+The CNN structure provided in the IceCube framework is explained `here <https://iopscience.iop.org/article/10.1088/1748-0221/16/07/P07041>`_.
 
 Input data 
 ++++++++++
 
-The CNN structure provided in the IceCube framework is explained `here <https://iopscience.iop.org/article/10.1088/1748-0221/16/07/P07041>`_.
+In :numref:`dnn_input_cnn_paper`, the input features for the CNN are shown.
 
-.. image:: images/dnn_input_cnn_paper.png
+.. _dnn_input_cnn_paper:
+.. figure:: images/dnn_input_cnn_paper.png
 
-For the following reconstructions, three input features are used. Each of those are calculated per DOM:
+    : All 9 input features for the CNN are shown.
 
-* Total charge: Sum of charge 
+In total, 9 input features are used for the CNN. For the following reconstructions, not only networks with 9 input features are used, 
+but also networks with 3 input features. This speeds up the evaluation of the network, since less input features have 
+to be calculated. Each feature is calculated per DOM. 
 
-* Relative time of first pulse: Relative to total time offset, calculated as the charge weighted mean time of all pulses
+The features of the 3 inputs networks are:
 
-* Standard deviation of first pulse: Charge weighted standard deviation of pulse times relative to total time offset
+* :math:`c_{\mathrm{total}}:` Total charge: Sum of charge 
 
+* :math:`t_{\mathrm{first}}:` Relative time of first pulse: Relative to total time offset, calculated as the charge weighted mean time of all pulses
 
+* :math:`t_{\mathrm{std}}:` Standard deviation of first pulse: Charge weighted standard deviation of pulse times relative to total time offset
+
+The additional 6 input features are:
+
+* :math:`t_{\mathrm{last}}:` Relative time of last pulse: Relative to total time offset, calculated as the charge weighted mean time of all pulses
+
+* :math:`t_{\mathrm{20\,\%}}:` Relative time of 20% charge: Relative to total time offset, calculated as the charge weighted mean time of all pulses
+
+* :math:`t_{\mathrm{50\,\%}}:` Relative time of 50% charge: Relative to total time offset, calculated as the charge weighted mean time of all pulses
+
+* :math:`t_{\mathrm{mean}}:` Mean time: Charge weighted mean time of all pulses relative to total time offset
+
+* :math:`c_{\mathrm{500ns}}:` Charge at 500ns: Sum of charge after 500ns
+
+* :math:`c_{\mathrm{100ns}}:` Charge at 100ns: Sum of charge after 100ns
+
+Input pulses 
+------------
+
+For the input pulses, two different time window cleaning methods are used. On the one hand, there is an internal time cleaning 
+in the DNN framework. It depends on a weighted charge and does not set a fixed time window. On the other hand, the following module 
+is used with a fixed cleaning of :math:`6000\,\mathrm{ns}`. Both methods use the *SplitInIceDSTPulses* as input.
+
+.. code-block:: python 
+
+    @icetray.traysegment
+    def apply_time_window_cleaning(
+        tray,
+        name,
+        InputResponse="SplitInIceDSTPulses",
+        OutputResponse="SplitInIceDSTPulsesTWCleaning6000ns",
+        TimeWindow=6000 * icetray.I3Units.ns,
+    ):
+        from icecube import DomTools  # noqa F401
+
+        tray.AddModule(
+            "I3TimeWindowCleaning<I3RecoPulse>",
+            name,
+            InputResponse=InputResponse,
+            OutputResponse=OutputResponse,
+            TimeWindow=TimeWindow,
+        )
+
+----
 
 Training data 
 +++++++++++++
 
+The training data are based on four old CORSIKA datasets. Further information are given at `iceprod2 <https://iceprod2.icecube.wisc.edu>`_.
+
+* 20904 
+* 21962
+* 22020
+* 22187 
+
 Reconstructed properties 
 ++++++++++++++++++++++++ 
 
+For this analysis, the following properties are reconstructed by 3 different networks.
+
+Energy 
+------
+* ``entry_energy``: Leading muon energy at the detector entry 
+* ``bundle_energy_at_entry``: Muon bundle energy at the detector entry
+* ``muon_energy_first_mctree``: Leading muon energy at surface 
+* ``bundle_energy_in_mctree``: Muon bundle energy at surface
+Track geometry 
+--------------
+* ``Length``: Propagation length of muon in the ice 
+* ``LengthInDetector``: Propagation length of muon in the detector
+* ``center_pos_x``: Closest x position of muon to center of the detector
+* ``center_pos_y``: Closest y position of muon to center of the detector
+* ``center_pos_z``: Closest z position of muon to center of the detector
+* ``center_pos_t``: Time of closest approach to the center of the detector
+* ``entry_pos_x``: x position of muon at the detector entry
+* ``entry_pos_y``: y position of muon at the detector entry
+* ``entry_pos_z``: z position of muon at the detector entry
+* ``entry_pos_t``: Timer of muon at the detector entry
+Direction 
+---------
+* ``zenith``: Zenith angle of muon 
+* ``azimuth``: Azimuth angle of muon
+
+----
+
 Physics motivation
 ------------------
+
+A muon bundle is defined as a bundle of muons that are produced by the same primary cosmic ray. 
+The leading muon is the muon with the highest energy in the bundle. This can be defined by the leadingness, which indicates the ratio between the 
+leading muon energy and the total bundle energy. Since it is not possible to reconstruct the 
+individual energy of the muons inside a bundle, in the following some MC studies are presented to show ideas, 
+how a neural network can be used reconstruct the energy of the leading muon. For this, the stochasticity and 
+the bundle radius are investigated.
+
+Stochasticity 
+-------------
+
+A muon looses its energy in stochastic processes. Thus, a single muon deposits stochastic energy losses along a track. In a bundle of many muons, every muon has its own stochastic energy losses, which 
+appear as a more continuous energy loss in the detector. Hence, if there are very stochastic energy losses detected inside the detector, there are probably only a few muons or a single muon (at low energies). 
+If we extend this to high energies, the largest energy losses are caused by the most energetic muon in the bundle. In a bundle in which the muon energies are distributed more equally, also the losses 
+appear more continuously. The idea is to search for events that deposit their energy more stochastically to select and/or to improve the energy reconstruction of muons with a high leadingness. 
+
+
+
+Monte Carlo studies
+-------------------
+The top row of the plots shows a cut applied on the bundle energy in GeV. Hence, from left to right only high energy muons are selected.
+
+In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy`, the energy of the leading muon is shown as a function of the bundle stochasticity.
+
+.. _MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy:
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy.pdf
+
+    : The energy of the leading muon is shown as a function of the bundle stochasticity.
+
+In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale`, 
+the leadingness is shown as a function of the bundle stochasticity. High stochasticities lead to a large leadingness, but it removes the entire statistics.
+
+.. _MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale:
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
+
+    : The leadingness is shown as a function of the bundle stochasticity.
+
+In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale`, 
+the leadingness is shown as a function of the largest energy loss. The largest energy loss is not a good indicator for the leadingness.
+
+.. _MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale:
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
+
+    : The leadingness is shown as a function of the largest energy loss.
+
+In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_entry_energy`, the energy of the leading muon is shown as a function of the largest energy loss. 
+The largest energy loss is correlated with the energy of the leading muon. The larger the energy loss, the higher the energy of the leading muon.
+
+.. _MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_entry_energy:
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_entry_energy.pdf
+
+    : The energy of the leading muon is shown as a function of the largest energy loss.
+
+
+In :numref:`bundle_muon_energy_spectrum_stochasticity_cuts`, the energy spectrum of the leading muon is shown for different cuts on the stochasticity. The plot is divided into 
+a prompt and conventional component. 
+A cut on the stochasticity removes high energy muons. Due to the low statistics expected at high energies for 10 years, 
+we do not apply any cuts on the stochasticity.
+
+.. _bundle_muon_energy_spectrum_stochasticity_cuts:
+.. figure:: images/plots/stochasticity_check/bundle_muon_energy_spectrum_stochasticity_cuts.pdf
+
+    : The energy spectrum of the leading muon is shown for different cuts on the stochasticity.
+
+Impact on the energy reconstruction
+-----------------------------------
+
+The impact of the stochasticity on the energy reconstruction is shown in the following plots. 
+
+The bundle energy reconstruction for different cuts on the stochasticity is shown in :numref:`bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower` and
+:numref:`bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher`. A cut on the stochasticity does not improve the bundle energy reconstruction.
+
+.. _bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
+
+    : The bundle energy reconstruction for stochasticities below a certain cut is shown.
+
+.. _bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
+    
+    : The bundle energy reconstruction for stochasticities above a certain cut is shown.
+
+The leading muon energy reconstruction for different cuts on the stochasticity is shown in :numref:`leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower` and
+:numref:`leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher`. A cut on the stochasticity does not improve the leading muon energy reconstruction.
+
+.. _leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
+
+    : The leading muon energy reconstruction for stochasticities below a certain cut is shown.
+
+.. _leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
+
+    : The leading muon energy reconstruction for stochasticities above a certain cut is shown.
+
+A cut on the stochasticity does not improve the bundle or leading muon energy reconstruction for the networks presented here. 
+
+
+Bundle radius 
+-------------
+
+Another idea to investigate muons with a high leadingness is to analyze the bundle radius. Depending on the fraction of the energy the most energetic muons carries, 
+the projected radius of the 
+entire bundle should differ. Here, different radii for the fractional amount of energy inside the projected circle (first order approximation) are studied. 
+The bundle radius is defined as the radius of the circle that contains a certain fraction of the energy.
+
+Monte Carlo studies
+-------------------
+
+In :numref:`bundle_radius_scale_1`, the bundle radius is shown for different bundle radius quantiles. These range from the energy inside the projected circle 
+from 50% to 100%. The same plot is shown for different scalings on the axes. The distributions peak between 5m and 20m, but also radii above 100m are observed.
+
+.. _bundle_radius_scale_2:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_scale_2.pdf
+
+In the following figures :numref:`bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale`, 
+the leadingness is shown as a function of the bundle radius for different bundle energy cuts. Large bundle radii lead to a low leadingness.
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.500_leadingness_bundle_energy_cut_no_logscale.pdf 
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.800_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.900_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.950_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.990_leadingness_bundle_energy_cut_no_logscale.pdf
+
+.. _bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale.pdf
+
+    : The leadingness is shown as a function of the bundle radius for different bundle energy cuts.
+
+In :numref:`bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut`, the muon bundle energy is shown as a function of the bundle radius for different bundle energy cuts.
+For a small amount of events, a large bundle radius indicates a low bundle energy.
+
+.. _bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut.pdf
+
+    : The muon bundle energy is shown as a function of the bundle radius for different bundle energy cuts.
+
+In :numref:`bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut`, the leading muon energy is shown as a function of the bundle radius for different bundle energy cuts.
+For a small amount of events, a large bundle radius indicates a low leading muon energy.
+
+.. _bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut.pdf
+
+    : The leading muon energy is shown as a function of the bundle radius for different bundle energy cuts.
+
+
+------------CONTINUE HEEEEEEREEEE-------------
+Leading energy spectrum for different cuts:
+
+* 99% bundle radius cut:
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_0.990_cut_prompt.pdf
+
+* 100% bundle radius cut:
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_1.000_cut_prompt.pdf
+
+A cut on the bundle radius also removes high energy events, thus we do not plan to set a cut.
+
+
+Impact on the energy reconstruction
+-----------------------------------
+
+Leading muon energy reconstruction, 100% bundle radius:
+
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut.pdf
+
+There is no significant reconstruction improvement due to the application of a bundle radius cut. Instead, high energy 
+events are rejected.
+
+
+
+
+
+
+
+
+
+
+
+
 
 Network evaluation 
 ------------------ 
@@ -95,164 +365,31 @@ Networks used for analysis
 
 Angular reconstructions 
 -----------------------
-.. image:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryAzimuth.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryAzimuth.pdf
 
-.. image:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith.pdf
 
-.. image:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith_angle_deviation.pdf 
+.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith_angle_deviation.pdf 
 
 Left side: only L2 muon filter, right side: L2 muon filter and cut on bundle energy: :math:`E > 10\,\mathrm{TeV}`
 
-.. image:: images/plots/data_mc/zenith.pdf 
+.. figure:: images/plots/data_mc/zenith.pdf 
     :width: 49% 
 
-.. image:: images/plots/data_mc/zenith_cut_1e4.pdf 
+.. figure:: images/plots/data_mc/zenith_cut_1e4.pdf 
     :width: 49%
 
 
 Energy reconstructions: muon bundle 
 -----------------------------------
-.. image:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_bundle_energy_at_entry.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_bundle_energy_at_entry.pdf
 
-.. image:: images/plots/data_mc/bundle_energy.pdf
+.. figure:: images/plots/data_mc/bundle_energy.pdf
 
 Energy reconstruction: leading muon 
 -----------------------------------
-.. image:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_entry_energy.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_entry_energy.pdf
 
-.. image:: images/plots/data_mc/leading_energy.pdf
+.. figure:: images/plots/data_mc/leading_energy.pdf
 
 
-Networks optimization 
-+++++++++++++++++++++
-
-The network optimization is currently under investigation.
-
-Stochasticity 
--------------
-
-A muon looses its energy in stochastic processes. Thus, a single muon deposits stochastic energy losses along a track. In a bundle of many muons, every muon has its own stochastic energy losses, which 
-appear as a more continuous energy loss in the detector. Hence, if there are very stochastic energy losses detected inside the detector, there are probably only a few or maybe a single muon (at low energies). 
-If we extend this to high energies, the largest energy losses are caused by the most energetic muon in the bundle. In a bundle in which the muon energies are distributed more equally, also the losses 
-appear more continuously. The idea is to search for events that deposit their energy more stochastically to select and/or to improve the energy reconstruction of muons with a high leadingness. 
-
-A full notebook with all plots can be found `here <https://github.com/icecube/dnn_selections/blob/AnalysisPipeline/notebooks/atmospheric_muon_leading/selection_performance/stochasticity_check.py.ipynb>`_.
-
-Monte Carlo studies
--------------------
-
-Some Monte Carlo studies are presented below. 
-
-The rquirement of a minimum stochasticity removes low energy events. 
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy.pdf
-
-High stochasticities lead to a large leadingness, but it removes the entire statistics.
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_area_above_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_area_below_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_distance_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_distance_01_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_distance_02_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_01_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_02_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
-
-Leading muon energy as a function of the largest energy loss: 
-
-.. image:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_entry_energy.pdf
-
-
-A cut on the stochasticity removes high energy muons. Due to the low statistics expected at high energies for 10 years, 
-we do not apply any cuts on the stochasticity.
-
-.. image:: images/plots/stochasticity_check/bundle_muon_energy_spectrum_stochasticity_cuts.pdf
-
-Impact on the energy reconstruction
------------------------------------
-
-Bundle energy reconstruction:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
-
-Leading muon energy reconstruction:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
-
-A cut on the stochasticity does not improve the bundle or leading muon energy reconstruction for the networks presented here. 
-
-
-Bundle radius 
--------------
-
-Another idea to investigate muons with a high leadingness is to analyze the bundle radius. Depending on the fraction of the energy the most energetic muons carries, the projected radius of the 
-entire bundle should differ. Here, different radii for the fractional amount of energy inside the projected circle (first order approximation) are studied. 
-
-A full notebook with all plots can be found `here <https://github.com/icecube/dnn_selections/blob/AnalysisPipeline/notebooks/atmospheric_muon_leading/selection_performance/stochasticity_check_reco_bundle_radius.ipynb>`_.
-
-Monte Carlo studies
--------------------
-
-Resulting bundle raddi:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_scale_2.pdf
-
-Leadingness for different bundle radii:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.500_leadingness_bundle_energy_cut_no_logscale.pdf 
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.800_leadingness_bundle_energy_cut_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.900_leadingness_bundle_energy_cut_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.950_leadingness_bundle_energy_cut_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.990_leadingness_bundle_energy_cut_no_logscale.pdf
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale.pdf
-
-As expected, a large bundle radius leads to a low leadingness. 
-
-Leading muon energy as a function of the bundle radius for different bundle energy cuts:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut.pdf
-
-Bundle muon energy as a function of the bundle radius for different bundle energy cuts:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut.pdf
-
-Leading energy spectrum for different cuts:
-
-* 99% bundle radius cut:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_0.990_cut_prompt.pdf
-
-* 100% bundle radius cut:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_1.000_cut_prompt.pdf
-
-A cut on the bundle radius also removes high energy events, thus we do not plan to set a cut.
-
-
-Impact on the energy reconstruction
------------------------------------
-
-Leading muon energy reconstruction, 100% bundle radius:
-
-.. image:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut.pdf
-
-There is no significant reconstruction improvement due to the application of a bundle radius cut. Instead, high energy 
-events are rejected.

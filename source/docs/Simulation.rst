@@ -49,13 +49,6 @@ This simulation is performed to test the extended history and prompt tagging sof
 The built CORSIKA software is stored at: ``/data/user/pgutjahr/software/CORSIKA/corsika-77420/bin/`` and also available in the cvmfs:
 ``/cvmfs/icecube.opensciencegrid.org/users/pgutjahr/software/CORSIKA/``
 
-Verification
-++++++++++++
-
-* WHAT EXACTLY HAVE WE DONE TO VERIFY OUR SIMULATIONS?
-
-* WHAT NEEDS TO BE DONE TO VERIFY IT?
-
 Dataset exploration - Level 2
 +++++++++++++++++++++++++++++
 In the following, unweighted distributions of the simulated events are shown. In :numref:`simulated_events_primary_energy`, the primary distribution are shown 
