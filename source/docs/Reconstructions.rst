@@ -94,7 +94,7 @@ Energy
 * ``bundle_energy_at_entry``: Muon bundle energy at the detector entry
 * ``muon_energy_first_mctree``: Leading muon energy at surface 
 * ``bundle_energy_in_mctree``: Muon bundle energy at surface
-Track geometry 
+Track geometry  
 --------------
 * ``Length``: Propagation length of muon in the ice 
 * ``LengthInDetector``: Propagation length of muon in the detector
@@ -265,44 +265,110 @@ For a small amount of events, a large bundle radius indicates a low leading muon
     : The leading muon energy is shown as a function of the bundle radius for different bundle energy cuts.
 
 
-------------CONTINUE HEEEEEEREEEE-------------
-Leading energy spectrum for different cuts:
 
-* 99% bundle radius cut:
+In :numref:`leadingE_radius_0.990_cut_prompt`, the leading muon energy spectrum is shown for different cuts on the bundle radius. 
+A bundle radius quantile of 99% is chosen as a cut parameter. 
 
+.. _leadingE_radius_0.990_cut_prompt:
 .. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_0.990_cut_prompt.pdf
 
-* 100% bundle radius cut:
+    : The leading muon energy spectrum is shown for different cuts on the bundle radius of the 99% quantile.
 
+In :numref:`leadingE_radius_1.000_cut_prompt`, the leading muon energy spectrum is shown for different cuts on the bundle radius.
+A bundle radius quantile of 100% is chosen as a cut parameter.
+
+.. _leadingE_radius_1.000_cut_prompt:
 .. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_1.000_cut_prompt.pdf
 
-A cut on the bundle radius also removes high energy events, thus we do not plan to set a cut.
+    : The leading muon energy spectrum is shown for different cuts on the bundle radius of the 100% quantile.
+
+
+As mentioned above, a cut on the bundle radius also removes high energy events, thus we do not plan to set a cut.
 
 
 Impact on the energy reconstruction
 -----------------------------------
 
-Leading muon energy reconstruction, 100% bundle radius:
+In :numref:`bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut`, the impact of the bundle radius on the 
+reconstruction of the leading muon energy is shown. A bundle radius quantile of 100% is chosen as a cut parameter.
 
+.. _bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut: 
 .. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut.pdf
+
+    : The impact of the bundle radius of the 10% quantile on the reconstruction of the leading muon energy is shown.
 
 There is no significant reconstruction improvement due to the application of a bundle radius cut. Instead, high energy 
 events are rejected.
 
 
 
-
-
-
-
-
-
-
-
-
-
 Network evaluation 
------------------- 
+++++++++++++++++++
+
+In the following, the evaluation of the networks is shown. Each figures contains two plots. The left plots shows the evaluation of all events, 
+the right plot shows an uncertainty cut applied on the estimated uncertainty by the network. The evaluation if performed on our own extended 
+history simulation dataset. Each plot has the network prediction on the y-axis and the true value on the x-axis. In general, networks are trained with 
+3 or 9 inputs and a time window of 6ms or the internal DNN time window cleaning. Furthermore, the CNN layers and nodes are varied.
+
+Bundle energy at surface 
+------------------------
+
+
+
+.. _DeepLearningReco_precut_bundle_energy_3inputs_6ms_at_surface_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree:
+.. figure:: images/plots/model_evaluation/precut/DeepLearningReco_precut_bundle_energy_3inputs_6ms_at_surface_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree.pdf 
+
+    : The bundle energy at the surface is shown for the network ``DeepLearningReco_precut_bundle_energy_3inputs_6ms_at_surface_01``. It uses 3 inputs 
+    and a 6ms time window.
+
+.. _DeepLearningReco_precut_bundle_energy_3inputs_6ms_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree:
+.. figure:: images/plots/model_evaluation/precut/DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree.pdf
+
+    : The bundle energy at the surface is shown for the network ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``. It uses 3 inputs
+    and a 6ms time window.
+
+
+Bundle energy at entry 
+----------------------
+
+Leading muon energy at surface
+------------------------------
+
+Leading muon energy at entry
+----------------------------
+
+Track geometry
+--------------
+
+Direction 
+---------
+
+
+Multiplicity 
+------------
+
+The multiplicity means the number of muons entering the detector in a bundle. So far, we do not use this information for the analysis, but we 
+just wanted to check if it is possible to reconstruct the multiplicity.
+
+.. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01_vs_MCLabelsLeadingMuons_num_muons_at_entry:
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+
+    : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01``. It uses 3 inputs and a 6ms time window.
+
+.. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_02_vs_MCLabelsLeadingMuons_num_muons_at_entry::
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_02_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+
+    : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_02``. It uses 3 inputs and a 6ms time window.
+
+.. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_03_vs_MCLabelsLeadingMuons_num_muons_at_entry:
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_03_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+
+    : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_03``. It uses 3 inputs and a 6ms time window.
+
+.. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_04_vs_MCLabelsLeadingMuons_num_muons_at_entry:
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_04_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+
+    : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_04``. It uses 3 inputs and a 6ms time window.
 
 SplineMPE vs. DNN 
 ----------------- 
@@ -317,7 +383,6 @@ which is around :math:`1^\circ` for all reconstructions. The SplineMPE reconstru
 
 .. _spline mpe all:
 .. figure:: images/plots/evaluate_SplineMPE/angular_resolution_all.pdf 
-    :scale: 49%
 
     : The median angular resolution with a 90% containment is shown for all reconstructions.
 
@@ -327,7 +392,6 @@ is a small improvement, but the :math:`90\,\%` containment is smallest for the D
 
 .. _spline mpe sub:
 .. figure:: images/plots/evaluate_SplineMPE/angular_resolution_sub.pdf 
-    :scale: 49%
 
     : The median angular resolution with a 90% containment is shown for DNN seeds only.
 
@@ -336,7 +400,6 @@ The duration of SplineMPE is shown in :numref:`spline mpe duration`.
 
 .. _spline mpe duration:
 .. figure:: images/plots/evaluate_SplineMPE/duration_spline_mpe.pdf
-    :scale: 49%
 
     : The duration of the SplineMPE reconstruction is shown.
 
@@ -347,21 +410,15 @@ and the wider contours, we decided to use the DNN only reconstructions for the d
 Final networks for analysis
 --------------------------- 
 
+* ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``: 
+* ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``:
+* ``DeepLearningReco_leading_bundle_OC_inputs9_large_log_02``:
+* ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``:
 
+----
 
-
-
-
-
-
-
-
-
-
-
-
-Networks used for analysis 
-++++++++++++++++++++++++++
+Networks used for pseudo analysis 
++++++++++++++++++++++++++++++++++
 
 Angular reconstructions 
 -----------------------
@@ -374,10 +431,8 @@ Angular reconstructions
 Left side: only L2 muon filter, right side: L2 muon filter and cut on bundle energy: :math:`E > 10\,\mathrm{TeV}`
 
 .. figure:: images/plots/data_mc/zenith.pdf 
-    :width: 49% 
 
 .. figure:: images/plots/data_mc/zenith_cut_1e4.pdf 
-    :width: 49%
 
 
 Energy reconstructions: muon bundle 
