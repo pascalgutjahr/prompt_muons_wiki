@@ -644,7 +644,7 @@ which is necessary for example in a point source analysis. Given the additional 
 and the wider contours, we decided to use the DNN only reconstructions for the directional reconstruction.
 
 Final networks for analysis
---------------------------- 
++++++++++++++++++++++++++++
 
 * ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``: 
 * ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``:
@@ -655,6 +655,9 @@ Final networks for analysis
 
 Networks used for pseudo analysis 
 +++++++++++++++++++++++++++++++++
+
+The following networks are the networks used for the pseudo analysis. These networks are at an early stage as it can be seen 
+in the performance in comparison to the plots presented above. Thus, this networks will not be used for the final analysis.
 
 Angular reconstructions 
 -----------------------
