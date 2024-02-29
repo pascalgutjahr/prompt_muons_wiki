@@ -88,11 +88,43 @@ Level 4
 
 On level 4, we do not apply any filters and we do not remove any events. We just add the DNN reconstructions mentioned in the reconstruction section. For this, the following networks are added:
 
-* ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``
-* ``DeepLearningReco_track_geometry_9inputs_uncleaned_01``
+* ``DeepLearningReco_direction_9inputs_uncleaned_medium_01``
 * ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``
+* ``DeepLearningReco_track_geometry_9inputs_uncleaned_01``
 
+Already added in step 3:
 
+* ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``
+
+In :numref:`DNN_reconstruction_runtimes`, the runtimes for the DNN reconstructions are shown. The preprocessing time is needed to create the input features for the DNNs based on the 
+input pulses. The preprocessing time of the precut network is faster, since only 3 input features instead of 9 features are calculated. 
+The CPU and GPU times are the runtimes needed to apply the DNNs on the respective device.
+
+.. _DNN_reconstruction_runtimes:
+.. list-table:: DNN reconstruction runtimes 
+    :widths: 33 33 33 33
+    :header-rows: 1 
+
+    * - Network
+      - Preprocessing / ms 
+      - CPU / ms 
+      - GPU / ms
+    * - Direction
+      - 22 ± 20  
+      - 106 ± 42 
+      - 5 ± 38 
+    * - Energy 
+      - 22 ± 20
+      - 144 ± 56 
+      - 3 ± 13 
+    * - Track geometry
+      - 22 ± 20 
+      - 106 ± 42 
+      - 3 ± 10
+    * - precut 
+      -  1 ± 1
+      - 11 ± 1
+      - 7 ± 4
 
 Level 5
 +++++++

@@ -136,14 +136,25 @@ appear more continuously. The idea is to search for events that deposit their en
 
 Monte Carlo studies
 -------------------
-The top row of the plots shows a cut applied on the bundle energy in GeV. Hence, from left to right only high energy muons are selected.
 
-In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy`, the energy of the leading muon is shown as a function of the bundle stochasticity.
+In :numref:`stochasticity_vs_leadingness`, the leadingness is shown as a function of the bundle stochasticity. A high stochasticity leads to a large leadingness, but only 
+for a small amount of events.
+
+.. _stochasticity_vs_leadingness:
+.. figure:: images/plots/stochasticity_check/stochasticity_vs_leadingness.pdf 
+
+    : The leadingness is shown as a function of the bundle stochasticity as a weighted distribution.
+
+
+To get an idea of the correlation between the leading muon energy and the bundle stochasticity, 
+in :numref:`MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy`, the energy of the leading muon is shown as a function of the bundle stochasticity.
 
 .. _MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy:
 .. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy.pdf
 
     : The energy of the leading muon is shown as a function of the bundle stochasticity.
+
+In the following, the title of the plots shows a cut applied on the bundle energy in GeV. Hence, from left to right only high energy muons are selected.
 
 In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale`, 
 the leadingness is shown as a function of the bundle stochasticity. High stochasticities lead to a large leadingness, but it removes the entire statistics.
@@ -231,6 +242,16 @@ from 50% to 100%. The same plot is shown for different scalings on the axes. The
 .. _bundle_radius_scale_2:
 .. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_scale_2.pdf
 
+    : The bundle radius is shown for different bundle radius quantiles.
+
+In :numref:`bundle_radius_vs_leadingness`, the leadingness is shown as a function of the bundle radius for a bundle radius quantile of 100%. 
+A small bundle radius leads to a high leadingness.
+
+.. _bundle_radius_vs_leadingness:
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_vs_leadingness.pdf
+
+    : The leadingness is shown as a function of the bundle radius for a bundle radius quantile of 100% as a weighted distribution.
+
 In the following figures :numref:`bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale`, 
 the leadingness is shown as a function of the bundle radius for different bundle energy cuts. Large bundle radii lead to a low leadingness.
 
@@ -307,9 +328,10 @@ Network evaluation
 ++++++++++++++++++
 
 In the following, the evaluation of the networks is shown. Each figures contains two plots. The left plots shows the evaluation of all events, 
-the right plot shows an uncertainty cut applied on the estimated uncertainty by the network. The evaluation if performed on our own extended 
+the right plot shows an uncertainty cut applied on the estimated uncertainty by the network. The evaluation is performed on our own extended 
 history simulation dataset. Each plot has the network prediction on the y-axis and the true value on the x-axis. In general, networks are trained with 
-3 or 9 inputs and a time window of 6ms or the internal DNN time window cleaning. Furthermore, the CNN layers and nodes are varied.
+3 or 9 inputs and a time window of 6ms or the internal DNN time window cleaning. Furthermore, the CNN layers and nodes are varied. The runtime prediction 
+is presented for the usage of a GPU.
 
 Bundle energy at surface 
 ------------------------
@@ -647,9 +669,9 @@ Final networks for analysis
 +++++++++++++++++++++++++++
 
 * ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``: 
-* ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``:
-* ``DeepLearningReco_leading_bundle_OC_inputs9_large_log_02``:
-* ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``:
+* ``DeepLearningReco_direction_9inputs_uncleaned_medium_01``:
+* ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``:
+* ``DeepLearningReco_track_geometry_9inputs_uncleaned_01``:
 
 ----
 

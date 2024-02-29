@@ -51,7 +51,8 @@ The built CORSIKA software is stored at: ``/data/user/pgutjahr/software/CORSIKA/
 
 Dataset exploration - Level 2
 +++++++++++++++++++++++++++++
-In the following, unweighted distributions of the simulated events are shown. In :numref:`simulated_events_primary_energy`, the primary distribution are shown 
+In the following, unweighted and weighted distributions of the simulated events are shown. In :numref:`simulated_events_primary_energy` and 
+:numref:`simulated_events_primary_energy_weighted`, the primary distributions are shown 
 for each dataset.
 
 .. _simulated_events_primary_energy:
@@ -59,28 +60,50 @@ for each dataset.
 
     : The energy distribution of primary particles is shown for the four different simulation datasets.
 
-In :numref:`simulated_events_5_components_primary_energy`, the primary distributions are shown for each dataset, separated by the primary particle type.
+.. _simulated_events_primary_energy_weighted:
+.. figure:: images/plots/dataset_exploration/simulated_events_primary_energy_weighted.pdf
+
+    : The energy distribution of primary particles is shown for the four different simulation datasets, weighted to GlobalSplineFit5Comp (GSF).
+
+In :numref:`simulated_events_5_components_primary_energy` and :numref:`simulated_events_5_components_primary_energy_weighted`, 
+the primary distributions are shown for each dataset, separated by the primary particle type.
 
 .. _simulated_events_5_components_primary_energy: 
 .. figure:: images/plots/dataset_exploration/simulated_events_5_components_primary_energy.pdf
 
     : The energy distribution of primary particles is shown for the four different simulation datasets, separated by the primary particle type.
 
-In :numref:`simulated_events_leading_muon_energy`, the energy distribution of the leading muon is shown for each dataset. The leading muon is defined 
+.. _simulated_events_5_components_primary_energy_weighted:
+.. figure:: images/plots/dataset_exploration/simulated_events_5_components_primary_energy_weighted.pdf
+
+    : The energy distribution of primary particles is shown for the four different simulation datasets, separated by the primary particle type, weighted to GlobalSplineFit5Comp (GSF).
+
+In :numref:`simulated_events_leading_muon_energy` and :numref:`simulated_events_leading_muon_energy_weighted`, the energy distribution of the leading muon is shown for each dataset. The leading muon is defined 
 as the muon with the highest energy in the muon bundle. The shown energy corresponds to the energy at the detector entry.
 
 .. _simulated_events_leading_muon_energy:
 .. figure:: images/plots/dataset_exploration/simulated_events_leading_muon_energy.pdf
 
     : The energy distribution of the leading muon is shown for the four different simulation datasets.
+
+.. _simulated_events_leading_muon_energy_weighted:
+.. figure:: images/plots/dataset_exploration/simulated_events_leading_muon_energy_weighted.pdf
+
+    : The energy distribution of the leading muon is shown for the four different simulation datasets, weighted to GlobalSplineFit5Comp (GSF).
     
-In :numref:`simulated_events_bundle_muon_energy`, the energy distribution of the muon bundle is shown for each dataset. The muon bundle is defined as the
+In :numref:`simulated_events_bundle_muon_energy` and :numref:`simulated_events_bundle_muon_energy_weighted`, the energy distribution of the muon bundle is shown for each dataset. 
+The muon bundle is defined as the
 the sum of the energy of all muons entering the detector.
 
 .. _simulated_events_bundle_muon_energy:
 .. figure:: images/plots/dataset_exploration/simulated_events_bundle_muon_energy.pdf
 
     : The energy distribution of the muon bundle is shown for the four different simulation datasets.
+
+.. _simulated_events_bundle_muon_energy_weighted:
+.. figure:: images/plots/dataset_exploration/simulated_events_bundle_muon_energy_weighted.pdf
+
+    : The energy distribution of the muon bundle is shown for the four different simulation datasets, weighted to GlobalSplineFit5Comp (GSF).
     
 
 Estimation of the simulated statistics
