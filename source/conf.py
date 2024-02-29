@@ -69,7 +69,7 @@ author = u'Pascal Gutjahr'
 #  built documents.
 #
 #  The short X.Y version.
-version = 'last updated: February 14, 2024'
+version = 'last updated: February 29, 2024'
 #  The full version, including alpha/beta/rc tags.
 release = 'latest'
 

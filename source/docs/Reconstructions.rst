@@ -331,7 +331,8 @@ In the following, the evaluation of the networks is shown. Each figures contains
 the right plot shows an uncertainty cut applied on the estimated uncertainty by the network. The evaluation is performed on our own extended 
 history simulation dataset. Each plot has the network prediction on the y-axis and the true value on the x-axis. In general, networks are trained with 
 3 or 9 inputs and a time window of 6ms or the internal DNN time window cleaning. Furthermore, the CNN layers and nodes are varied. The runtime prediction 
-is presented for the usage of a GPU.
+is presented for the usage of a GPU. The preprocessing runtime represents the time needed to create the input features for the network based on the 
+input pulses. 
 
 Bundle energy at surface 
 ------------------------
