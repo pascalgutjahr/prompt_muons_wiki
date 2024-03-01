@@ -21,7 +21,15 @@ of the bundle:
 
     L_{\mathrm{E}} = \frac{E_{\mathrm{max}}}{E_{\mathrm{tot}}}
 
+
+The leadingness is shown for the prompt and conventional component for two different energy cuts in 
+:numref:`leading_bundle_energy_fraction`.
+
+.. _leading_bundle_energy_fraction:
 .. figure:: images/plots/dataset_exploration/leading_bundle_energy_fraction.pdf 
+  
+    : The leadingness is shown for the prompt and conventional component for two different energy cuts. The prompt component is shown as dashed lines 
+    and the conventional component as solid lines.
 
 A minimum energy is required to have an excess of prompt particles in relation to conventional ones. In addition, there is a sweet spot between 
 a leadingness of :math:`L_{\mathrm{E}} \in [0.1, 0.9]` in which the prompt component dominates the conventional component. Hence, a high leadingness does not 
