@@ -1,7 +1,115 @@
 Q & A
 #####
 
-* October 21, 2023
+In this section, a collection of all questions and answers from the presentations is given. The presentations are listed :ref:`here <main paragraph>`.
+
+March 18, 2024
+==============
+
+`Q: Do you want to do your analysis in different zenith bins?` 
+
+A: At the moment we do not have enough MC statistics to do the analysis in different zenith bins. But 
+with more statistics we will test this.
+
+----
+
+`Q: Do you include zenith in your pseudo analysis?` 
+
+A: In the plots shown in this presentation, we do not include zenith since the results are pretty similar. 
+For the future analysis with more MC statistics we will check again, if we are more sensitive to prompt for 
+including zenith.
+
+----
+
+`Q: You plan to do a foward folding fit with NNMFit. Why do you also want to unfold a muon spectrum?` 
+
+A: With a foward folding fit we can test a specific model. In our case this is the latest CORSIKA 77500, 
+SIBYLL 2.3d, latest icetray etc. Hence, we do the fit under the assumption of these specific models. This 
+has the advantage, that these models can be tested and iteratively improved. An unfolding is model independent. 
+This means, that we get the inclusive muon flux at the surface. This should not change with the model. 
+It can then be used for example by theorists to update and improve their models. Both are important measurements
+that need to be done.
+
+----
+
+`Q: Does your reconstruction have any overlap with the ones of Alina?`
+
+A: No, she is interested in the neutrinos, I am interested in the muons. But we do have an overlap in the 
+simulation part, since we both use CORSIKA ehist for the high energy region. 
+
+----
+
+`Q: How do you treat unflavoured mesons?`
+
+A: We treat them as prompt. Muons arising from pions and kaons are treated as conventional, all the others 
+as prompt.
+
+----
+
+`Q: I am not sure how meaningful it is for particle experiments to merge unflavoured and forward D.` 
+
+A: The energy distribution looks similar up to ~30 PeV (see Figure :numref:`mceq_flux`). I assume we are not able to fit 
+charmed and unflavoured separately.
+
+----
+
+`Q: Do to different physics between unflavoured and forward D there could be a difference in the multiplicity. Can you check that?`
+
+A: TODO
+
+----
+
+`Q: What atmospheric uncertainties do you include?`
+
+A: We will do our analysis for all common cosmic ray primary models, Gaisser H3a, H4a and Global Spline Fit. Since the simulation 
+is pretty expensive, we rely on one hadronic interaction model, which will be SIBYLL 2.3d.
+
+----
+
+March 1, 2024
+=============
+
+`Q: For the angular resolution, you can show a histogram of the angular difference between the true and the reconstructed direction.` 
+
+A: TODO 
+
+----
+
+`Q: The lateral distribution between unflavoured, charmed and conventianal should be different. Can you use machine learning to distinguish between them?` 
+
+A: TODO
+
+----
+
+`Q: Can you reconstruct the multiplicity with your neural networks? It would be very interesting if we can select a single muon (neutrino induced muon) from 
+muon bundle.` 
+
+A: So far, we don't need the multiplicity for our analysis. Hence, we didn't improve this reconstruction, but at the beginning I just trained one model 
+to predict the multiplicity. The results are shown in Figure :numref:`DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01_vs_MCLabelsLeadingMuons_num_muons_at_entry` 
+and following. Of course, we can test the multiplicity prediction for a neutrino dataset.
+
+---- 
+
+`Q: Can you train a network to detect/select prompt mouns?`
+
+A: This is not what we want to do. But you could for example train a network on CORSIKA simulations including prompt and on CORSIKA simulations without prompt, this 
+depends on the hadronic interaction model. Since the entire shower profile is pretty similar, it is hard to distinguish between prompt and conventional muons. We for 
+example also used the dynstack method to scale the prompt component up and down to test, whether the showers change to validate, that we can introduce our 
+scaling parameter for the prompt component.
+
+----
+
+`Q: You showed the network performances for the usual time window cleaning of 6000 ns and for the pulses without any cleaning. The results without cleaning seem to 
+be better. Do you have an idea why this is the case?`
+
+A: The 6000 ns time window cleaning analyzes the weighted charge and chooses the time window with the most charged included. On the one hand, this removes successfully 
+the after pulses, on the other hand it also removes the first pulses that arrive at the DOM. But these first pulses definitely include information about the 
+direction and maybe also about the highest energetic muon - the leading muon. This is why the results without cleaning are better.
+
+----
+
+October 21, 2023
+================
 
 `Q: How do you want to identify a prompt muon?`
 
@@ -55,7 +163,8 @@ A: TODO
 
 ----
 
-* September 29, 2023
+September 29, 2023
+==================
 
 `Q: In the simulation you remove the electromagnetic shower component. Thus, you also remove some muons. How large is the impact of this to your analysis?``
 

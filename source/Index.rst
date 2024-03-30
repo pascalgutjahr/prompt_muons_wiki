@@ -2,6 +2,9 @@
    Johannes by copying his own sphinx doc
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.   
+
+.. _main paragraph:
+
 Measurement of the prompt component of the atmospheric muon flux
 ################################################################
 
@@ -30,6 +33,15 @@ Useful links:
 
 List of presented talks:
 ------------------------
+
+2024:
++++++
+
+* 18 March: Spring Collaboration Meeting Münster `Details on the high-energy atmospheric muon sample <https://events.icecube.wisc.edu/event/180/contributions/10135/attachments/7678/9940/2024_03_18_Muenster_IceCube.pdf>`_
+
+* 18 March: Spring Collaboration Meeting Münster `Measuring the prompt component of the atmospheric muon flux <https://events.icecube.wisc.edu/event/180/contributions/10082/attachments/7674/9935/pgutjahr_Muenster_2024.pdf>`_
+
+* 1 March: CR WG `Selection and reconstruction <https://drive.google.com/file/d/1ACwalFSaAGHAUcTKAQ1EeBk8Yn2qfuMY/view?pli=1>`_ 
 
 2023:
 +++++
