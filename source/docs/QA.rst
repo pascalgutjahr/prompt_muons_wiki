@@ -6,14 +6,14 @@ In this section, a collection of all questions and answers from the presentation
 March 18, 2024
 ==============
 
-`Q: Do you want to do your analysis in different zenith bins?` 
+`Q (Jakob): Do you want to do your analysis in different zenith bins?` 
 
 A: At the moment we do not have enough MC statistics to do the analysis in different zenith bins. But 
 with more statistics we will test this.
 
 ----
 
-`Q: Do you include zenith in your pseudo analysis?` 
+`Q (Jakob): Do you include zenith in your pseudo analysis?` 
 
 A: In the plots shown in this presentation, we do not include zenith since the results are pretty similar. 
 For the future analysis with more MC statistics we will check again, if we are more sensitive to prompt for 
@@ -21,7 +21,7 @@ including zenith.
 
 ----
 
-`Q: You plan to do a foward folding fit with NNMFit. Why do you also want to unfold a muon spectrum?` 
+`Q (Claudio): You plan to do a foward folding fit with NNMFit. Why do you also want to unfold a muon spectrum?` 
 
 A: With a foward folding fit we can test a specific model. In our case this is the latest CORSIKA 77500, 
 SIBYLL 2.3d, latest icetray etc. Hence, we do the fit under the assumption of these specific models. This 
@@ -32,34 +32,92 @@ that need to be done.
 
 ----
 
-`Q: Does your reconstruction have any overlap with the ones of Alina?`
+`Q (Claudio): Does your reconstruction have any overlap with the ones of Alina?`
 
 A: No, she is interested in the neutrinos, I am interested in the muons. But we do have an overlap in the 
 simulation part, since we both use CORSIKA ehist for the high energy region. 
 
 ----
 
-`Q: How do you treat unflavoured mesons?`
+`Q (Lu): How do you treat unflavoured mesons?`
 
 A: We treat them as prompt. Muons arising from pions and kaons are treated as conventional, all the others 
 as prompt.
 
 ----
 
-`Q: I am not sure how meaningful it is for particle experiments to merge unflavoured and forward D.` 
+`Q (Lu): I am not sure how meaningful it is for particle experiments to merge unflavoured and forward D.` 
 
 A: The energy distribution looks similar up to ~30 PeV (see Figure :numref:`mceq_flux`). I assume we are not able to fit 
 charmed and unflavoured separately.
 
 ----
 
-`Q: Do to different physics between unflavoured and forward D there could be a difference in the multiplicity. Can you check that?`
+`Q (Lu): Do to different physics between unflavoured and forward D there could be a difference in the multiplicity. Can you check that?`
 
-A: TODO
+A: Figure :numref:`multiplicity_charmed_vs_unflavored` shows the multiplicity of charmed and unflavoured mesons as a rate. 
+Figure :numref:`multiplicity_charmed_vs_unflavored_10_years` shows the multiplicity of charmed and unflavoured mesons for 10 years. 
+The shape of charmed an unflavoured mesons is similar. In the forward fit, we can try to fit them separately, but regarding the low statistics at 
+higher energies, I don't expect a significant result. The classification of the particles is shown in the table :numref:`particle_categories`.
 
+.. _multiplicity_charmed_vs_unflavored:
+.. figure:: images/plots/QA/multiplicity_charmed_vs_unflavored.png
+
+    : The multiplicity of charmed and unflavoured mesons is shown as a rate.
+
+.. _multiplicity_charmed_vs_unflavored_10_years:
+.. figure:: images/plots/QA/multiplicity_charmed_vs_unflavored_10_years.png
+
+    : The multiplicity of charmed and unflavoured mesons is shown for the expeceted events for 10 years.
+
+.. _particle_categories:
+.. list-table:: Particle Categories
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Conventional
+     - Charmed
+     - Unflavored
+   * - pi+
+     - D+
+     - rho(770)0
+   * - K+
+     - D*(2010)+
+     - eta
+   * - K(L)0
+     - D0
+     - omega(782)
+   * - K(S)0
+     - D*(2007)0
+     - phi(1020)
+   * - mu-
+     - D(s)+
+     - J/psi(1S)
+   * - 
+     - D(s)*+
+     - p
+   * - 
+     - 
+     - Sigma(c)(2455)0
+   * - 
+     - 
+     - Lambda(c)+
+   * - 
+     - 
+     - Xi(c)0
+   * - 
+     - 
+     - Sigma(c)(2455)+
+   * - 
+     - 
+     - Sigma(c)(2455)++
+   * - 
+     - 
+     - Xi(c)+
+ 
 ----
 
-`Q: What atmospheric uncertainties do you include?`
+`Q (Lu): What atmospheric uncertainties do you include?`
 
 A: We will do our analysis for all common cosmic ray primary models, Gaisser H3a, H4a and Global Spline Fit. Since the simulation 
 is pretty expensive, we rely on one hadronic interaction model, which will be SIBYLL 2.3d.
@@ -69,19 +127,20 @@ is pretty expensive, we rely on one hadronic interaction model, which will be SI
 March 1, 2024
 =============
 
-`Q: For the angular resolution, you can show a histogram of the angular difference between the true and the reconstructed direction.` 
+`Q (Frank): For the angular resolution, you can show a histogram of the angular difference between the true and the reconstructed direction.` 
 
 A: TODO 
 
 ----
 
-`Q: The lateral distribution between unflavoured, charmed and conventianal should be different. Can you use machine learning to distinguish between them?` 
+`Q (Dave): The lateral distribution between unflavoured, charmed and conventianal should be different. Can you use machine learning to distinguish between them?` 
 
-A: TODO
+A: On the one hand, this is a stochastic process. Hence, the distributions overlap. On the other hand, the lateral distributions are on the order of :math:`1 \mathrm{m}`. 
+Using the current IceCube geometry, we can not resolve this. 
 
 ----
 
-`Q: Can you reconstruct the multiplicity with your neural networks? It would be very interesting if we can select a single muon (neutrino induced muon) from 
+`Q (Dave): Can you reconstruct the multiplicity with your neural networks? It would be very interesting if we can select a single muon (neutrino induced muon) from 
 muon bundle.` 
 
 A: So far, we don't need the multiplicity for our analysis. Hence, we didn't improve this reconstruction, but at the beginning I just trained one model 
@@ -90,7 +149,7 @@ and following. Of course, we can test the multiplicity prediction for a neutrino
 
 ---- 
 
-`Q: Can you train a network to detect/select prompt mouns?`
+`Q (Dave): Can you train a network to detect/select prompt mouns?`
 
 A: This is not what we want to do. But you could for example train a network on CORSIKA simulations including prompt and on CORSIKA simulations without prompt, this 
 depends on the hadronic interaction model. Since the entire shower profile is pretty similar, it is hard to distinguish between prompt and conventional muons. We for 
@@ -99,7 +158,7 @@ scaling parameter for the prompt component.
 
 ----
 
-`Q: You showed the network performances for the usual time window cleaning of 6000 ns and for the pulses without any cleaning. The results without cleaning seem to 
+`Q (Serap): You showed the network performances for the usual time window cleaning of 6000 ns and for the pulses without any cleaning. The results without cleaning seem to 
 be better. Do you have an idea why this is the case?`
 
 A: The 6000 ns time window cleaning analyzes the weighted charge and chooses the time window with the most charged included. On the one hand, this removes successfully 
@@ -111,31 +170,31 @@ direction and maybe also about the highest energetic muon - the leading muon. Th
 October 21, 2023
 ================
 
-`Q: How do you want to identify a prompt muon?`
+`Q (Dave): How do you want to identify a prompt muon?`
 
 A: We do not want do identify a prompt muon. We want to measure the normalization of the prompt component. 
 
 ----
 
-`Q: Is 20 % offset between MCEq and CORSIKA an issue?` 
+`Q (Frank): Is 20 % offset between MCEq and CORSIKA an issue?` 
 
 A: These are two completely different approaches. There is no true or correct result. (see section `Definitions of the prompt component`)
 
 ----
 
-`Q: How does the cos(theta) distribution behaves in comparison with the results of Patrick Berghaus?`
+`Q (Spencer): How does the cos(theta) distribution behaves in comparison with the results of Patrick Berghaus?`
 
 A: There are similar issues. Overshoots above 0.5 and undershoots around 0.3.
 
 ----
 
-`Q: Do you set a fixed conventional normalization in your pseudo analysis? If not, to which value do you fit it?`
+`Q (Anatoli): Do you set a fixed conventional normalization in your pseudo analysis? If not, to which value do you fit it?`
 
 A: No, it is not fixed. In the pseudo analysis we fit it to 0.998.
 
 ----
 
-`Q: What happens, if you use single muons?`
+`Q (Shigeru): What happens, if you use single muons?`
 
 A: For the pseudo analysis, we use the reconstructed bundle energy at entry to fit the normalization of the prompt and conventional muon flux. Here, we do not select 
 muons with a special leadingness. This follows from :numref:`leading_bundle_energy_fraction`, which shows that a high leadingness does not increase the sensitivity do detect prompt 
@@ -144,29 +203,43 @@ single muons, we would lose statistics and the analysis would be less sensitive.
 
 ----
 
-`Q: Regarding the zenith-problem: Maybe you can estimate the impact of the magnetic field of the earth on high energy muons. Could this help to solve the problem?` 
+`Q (Spencer): Regarding the zenith-problem: Maybe you can estimate the impact of the magnetic field of the earth on high energy muons. Could this help to solve the problem?` 
 
 A: TODO
 
 ----
 
-`Q: How large are the uncertainties on the conventional component (pion/kaon production)?` 
+`Q (Spencer): How large are the uncertainties on the conventional component (pion/kaon production)?` 
 
 A: TODO
 
 ----
 
-`Q: How large is the background that we expect (astrophysical neutrinos, atmospheric neutrinos)? If we are able to distinguish between a single muon 
+`Q (Spencer): How large is the background that we expect (astrophysical neutrinos, atmospheric neutrinos)? If we are able to distinguish between a single muon 
 and a muon bundle, we can remove neutrino induced background muons.`
 
-A: TODO
+A: To estimate the neutrino background, the bundle energy at entry is shown in :numref:`neutrino_background_bundle_energy_at_entry`. The NuGen background includes both atmospheric
+and astrophysical neutrinos. At the highest energies of :math:`10 \mathrm{PeV}`, it's on the order of a few percent. It decreases to 
+below :math:`1 \mathrm{%}` at lower energies. 
+Regarding the distinction between single muons and muon bundles, I made some very preliminary studies. It seems to be quite promising, but it 
+definitely needs more investigation. Since I used some assumptions, uploading the plots might be confusing. I can provide some plots upon request.
+
+.. _neutrino_background_bundle_energy_at_entry:
+.. figure:: images/plots/QA/bundle_energy_at_entry.png
+
+    : Bundle energy at entry is shown to estimate the neutrion background. The NuGen background in purple includes both atmospheric 
+    and astrophysical neutrinos. The atmospheric 
+    neutrinos are estimated using MCEq and GaisserH3a. The astrophysical neutrinos are calculated with :math:`\gamma = 2.6` with a 
+    normalization of :math:`n = 1.5`. 
+
+
 
 ----
 
 September 29, 2023
 ==================
 
-`Q: In the simulation you remove the electromagnetic shower component. Thus, you also remove some muons. How large is the impact of this to your analysis?``
+`Q (?): In the simulation you remove the electromagnetic shower component. Thus, you also remove some muons. How large is the impact of this to your analysis?``
 
 A: We used CORSIKA 8 to estimate the impact of the electromagnetic shower component on the produced muons. For a 500 PeV proton shower, the total amount of 
 muon-energy per shower is about 4.8 %. 
@@ -187,7 +260,7 @@ we will simulate the EM component, if the simulation of the EM component is feas
 
 ----
 
-`Q: Your prompt definition is: parent is not pion or kaon. The definiton in MCEq divides prompt and conventional by a minimum decay length of 0.123 cm. Is there a difference?`
+`Q (?): Your prompt definition is: parent is not pion or kaon. The definiton in MCEq divides prompt and conventional by a minimum decay length of 0.123 cm. Is there a difference?`
 
 A: The “lifetime” definition is similar, as it includes every particle with a lifetime which is greater than ten times the lifetime of the D0 as conventional and the rest as 
 prompt. This is the definition of prompt used inside MCEq, and the lifetime limit corresponds to a decay length of approximately 1.2 cm. Considering all particles in CORSIKA7, 
@@ -199,13 +272,13 @@ definitions produce nearly identical results, see section `Definitions of the pr
 
 ----
 
-`Q: How do you plan to reconstruct the leading muon energy?`
+`Q (Agnieszka): How do you plan to reconstruct the leading muon energy?`
 
 A: For the reconstruction of the leading muon energy, we use a convolutional neural network. Further details can be found in the `Reconstructions` section of this wiki.
 
 ----
 
-`Q: In your pseudo analysis you used a poisson likelihood. Do you want to add limited statistics to your likelihood?`
+`Q (Jakob): In your pseudo analysis you used a poisson likelihood. Do you want to add limited statistics to your likelihood?`
 
 A: Yes, we do want use the Say likelihood. Apart from that, for the real analysis we will probably switch to the tool NNMFit. This is already known in IceCube and in our 
 first test it seems to work for us as well. Thus, we can avoid code duplication. In addition, the tools is able to perform fits with multiple datasets. In the future, this 
@@ -213,7 +286,7 @@ helps do to a combined fit with a atmospheric muon and neutrino dataset.
 
 ----
 
-`Q: What is the impact of limited MC statistics on your analysis currently?`
+`Q (Jakob?): What is the impact of limited MC statistics on your analysis currently?`
 
 A: As you can see in the section `New CORSIKA extended history simulations`, we have a quite sufficient statistics for high energies, but to little statistics for low energies. 
 Hence, especially the low energy events are oversampled in the pseudo dataset. For the real analysis, we will simulate a new datasets with more statistics to reach 
