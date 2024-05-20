@@ -238,3 +238,74 @@ The response matrix is then calculated as
 
 The likelihood :math:`\mathcal{L}` now also depends on the nuisance parameters :math:`\vec{\xi}`, 
 which makes it possible to fit these parameters in the unfolding.
+
+
+Unfolding
+---------
+
+In this analysis, we would like to unfold the energy of the leading muon at the surface. This is variable is called our 
+target variable. For the unfolding, we need proxies, that correlate with our target. 
+
+Proxy Variable
+==============
+
+At first, we need a proxy that correlates with the true physical quantity. In Figure :numref:`proxy_variable`, the muon energy of the 
+leading muon at entry is used as a proxy variable. The target is the energy of the leading muon at the surface. 
+
+
+.. _proxy_variable:
+.. figure:: images/plots/unfolding/source/docs/images/plots/unfolding/DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02_entry_energy_vs_muon_energy_first_mctree.png 
+
+  : Proxy variable for unfolding. Here, the muon energy of the leading muon at entry is used. The target is the leading muon energy 
+  at surface.
+
+
+Unfold Event Rate - one proxy
+=============================
+
+In Figure :numref:`unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps`, the unfolded event rate of the muon energy of the leading muon at the surface is shown. 
+In Figure :numref:`unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps`, the same unfolding is performed with more steps and walkers. 
+
+
+.. _unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps:
+.. figure:: images/plots/unfolding/source/docs/images/plots/unfolding/unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps.png 
+
+  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution is shown in blue, the unfolded 
+  distribution in red. 
+
+.. _unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps:
+.. figure:: images/plots/unfolding/source/docs/images/plots/unfolding/unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps.png 
+
+  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution is shown in blue, the unfolded 
+  distribution in red. 
+
+Unfold Event Rate - multiple proxies / tree binning 
+===================================================
+
+Instead of using just one proxy, multiple proxies can be used. Due to the high dimensionality, a decision tree is used to bin the data. 
+This is done in a way, that the tree is used to solve our problem: estimating the energy of the leading muon at the surface. But then, 
+we don't use the estimation of the energy, but just the leafs for the binning. This way, we can use the tree to bin the data. Of course, 
+this approach can also be used with only one proxy. This is presented first, to compare the results with the classical binning by hand.
+
+In Figures :numref:`decision_tree_regression_1D_only_leading_energy` and :numref:`decision_tree_regression_2D_only_leading_energy`, 
+the decision tree regression for the leading muon energy at the surface is shown. The tree is able to reconstruct the target variable.
+
+.. _decision_tree_regression_1D_only_leading_energy:
+.. figure:: images/plots/unfolding/source/docs/images/plots/unfolding/decision_tree_regression_1D_only_leading_energy.png 
+
+  : Decision tree regression for the leading muon energy at the surface. The tree is used to bin the data.
+
+.. _decision_tree_regression_2D_only_leading_energy:
+.. figure:: images/plots/unfolding/source/docs/images/plots/unfolding/decision_tree_regression_2D_only_leading_energy.png 
+
+  : Decision tree regression for the leading muon energy at the surface in 2D. The tree is used to bin the data.
+
+Using this binning and the same number of steps and walkers a in Figure :numref:`_unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps`, 
+the unfolding of the event rate results as in Figure :numref:`tree_binning_unfolding_rate_only_leading_energy`. The tree binning improves 
+the unfolding result.
+
+.. _tree_binning_unfolding_rate_only_leading_energy:
+.. figure:: images/plots/unfolding/tree_binning_unfolding_rate_only_leading_energy.png
+
+  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution is shown in blue, the unfolded in red. 
+  Tree binning is used. As a proxy, only the leading muon energy at entry is used.
