@@ -141,7 +141,7 @@ In :numref:`stochasticity_vs_leadingness`, the leadingness is shown as a functio
 for a small amount of events.
 
 .. _stochasticity_vs_leadingness:
-.. figure:: images/plots/stochasticity_check/stochasticity_vs_leadingness.pdf 
+.. figure:: images/plots/stochasticity_check/stochasticity_vs_leadingness.png
 
     : The leadingness is shown as a function of the bundle stochasticity as a weighted distribution.
 
@@ -150,7 +150,7 @@ To get an idea of the correlation between the leading muon energy and the bundle
 in :numref:`MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy`, the energy of the leading muon is shown as a function of the bundle stochasticity.
 
 .. _MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy:
-.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy.pdf
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_entry_energy.png
 
     : The energy of the leading muon is shown as a function of the bundle stochasticity.
 
@@ -160,7 +160,7 @@ In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_le
 the leadingness is shown as a function of the bundle stochasticity. High stochasticities lead to a large leadingness, but it removes the entire statistics.
 
 .. _MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale:
-.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.png
 
     : The leadingness is shown as a function of the bundle stochasticity.
 
@@ -168,7 +168,7 @@ In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadi
 the leadingness is shown as a function of the largest energy loss. The largest energy loss is not a good indicator for the leadingness.
 
 .. _MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale:
-.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.pdf
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.png
 
     : The leadingness is shown as a function of the largest energy loss.
 
@@ -176,7 +176,7 @@ In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadi
 The largest energy loss is correlated with the energy of the leading muon. The larger the energy loss, the higher the energy of the leading muon.
 
 .. _MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_entry_energy:
-.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_entry_energy.pdf
+.. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_entry_energy.png
 
     : The energy of the leading muon is shown as a function of the largest energy loss.
 
@@ -187,7 +187,7 @@ A cut on the stochasticity removes high energy muons. Due to the low statistics 
 we do not apply any cuts on the stochasticity.
 
 .. _bundle_muon_energy_spectrum_stochasticity_cuts:
-.. figure:: images/plots/stochasticity_check/bundle_muon_energy_spectrum_stochasticity_cuts.pdf
+.. figure:: images/plots/stochasticity_check/bundle_muon_energy_spectrum_stochasticity_cuts.png
 
     : The energy spectrum of the leading muon is shown for different cuts on the stochasticity.
 
@@ -200,12 +200,12 @@ The bundle energy reconstruction for different cuts on the stochasticity is show
 :numref:`bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher`. A cut on the stochasticity does not improve the bundle energy reconstruction.
 
 .. _bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.png
 
     : The bundle energy reconstruction for stochasticities below a certain cut is shown.
 
 .. _bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundleE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.png
     
     : The bundle energy reconstruction for stochasticities above a certain cut is shown.
 
@@ -213,12 +213,12 @@ The leading muon energy reconstruction for different cuts on the stochasticity i
 :numref:`leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher`. A cut on the stochasticity does not improve the leading muon energy reconstruction.
 
 .. _leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_lower.png
 
     : The leading muon energy reconstruction for stochasticities below a certain cut is shown.
 
 .. _leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_stoch_cut_higher.png
 
     : The leading muon energy reconstruction for stochasticities above a certain cut is shown.
 
@@ -240,7 +240,7 @@ In :numref:`bundle_radius_scale_2`, the bundle radius is shown for different bun
 from 50% to 100%. The same plot is shown for different scalings on the axes. The distributions peak between 5m and 20m, but also radii above 100m are observed.
 
 .. _bundle_radius_scale_2:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_scale_2.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_scale_2.png
 
     : The bundle radius is shown for different bundle radius quantiles.
 
@@ -248,25 +248,25 @@ In :numref:`bundle_radius_vs_leadingness`, the leadingness is shown as a functio
 A small bundle radius leads to a high leadingness.
 
 .. _bundle_radius_vs_leadingness:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_vs_leadingness.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_vs_leadingness.png
 
     : The leadingness is shown as a function of the bundle radius for a bundle radius quantile of 100% as a weighted distribution.
 
 In the following figures :numref:`bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale`, 
 the leadingness is shown as a function of the bundle radius for different bundle energy cuts. Large bundle radii lead to a low leadingness.
 
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.500_leadingness_bundle_energy_cut_no_logscale.pdf 
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.500_leadingness_bundle_energy_cut_no_logscale.png 
 
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.800_leadingness_bundle_energy_cut_no_logscale.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.800_leadingness_bundle_energy_cut_no_logscale.png
 
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.900_leadingness_bundle_energy_cut_no_logscale.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.900_leadingness_bundle_energy_cut_no_logscale.png
 
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.950_leadingness_bundle_energy_cut_no_logscale.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.950_leadingness_bundle_energy_cut_no_logscale.png
 
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.990_leadingness_bundle_energy_cut_no_logscale.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_0.990_leadingness_bundle_energy_cut_no_logscale.png
 
 .. _bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingness_bundle_energy_cut_no_logscale.png
 
     : The leadingness is shown as a function of the bundle radius for different bundle energy cuts.
 
@@ -274,7 +274,7 @@ In :numref:`bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut`, the 
 For a small amount of events, a large bundle radius indicates a low bundle energy.
 
 .. _bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_bundleE_bundle_energy_cut.png
 
     : The muon bundle energy is shown as a function of the bundle radius for different bundle energy cuts.
 
@@ -282,7 +282,7 @@ In :numref:`bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut`, the
 For a small amount of events, a large bundle radius indicates a low leading muon energy.
 
 .. _bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_bundle_energy_cut.png
 
     : The leading muon energy is shown as a function of the bundle radius for different bundle energy cuts.
 
@@ -292,7 +292,7 @@ In :numref:`leadingE_radius_0.990_cut_prompt`, the leading muon energy spectrum 
 A bundle radius quantile of 99% is chosen as a cut parameter. 
 
 .. _leadingE_radius_0.990_cut_prompt:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_0.990_cut_prompt.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_0.990_cut_prompt.png
 
     : The leading muon energy spectrum is shown for different cuts on the bundle radius of the 99% quantile.
 
@@ -300,7 +300,7 @@ In :numref:`leadingE_radius_1.000_cut_prompt`, the leading muon energy spectrum 
 A bundle radius quantile of 100% is chosen as a cut parameter.
 
 .. _leadingE_radius_1.000_cut_prompt:
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_1.000_cut_prompt.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/leadingE_radius_1.000_cut_prompt.png
 
     : The leading muon energy spectrum is shown for different cuts on the bundle radius of the 100% quantile.
 
@@ -315,7 +315,7 @@ In :numref:`bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_export
 reconstruction of the leading muon energy is shown. A bundle radius quantile of 100% is chosen as a cut parameter.
 
 .. _bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut: 
-.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut.pdf
+.. figure:: images/plots/stochasticity_check_reco_bundle_radius/bundle_radius_radius_quantile_1.000_leadingE_DeepLearningReco_exported_model_PromptMu_L2_energy_radius_cut.png
 
     : The impact of the bundle radius of the 10% quantile on the reconstruction of the leading muon energy is shown.
 
@@ -340,13 +340,13 @@ Bundle energy at surface
 precut networks:
 
 .. _DeepLearningReco_precut_bundle_energy_3inputs_6ms_at_surface_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree:
-.. figure:: images/plots/model_evaluation/precut/DeepLearningReco_precut_bundle_energy_3inputs_6ms_at_surface_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree.pdf 
+.. figure:: images/plots/model_evaluation/precut/DeepLearningReco_precut_bundle_energy_3inputs_6ms_at_surface_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree.png 
 
     : The bundle energy at the surface is shown for the network ``DeepLearningReco_precut_bundle_energy_3inputs_6ms_at_surface_01``. It uses 3 inputs 
     and a 6ms time window.
 
 .. _DeepLearningReco_precut_bundle_energy_3inputs_6ms_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree:
-.. figure:: images/plots/model_evaluation/precut/DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree.pdf
+.. figure:: images/plots/model_evaluation/precut/DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree.png
 
     : The bundle energy at the surface is shown for the network ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``. It uses 3 inputs
     and a 6ms time window.
@@ -354,12 +354,12 @@ precut networks:
 ----
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_in_mctree:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_in_mctree.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_in_mctree.png
 
     : The bundle energy at the surface is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. It uses 9 inputs and a 6ms time window.
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_in_mctree:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_in_mctree.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_in_mctree.png
 
     : The bundle energy at the surface is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
 
@@ -367,22 +367,22 @@ Bundle energy at entry
 ----------------------
 
 .. _DeepLearningReco_leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_at_entry:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_at_entry.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_at_entry.png
 
     : The bundle energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. It uses 9 inputs and a 6ms time window.
 
 .. _DeepLearningReco_leading_bundle_OC_inputs9_large_log_02__bundle_energy_at_entry:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_OC_inputs9_large_log_02__bundle_energy_at_entry.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_OC_inputs9_large_log_02__bundle_energy_at_entry.png
 
     : The bundle energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_at_entry:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_at_entry.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__bundle_energy_at_entry.png
 
     : The bundle energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. It uses 9 inputs and a 6ms time window.
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_at_entry:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_at_entry.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_at_entry.png
 
     : The bundle energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
 
@@ -390,12 +390,12 @@ Leading muon energy at surface
 ------------------------------
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__muon_energy_first_mctree:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__muon_energy_first_mctree.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__muon_energy_first_mctree.png
 
     : The leading muon energy at the surface is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. It uses 9 inputs and a 6ms time window.
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__muon_energy_first_mctree:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__muon_energy_first_mctree.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__muon_energy_first_mctree.png
 
     : The leading muon energy at the surface is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
 
@@ -403,22 +403,22 @@ Leading muon energy at entry
 ----------------------------
 
 .. _DeepLearningReco_leading_bundle_energy_OC_inputs9_6ms_large_log_02__entry_energy:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_energy_OC_inputs9_6ms_large_log_02__entry_energy.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_energy_OC_inputs9_6ms_large_log_02__entry_energy.png
 
     : The leading muon energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. It uses 9 inputs and a 6ms time window.
 
 .. _DeepLearningReco_leading_bundle_OC_inputs9_large_log_02__entry_energy:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_OC_inputs9_large_log_02__entry_energy.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_OC_inputs9_large_log_02__entry_energy.png
 
     : The leading muon energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__entry_energy:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__entry_energy.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02__entry_energy.png
 
     : The leading muon energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. It uses 9 inputs and a 6ms time window.
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__entry_energy:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__entry_energy.pdf
+.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__entry_energy.png
 
     : The leading muon energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
 
@@ -431,12 +431,12 @@ In :numref:`recos_muon_energy_fraction`, the reconstructed muon energy fraction 
 Hence, the network seems to reconstruct the bundle energy and tries to refer to the leading muon energy. 
 
 .. _true_muon_energy_fraction:
-.. figure:: images/plots/model_evaluation/energy/true_muon_energy_fraction.pdf
+.. figure:: images/plots/model_evaluation/energy/true_muon_energy_fraction.png
 
     : The true muon energy fraction is shown as a function of the true bundle energy, at entry.
 
 .. _recos_muon_energy_fraction:
-.. figure:: images/plots/model_evaluation/energy/reco_muon_energy_fraction.pdf
+.. figure:: images/plots/model_evaluation/energy/reco_muon_energy_fraction.png
 
     : The reconstructed muon energy fraction is shown as a function of the true bundle energy, at entry.
 
@@ -446,120 +446,120 @@ Track geometry
 Center time:
 
 .. _track_geometry_9inputs_6ms_medium_01__center_pos_t:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_t.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_t.png
 
     : The center time is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_t:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_t.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_t.png
 
     : The center time is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Entry time: 
 
 .. _track_geometry_9inputs_6ms_medium_01__entry_pos_t:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_t.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_t.png
 
     : The entry time is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_t:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_t.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_t.png
 
     : The entry time is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Center position x:
 
 .. _track_geometry_9inputs_6ms_medium_01__center_pos_x:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_x.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_x.png
 
     : The center position x is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_x:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_x.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_x.png
 
     : The center position x is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Center position y:
 
 .. _track_geometry_9inputs_6ms_medium_01__center_pos_y:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_y.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_y.png
 
     : The center position y is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_y:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_y.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_y.png
 
     : The center position y is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Center position z:
 
 .. _track_geometry_9inputs_6ms_medium_01__center_pos_z:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_z.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__center_pos_z.png
 
     : The center position z is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_z:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_z.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_z.png
 
     : The center position z is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Entry position x:
 
 .. _track_geometry_9inputs_6ms_medium_01__entry_pos_x:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_x.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_x.png
 
     : The entry position x is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_x:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_x.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_x.png
 
     : The entry position x is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Entry position y:
 
 .. _track_geometry_9inputs_6ms_medium_01__entry_pos_y:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_y.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_y.png
 
     : The entry position y is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_y:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_y.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_y.png
 
     : The entry position y is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Entry position z:
 
 .. _track_geometry_9inputs_6ms_medium_01__entry_pos_z:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_z.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__entry_pos_z.png
 
     : The entry position z is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_z:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_z.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_z.png
 
     : The entry position z is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Total track length:
 
 .. _track_geometry_9inputs_6ms_medium_01__Length:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__Length.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__Length.png
 
     : The track length is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__Length:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__Length.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__Length.png
 
     : The track length is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Track length in detector:
 
 .. _track_geometry_9inputs_6ms_medium_01__LengthInDetector:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__LengthInDetector.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_6ms_medium_01__LengthInDetector.png
 
     : The track length in the detector is shown for the network ``DeepLearningREco_track_geometry_9inputs_6ms_medium_01``. It uses 9 inputs and a 6ms time window.
 
 .. _track_geometry_9inputs_uncleaned_01__LengthInDetector:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__LengthInDetector.pdf
+.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__LengthInDetector.png
 
     : The track length in the detector is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
@@ -569,36 +569,36 @@ Direction
 Zenith angle:
 
 .. _direction_9inputs_6ms_medium_02_03__zenith:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03__zenith.pdf
+.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03__zenith.png
 
     : The zenith angle is shown for the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``. It uses 9 inputs and a 6ms time window.
 
 .. _direction_9inputs_uncleaned_01__zenith:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_uncleaned_medium_01__zenith.pdf
+.. figure:: images/plots/model_evaluation/direction/direction_9inputs_uncleaned_medium_01__zenith.png
 
     : The zenith angle is shown for the network ``DeepLearningReco_direction_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Azimuth angle:
 
 .. _direction_9inputs_6ms_medium_02_03__azimuth:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03__azimuth.pdf
+.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03__azimuth.png
 
     : The azimuth angle is shown for the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``. It uses 9 inputs and a 6ms time window.
 
 .. _direction_9inputs_uncleaned_01__azimuth:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_uncleaned_medium_01__azimuth.pdf
+.. figure:: images/plots/model_evaluation/direction/direction_9inputs_uncleaned_medium_01__azimuth.png
 
     : The azimuth angle is shown for the network ``DeepLearningReco_direction_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Angular resolution:
 
 .. _direction_9inputs_6ms_medium_02_03_angular_resolution:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03_angular_resolution.pdf
+.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03_angular_resolution.png
 
     : The angular resolution is shown for the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``. It uses 9 inputs and a 6ms time window.
 
 .. _direction_9inputs_uncleaned_medium_01_angular_resolution:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_uncleaned_medium_01_angular_resolution.pdf
+.. figure:: images/plots/model_evaluation/direction/direction_9inputs_uncleaned_medium_01_angular_resolution.png
 
     : The angular resolution is shown for the network ``DeepLearningReco_direction_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
 
@@ -610,22 +610,22 @@ The multiplicity means the number of muons entering the detector in a bundle. So
 just wanted to check if it is possible to reconstruct the multiplicity.
 
 .. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01_vs_MCLabelsLeadingMuons_num_muons_at_entry:
-.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01_vs_MCLabelsLeadingMuons_num_muons_at_entry.png
 
     : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_01``. It uses 3 inputs and a 6ms time window.
 
 .. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_02_vs_MCLabelsLeadingMuons_num_muons_at_entry::
-.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_02_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_02_vs_MCLabelsLeadingMuons_num_muons_at_entry.png
 
     : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_02``. It uses 3 inputs and a 6ms time window.
 
 .. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_03_vs_MCLabelsLeadingMuons_num_muons_at_entry:
-.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_03_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_03_vs_MCLabelsLeadingMuons_num_muons_at_entry.png
 
     : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_03``. It uses 3 inputs and a 6ms time window.
 
 .. _DeepLearningReco_precut_bundle_energy_multi_OC_6ms_04_vs_MCLabelsLeadingMuons_num_muons_at_entry:
-.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_04_vs_MCLabelsLeadingMuons_num_muons_at_entry.pdf
+.. figure:: images/plots/model_evaluation/multiplicity/DeepLearningReco_precut_bundle_energy_multi_OC_6ms_04_vs_MCLabelsLeadingMuons_num_muons_at_entry.png
 
     : The multiplicity is shown for the network ``DeepLearningReco_precut_bundle_energy_multi_OC_6ms_04``. It uses 3 inputs and a 6ms time window.
 
@@ -641,7 +641,7 @@ Furthermore, also the default OnlineL2 reconstructions are shown. :numref:`splin
 which is around :math:`1^\circ` for all reconstructions. The SplineMPE reconstructions are slightly better.
 
 .. _spline mpe all:
-.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_all.pdf 
+.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_all.png 
 
     : The median angular resolution with a 90% containment is shown for all reconstructions.
 
@@ -650,7 +650,7 @@ The improvement of SplineMPE with the DNN seeds is shown in :numref:`spline mpe 
 is a small improvement, but the :math:`90\,\%` containment is smallest for the DNN only reconstruction.
 
 .. _spline mpe sub:
-.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_sub.pdf 
+.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_sub.png 
 
     : The median angular resolution with a 90% containment is shown for DNN seeds only.
 
@@ -658,7 +658,7 @@ is a small improvement, but the :math:`90\,\%` containment is smallest for the D
 The duration of SplineMPE is shown in :numref:`spline mpe duration`. 
 
 .. _spline mpe duration:
-.. figure:: images/plots/evaluate_SplineMPE/duration_spline_mpe.pdf
+.. figure:: images/plots/evaluate_SplineMPE/duration_spline_mpe.png
 
     : The duration of the SplineMPE reconstruction is shown.
 
