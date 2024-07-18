@@ -23,10 +23,10 @@ other muons that originate not from pions and kaons. The flux has a spectral ind
 in comparison to the conventional flux. In other words, the prompt spectrum is flatter than the conventional one. 
 The prompt produced particles have short lifetimes which lead in first order to 
 an immediate decay. Hence, the muon energy correlates stronger to the primary particle energy. Instead, the conventional pions and kaons 
-live long enough to interact with the atmosphere. This causes energy losses and results to lower muon energies. The cross-over point is 
-around :math:`1\,\mathrm{PeV}`. This prompt flux was not significantly detected yet, due to the less amount of 
-muons expected for these high energies in a detector volume of 
-:math:`1\,\mathrm{km}^3` like IceCube. Figure :numref:`mceq_flux` shows the different components of 
+live long enough to interact with the atmosphere. These re-interactions in the atmosphere cause energy losses which reduces the energy successively.
+This leads to the resulting muons having lower energy as well. 
+Conventional muons dominate below :math:`1\,\mathrm{PeV}` and prompt muons dominate above. 
+Figure :numref:`mceq_flux` shows the different components of 
 the atmospheric muon flux created with `MCEq <https://github.com/afedynitch/MCEq>`_. More information to the hadronic interaction model SIBYLL 
 used to create these spectra are provided `here <https://arxiv.org/pdf/1806.04140.pdf>`_.
 
@@ -39,12 +39,17 @@ used to create these spectra are provided `here <https://arxiv.org/pdf/1806.0414
     
 Previous analyses 
 +++++++++++++++++
-In the past, two analyses were performed focused on high energetic muons arising from our Earth's atmosphere by Thomasz Fuchs and Patrick Berghaus. 
+Due to the fact, the resulting muon flux follows a power law, the low statistics at high energies are a challenge to detect the prompt component.
+In the past, three analyses were performed focused on high energetic muons arising from our Earth's atmosphere by Thomasz Fuchs, Patrick Berghaus
+and Hans-Peter Bretz. 
 In Tomasz's thesis, which included an unfolding of the energy spectrum with one year of experimental data, the analysis was limited by MC statistics. 
 This caused the analysis to result in a prompt normalization that is compatible with zero. 
 In Patrick's thesis, a mismatch between MC and data was found in the :math:`\cos(\theta)` distribution. This issue leads to systematic uncertainties resulting the 
 final significance of the detection of the prompt component to be lower than :math:`3.5 \sigma`.
+Hans-Peter performed an analysis with three years of data, but a final muon spectrum as a function of the actual 
+muon energy has never been derived.
 
+The links to the analyses can be found :ref:`here <main paragraph>`.
 
 New analysis 
 ++++++++++++

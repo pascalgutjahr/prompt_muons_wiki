@@ -24,6 +24,7 @@ Previous analyses
 -----------------
 * Tomasz Fuchs: `<https://wiki.icecube.wisc.edu/index.php/Analysis_of_Leading_Muons>`_
 * Patrick Berghaus: `<https://arxiv.org/pdf/1506.07981.pdf>`_
+* Hans-Peter Bretz: `<https://www-zeuthen.desy.de/~hpbretz/he_muon_analysis_wiki/html/index.html>`_
 
 
 Useful links:
