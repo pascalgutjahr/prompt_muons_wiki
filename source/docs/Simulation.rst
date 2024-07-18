@@ -35,9 +35,9 @@ The following settings are used:
 
 * Ecuts2: 273 GeV (muon min energy)
 
-* Ecuts3: 1020 GeV (electron min energy)
+* Ecuts3: :math:`10^{20}` GeV (electron min energy)
 
-* Ecuts4: 1020 GeV (photon min energy)
+* Ecuts4: :math:`10^{20}` GeV (photon min energy)
 
 * TrimShower: True 
 
@@ -51,6 +51,19 @@ The built CORSIKA software is stored at: ``/data/user/pgutjahr/software/CORSIKA/
 
 Dataset exploration - Level 2
 +++++++++++++++++++++++++++++
+
+For the dataset exploration, the definition of a leading muon is defined as following: 
+The leading muon is the muon with the highest energy in the muon bundle. This can be expressed in "Leadingness".
+Leadingness :math:`L_{\mathrm{E}}` describes the ratio of the highest energetic muon :math:`E_{\mathrm{max}}` 
+in a muon bundle to the total energy :math:`E_{\mathrm{tot}}` of the muon bundle:
+
+.. math:: 
+
+    L_{\mathrm{E}} = \frac{E_{\mathrm{max}}}{E_{\mathrm{tot}}}
+
+If there is no specific leadingness stated, the term leading muon refers to the muon with the highest energy in the muon bundle.
+
+
 In the following, unweighted and weighted distributions of the simulated events are shown. In :numref:`simulated_events_primary_energy` and 
 :numref:`simulated_events_primary_energy_weighted`, the primary distributions are shown 
 for each dataset.
@@ -134,6 +147,14 @@ above 1 PeV, more muons are simulated than expected for 1 year. (The cuts applie
 Large scale simulation 
 ++++++++++++++++++++++
 
+----
+
+*Note*: In the icetray version 1.11.0-rc1, a bug was introduced that we fixed locally without committing to move on 
+with our simulation to perform further tests. Hence, this is still a preliminary simulation since we want to provide 
+a simulation that is re-producible (using an official icetray version tag).
+
+----
+
 A preliminary large-scale simulation is currently performed with Iceprod. 
 The datasets are:
 
@@ -143,19 +164,50 @@ The datasets are:
 * 22777: 1e9 GeV - 1e10 GeV
 * 22778: 1e10 GeV - 1e11 GeV
 
+The following settings are used:
 
-The large scale simulation with sufficient statistics will be performed with Iceprod and provided as an official dataset. 
-To start this simulation, the following questions need to be answered:
+* CORSIKA version 77500 
+
+* SIBYLL 2.3d 
+
+* Icetray 1.11.0-rc1
+
+* 5 components (p, He, N, Al, Fe)
+
+* Zenith angle: 0 - 90 degrees
+
+* Polyplopia: False (no coincident events are simulated)
+
+* Ecuts1: 273 GeV (hadron min energy)
+
+* Ecuts2: 273 GeV (muon min energy)
+
+* Ecuts3: 273 GeV (electron min energy)
+
+* Ecuts4: 273 GeV (photon min energy)
+
+* TrimShower: False 
+
+* Atmosphere: all 12 seasons 
+
+The detailed settings can be found in the config files at `IceProd <https://iceprod2.icecube.wisc.edu>`_
+
+
+General Simulation Questions 
+++++++++++++++++++++++++++++
+
+Before we have started the large-scale IceProd simulation, we have discussed the following questions:
 
 * Does cutting of the electromagnetic shower component have any impact on our phase space (high energy muons)? This is done by `Ecuts3` and `Ecuts4`.
-    - 10% effect possible on the muon energy spectrum, but no significant effect on the runtime and disk space -> EM component will be turned on
+    - 10% effect possible on the muon energy spectrum, but no significant effect on the runtime and disk space -> EM component will be turned on, which is 
+    done by setting `Ecuts3` and `Ecuts4` to the same value as `Ecuts2` and `Ecuts1`, thus 273 GeV.
 
-* Shall we stay with Icetray 1.5.1? Were any bugs fixed in the latest versions? 
+* Shall we stay with Icetray 1.5.1 which was used for the first test simulation?
     - Use latest version of Icetray to include any possible bug fixes and up-to-date software + latest ice model
 
 * We haven't oversampled our showers yet. Which factor for oversampling is usual? 
     - At low energies, oversampling up to 10 is common, but this should be decreased at higher energies. 
-    - We don't use oversampling 
+    -> We decided not to oversample the showers, since this results in a "fake statistics".
 
 * How can we reduce the disk space?
     - For the final simulation, we will store step 0 and level 2 files. The extended I3MCTrees can be removed, since we can re-simulate them using PROPOSAL if needed.
