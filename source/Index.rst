@@ -15,6 +15,10 @@ Contact:
 * ludwig.neste@tu-dortmund.de
 * mirco.huennefeld@tu-dortmund.de
 
+Reviewers:
+----------
+* Cosmic Ray Working Group: Dennis Soldin
+
 
 Previous analyses
 -----------------
