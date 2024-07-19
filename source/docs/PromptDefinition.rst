@@ -1,15 +1,8 @@
-Definitions of the prompt component 
-###################################
-
-This work is based on the Master thesis of Ludwig Neste, which can be provided on request. 
-
-Whether a muon is prompt or conventional can be defined in different ways. The definition we choose is mentioned in the final definition.
-Furthermore, we have comparisons between CORSIKA and MCEq for other possible prompt definitions.
-
-Final definition 
-++++++++++++++++
+Definition of the prompt component 
+##################################
 
 * Prompt muon: parent is not pion or kaon 
+* Conventional muon: parent is pion or kaon
 
 A comparison between CORSIKA standalone and MCEq is shown in :numref:`CORSIKA_standalone_mceq`. 
 
@@ -36,7 +29,6 @@ All in all, both methods lead to similar results considering the statistical unc
 be explained by the different versions of the hadronic interaction model SIBYLL. In CORSIKA, version 2.3d is used,
 in MCEq version 2.3c is used. 
 
-Other definitions 
-+++++++++++++++++
-
-(Stated in the Master thesis of Ludwig Neste, will be added later)
+This work is based on the Master thesis of Ludwig Neste, which can be downloaded 
+`here <https://user-web.icecube.wisc.edu/~pgutjahr/PromptMuons/_static/downloads/2023_Master_Neste_Ludwig.pdf>`_.
+Other definitions of the prompt component are possible as well and can be found in Ludwig's thesis.
