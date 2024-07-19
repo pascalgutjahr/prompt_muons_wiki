@@ -87,4 +87,5 @@ List of presented talks:
    docs/Analysis_unfolding.rst
    docs/QA.rst
    docs/NextSteps.rst
+   docs/Appendix.rst
    

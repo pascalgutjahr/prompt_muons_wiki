@@ -2,11 +2,57 @@ Reconstructions
 ###############
 
 The reconstructions used in this analysis are based on machine learning using the `dnn_reco <https://github.com/icecube/dnn_reco>`_ framework.
-We had two bachelor students Leander Flottau and Benjamin Brandt working on angular and 
-energy reconstructions. Their bachelor theses are provided on request. Afterwards, we further improved these reconstructions. 
-In this chapter, the usage, training data, and network evaluation are presented.
 
 The CNN structure provided in the IceCube framework is explained `here <https://iopscience.iop.org/article/10.1088/1748-0221/16/07/P07041>`_.
+
+In this chapter, the architecture, usage, training data, and network evaluation are presented.
+
+The results shown here were supported by two bachelor students, Leander Flottau and Benjamin Brandt who worked on direction and energy reconstructions.
+
+Physics motivation
+------------------
+
+This analysis has two goals: 1. measure the normalization of the prompt component of the atmospheric muon flux and 2. unfold the muon energy spectrum at surface. 
+These measurements require a reconstruction of the muon energy. Furthermore, to verify the CORSIKA simulations, properties like the muon direction, the detector 
+entry position of the muon and the propagation length of the muon are reconstructed. This does not only help to verify the simulations, but also to perform a 
+selection. For example, regions in which a data-MC mismatch is observed can be excluded from the analysis.
+
+When a cosmic particle hits our Earth's atmosphere, secondary particles are produced in cascades. Depending on the energy of the primary particle, 
+these cascades are large and produce not only one but several particles. These cascades are called extensive air showers. Since most of the produced 
+particles are unstable, on Earth's surface mainly neutrinos and muons are detected. Thus, per shower not only one muon is created, but a bundle of muons.
+
+A muon bundle is defined as all muons that are produced by the same primary cosmic ray. Since not all muons are energetic enough to reach the detector, 
+the amount of muons in a bundle does change while the muons propagate through the Earth to the detector. In this analysis, typical defintions are 
+the bundle energy at the surface and the bundle energy at the detector entry, which are the sum of the muon energies at the surface and at the detector entry, respectively.
+
+The leading muon is the muon with the highest energy in the bundle. This can be defined by the leadingness, which is the ratio between the 
+energy of the leading muon and the total bundle energy. Since all muons in a bundle propagate close to each other, it is not possible to 
+reconstruct the energies of the individual muons in a bundle. 
+
+Nevertheless, in this analysis, we reconstruct the energy of the leading muon using neural networks. This is fundamentally aided by two physical phenomena. 
+Firstly, muons lose energy in individual interactions during their propagation through the ice. This occurs through stochastic processes. 
+Thus, a single muon statistically deposits varying amounts of energy along its path. When considering a bundle the individual energy 
+losses add up, and it appears as if the entire muon bundle continuously loses (the same amount of) energy along its propagation. If the muon bundle contains a muon 
+that is significantly higher in energy than the accompanying muons, this high-energy muon should deposit larger amounts of energy in the ice, making the overall energy 
+deposition appear less continuous. This is referred to as stochasticity. In summary, if the energy depositions are dominated by large stochastic losses, the leadingness 
+is more likely to be high. If the energy depositions appear to be more continuous, the leadingness is more likely to be low.
+
+Secondly, at high energies, the particles are produced in a forward direction. This means that the leading muon is more likely to be produced in the forward direction.
+Hence, the distances of the individual muons to the projected center of the shower are smaller, for a bundle with a high leadingness. For a bundle with a low leadingness,
+the distances are larger. To quantify this, the perpendicular distance between the leading muon and the closest approach position to the center of the detector is 
+calculated. Then, the closest approach point to the center is calculated for all muons in the bundle. With these positions, the distances between 
+the leading muon and the other muons are calculated. Finally, the distances are weighted by the energy. For example, 100% means that the largest distance between 
+a muon and the leading muon is calculated. 90% means that the distance between the leading muon and the muon that accumulates 90 % of the bundle energy is calculated.
+In the following, this distance is referred to as the bundle radius. 
+
+
+
+CNN architecture
+++++++++++++++++
+- use figure of CNN paper 
+- explain three different networks 
+- explain uncertainty estimation 
+
 
 Input data 
 ++++++++++
@@ -114,23 +160,19 @@ Direction
 
 ----
 
-Physics motivation
-------------------
 
-A muon bundle is defined as a bundle of muons that are produced by the same primary cosmic ray. 
-The leading muon is the muon with the highest energy in the bundle. This can be defined by the leadingness, which indicates the ratio between the 
-leading muon energy and the total bundle energy. Since it is not possible to reconstruct the 
-individual energy of the muons inside a bundle, in the following some MC studies are presented to show ideas, 
-how a neural network can be used reconstruct the energy of the leading muon. For this, the stochasticity and 
-the bundle radius are investigated.
 
 Stochasticity 
 -------------
 
-A muon looses its energy in stochastic processes. Thus, a single muon deposits stochastic energy losses along a track. In a bundle of many muons, every muon has its own stochastic energy losses, which 
-appear as a more continuous energy loss in the detector. Hence, if there are very stochastic energy losses detected inside the detector, there are probably only a few muons or a single muon (at low energies). 
-If we extend this to high energies, the largest energy losses are caused by the most energetic muon in the bundle. In a bundle in which the muon energies are distributed more equally, also the losses 
-appear more continuously. The idea is to search for events that deposit their energy more stochastically to select and/or to improve the energy reconstruction of muons with a high leadingness. 
+A muon looses its energy in stochastic processes. Thus, a single muon deposits stochastic energy losses along a track. In a bundle of many muons, 
+every muon has its own stochastic energy losses, which 
+appear as a more continuous energy loss in the detector. Hence, if there are very stochastic energy losses detected inside the detector, there are 
+probably only a few muons or a single muon (at low energies). 
+If we extend this to high energies, the largest energy losses are caused by the most energetic muon in the bundle. In a bundle in which the muon 
+energies are distributed more equally, also the losses 
+appear more continuously. The idea is to search for events that deposit their energy more stochastically to select and/or to improve the energy 
+reconstruction of muons with a high leadingness. 
 
 
 
