@@ -74,7 +74,7 @@ List of presented talks:
 ----
 
 .. toctree::
-   :maxdepth: 10
+   :maxdepth: 12
    :glob:
 
    docs/Overview.rst
