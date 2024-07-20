@@ -30,9 +30,10 @@ energy of the leading muon and the total bundle energy. Since all muons in a bun
 reconstruct the energies of the individual muons in a bundle. 
 
 Nevertheless, in this analysis, we reconstruct the energy of the leading muon using neural networks. This is fundamentally aided by two physical phenomena. 
-Firstly, muons lose energy in individual interactions during their propagation through the ice. This occurs through stochastic processes. 
-Thus, a single muon statistically deposits varying amounts of energy along its path. When considering a bundle the individual energy 
-losses add up, and it appears as if the entire muon bundle continuously loses (the same amount of) energy along its propagation. If the muon bundle contains a muon 
+Firstly, muons with energies of TeV and above mainly lose energy in stochastic interactions like bremsstrahlung, electron pair production and photonuclear interaction
+(see Bethe-Bloch).
+Thus, a single muon statistically deposits varying amounts of energy along its path through the ice. When considering a bundle, the individual energy 
+losses add up and it appears as if the entire muon bundle continuously loses (the same amount of) energy along its propagation. If the muon bundle contains a muon 
 that is significantly higher in energy than the accompanying muons, this high-energy muon should deposit larger amounts of energy in the ice, making the overall energy 
 deposition appear less continuous. This is referred to as stochasticity. In summary, if the energy depositions are dominated by large stochastic losses, the leadingness 
 is more likely to be high. If the energy depositions appear to be more continuous, the leadingness is more likely to be low. MC studies about the stochasticity 

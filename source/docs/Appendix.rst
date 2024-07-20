@@ -66,7 +66,8 @@ the leadingness is shown as a function of the bundle stochasticity. High stochas
     : The leadingness is shown as a function of the bundle stochasticity.
 
 In :numref:`MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale`, 
-the leadingness is shown as a function of the largest energy loss. The largest energy loss is not a good indicator for the leadingness.
+the leadingness is shown as a function of the largest energy loss. It results that considering only the largest energy loss does not 
+indicate the leadingness.
 
 .. _MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale:
 .. figure:: images/plots/stochasticity_check/MCLabelsLeadingMuons_bundle_stochasticity_energy_00_vs_MCLabelsLeadingMuons_leading_energy_rel_entry_bundle_energy_cuts_larger_bins_no_logscale.png
