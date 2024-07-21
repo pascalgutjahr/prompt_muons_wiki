@@ -1,3 +1,5 @@
+.. _selection paragraph:
+
 Selection 
 #########
 
