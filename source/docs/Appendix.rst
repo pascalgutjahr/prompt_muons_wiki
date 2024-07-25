@@ -10,6 +10,8 @@ This appendix includes further information about studies, detailed investigation
 Stochasticity 
 +++++++++++++
 
+``This section is based on datasets 30010-30013``
+
 A muon loses its energy in stochastic processes. Thus, a single muon deposits stochastic energy losses along a track. In a bundle of many muons, 
 every muon has its own stochastic energy losses, which 
 appear as a more continuous energy loss in the detector. Hence, if there are very stochastic energy losses detected inside the detector, there are 
@@ -133,6 +135,8 @@ In summary, a cut on the stochasticity does not improve the bundle or leading mu
 Bundle radius 
 +++++++++++++
 
+``This section is based on datasets 30010-30013``
+
 Another idea to investigate muons with a high leadingness is to analyze the bundle radius. Depending on the fraction of the energy the most energetic muons carries, 
 the projected radius of the 
 entire bundle should differ. Here, different radii for the fractional amount of energy inside the projected area are studied. 
@@ -238,6 +242,8 @@ events are rejected. Hence, no cut on the bundle radius is performed.
 
 Network evaluation 
 ++++++++++++++++++
+
+``This section is based on datasets 30010-30013``
 
 In the following, the evaluation of the networks is shown. Each figure contains two plots. The left plots show the evaluation of all events, 
 the right plot shows an uncertainty cut applied on the estimated uncertainty by the network. The evaluation is performed on our own extended 
@@ -548,6 +554,8 @@ just wanted to check if it is possible to reconstruct the multiplicity.
 
 Networks used for pseudo analysis 
 +++++++++++++++++++++++++++++++++
+
+``This section is based on datasets 30010-30013``
 
 The following networks are the networks used for the pseudo analysis. These networks are at an early stage as it can be seen 
 in the performance in comparison to the plots presented above. Thus, this networks will not be used for the final analysis.
