@@ -49,6 +49,142 @@ while keeping as many as possible high energy events. :numref:`fration_of_reject
       - 0.99 
       - 0.74 
       - 0.18
+
+Energy Bins and Weights
+=======================
+
+.. list-table:: Fraction of events passed filters for different energy bins and weightings. Muon energy at surface is considered.
+   :header-rows: 1
+
+   * - Filter
+     - 10 TeV < E < 100 TeV
+     - 100 TeV < E < 1 PeV
+     - 1 PeV < E < 10 PeV
+     - 10 PeV < E < 100 PeV 
+     - All energies
+   * - MuonFilter, GaisserH3a
+     - 2.8e-01
+     - 7.8e-01
+     - 8.3e-01
+     - 1.0e+00
+     - 1.2e-02
+   * - OnlineL2Filter, GaisserH3a
+     - 1.2e-01
+     - 6.3e-01
+     - 7.9e-01
+     - 8.6e-01
+     - 2.9e-03
+   * - HighQFilter, GaisserH3a
+     - 3.0e-02
+     - 2.8e-01
+     - 5.1e-01
+     - 6.4e-01
+     - 5.1e-04
+   * - EHEAlertFilter, GaisserH3a
+     - 0.0e+00
+     - 1.8e-07
+     - 2.0e-05
+     - 0.0e+00
+     - 4.6e-12
+   * - EHEAlertFilterHB, GaisserH3a
+     - 2.9e-06
+     - 8.3e-04
+     - 3.2e-02
+     - 2.1e-01
+     - 4.4e-08
+   * - MuonFilter, GaisserH4a
+     - 2.8e-01
+     - 7.8e-01
+     - 8.0e-01
+     - 1.0e+00
+     - 1.2e-02
+   * - OnlineL2Filter, GaisserH4a
+     - 1.2e-01
+     - 6.3e-01
+     - 7.7e-01
+     - 1.0e+00
+     - 2.8e-03
+   * - HighQFilter, GaisserH4a
+     - 2.9e-02
+     - 2.7e-01
+     - 5.2e-01
+     - 6.5e-01
+     - 5.0e-04
+   * - EHEAlertFilter, GaisserH4a
+     - 0.0e+00
+     - 1.8e-07
+     - 1.2e-04
+     - 0.0e+00
+     - 7.4e-12
+   * - EHEAlertFilterHB, GaisserH4a
+     - 2.4e-06
+     - 6.5e-04
+     - 2.2e-02
+     - 2.6e-01
+     - 3.6e-08
+   * - MuonFilter, GlobalFitGST
+     - 2.9e-01
+     - 7.8e-01
+     - 8.4e-01
+     - 1.0e+00
+     - 1.1e-02
+   * - OnlineL2Filter, GlobalFitGST
+     - 1.3e-01
+     - 6.3e-01
+     - 8.2e-01
+     - 1.0e+00
+     - 2.7e-03
+   * - HighQFilter, GlobalFitGST
+     - 3.3e-02
+     - 2.9e-01
+     - 5.1e-01
+     - 6.4e-01
+     - 5.4e-04
+   * - EHEAlertFilter, GlobalFitGST
+     - 0.0e+00
+     - 2.4e-07
+     - 2.6e-10
+     - 0.0e+00
+     - 4.4e-12
+   * - EHEAlertFilterHB, GlobalFitGST
+     - 2.2e-06
+     - 5.2e-04
+     - 3.0e-02
+     - 3.1e-01
+     - 2.7e-08
+   * - MuonFilter, GlobalSplineFit5Comp
+     - 2.7e-01
+     - 7.8e-01
+     - 7.6e-01
+     - 1.0e+00
+     - 1.2e-02
+   * - OnlineL2Filter, GlobalSplineFit5Comp
+     - 1.2e-01
+     - 6.2e-01
+     - 7.3e-01
+     - 9.5e-01
+     - 2.6e-03
+   * - HighQFilter, GlobalSplineFit5Comp
+     - 2.6e-02
+     - 2.7e-01
+     - 5.6e-01
+     - 6.1e-01
+     - 4.1e-04
+   * - EHEAlertFilter, GlobalSplineFit5Comp
+     - 0.0e+00
+     - 9.7e-08
+     - 2.4e-05
+     - 0.0e+00
+     - 3.3e-12
+   * - EHEAlertFilterHB, GlobalSplineFit5Comp
+     - 1.7e-06
+     - 4.0e-04
+     - 2.7e-02
+     - 3.0e-01
+     - 2.5e-08
+
+
+
      
 In the final analysis, the lower energy cut will probably be between :math:`10\,\mathrm{TeV}` and :math:`100\,\mathrm{TeV}`. Since we do not expect many events in 
 total in this high energy regime for ten years of experimental data, the HQFilter rejects too many high-energetic events. 
