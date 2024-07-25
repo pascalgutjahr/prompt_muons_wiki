@@ -4,55 +4,59 @@ Selection
 #########
 
 The starting point for the selection is level 2.  
-The rate for all events is :math:`369.43\,\mathrm{Hz}`. This rate is dominated by the prompt component with 
+The rate for all events depends on the underlying primary model. For the common primary models, the rates are 1308 Hz (H3a), 1335 Hz (H4a), 1280 Hz (GST) and 1324 Hz (GSF). For example, using H3a, the number of total 
+events per run (8h) can be estimated, which is 37,664,347. A single run 
+is processed by a single processor unit. Assuming an average processing time 
+of 1 second per event, the runtime per run would be 10462.32 hours, which 
+is not feasible. Hence, a fast selection is necessary to remove 
+statistics. As presented in :numref:`mceq_flux`, the prompt 
+muon flux becomes more dominant towards higher energies, and it is 
+suppressed by orders of magnitude at lower energies. Thus, low energy muons need 
+to be removed. 
+
+In a first step, several filters are investigated in regard 
+to the energy of the leading muon at surface and the cosine zenith angle. The muon filter results as the best choice. Afterwards, a cut on the bundle energy at surface is applied to remove more low energy events. These two steps define 
+level 3. In level 4, DNN reconstructions for several properties are added. 
+In level 5, quality cuts are applied to improve the data-MC agreement.
+
+**Note**
+The rates mentioned above are based on the simulations 22774-22778. In this simulation, the lower 
+energy bound of the primary energy is 10 TeV. Thus, the rates expected 
+for the experimental data are higher, since also primaries with energies 
+below 10 TeV produce muons that are detected by IceCube.
+
+----
+
+**old text**
+
+The rate for all events is :math:`369.43\,\mathrm{Hz}`. This rate is dominated by the conventional component with 
 :math:`365.21\,\mathrm{Hz}`. The prompt rate is :math:`4.23\,\mathrm{Hz}`.
 The application of the muon filter leads to a rate of :math:`24.62\,\mathrm{Hz}`. This means, 708932 events are expected per run of 8h. 
 If a single process step would take 1s per event, the runtime per run would be 197h, which is not feasible. If we target a runtime of 1h per run with 
 a processing time of 1s per event, a rate of :math:`125\,\mathrm{mHz}` is required.
 
-In the following, our level 3 containing the muon filter and an energy cut to reduce the rate is discussed. Afterwards, level 4 with the application of the DNN models is presented.
-Level 5 is not yet defined and depends on the quality cuts of the data-mc comparison.
-
+----
 
 Level 3 
 +++++++
 
 Filters 
 -------
-The detection of atmospheric prompt muons requires high energy events. Thus, the MuonFilter and HQFilter are tested to get rid of low energy events 
-while keeping as many as possible high energy events. :numref:`fration_of_rejected_events` shows the fraction of rejected events for different energy cuts.
-
-.. _bundle_muon_energy_ratio:
-.. figure:: images/plots/pre_filter/bundle_muon_energy_ratio.pdf
-
-    : Investigating the impact of the muon and HQ filter on level 2 for the bundle energy at entry.
+The detection of atmospheric prompt muons requires high energy events. Thus, five different filters focusing on high energy events are tested to get rid of low energy events 
+while keeping as many as possible high energy events. :numref:`fration_of_passed_events` shows the fraction of passed events for different energy bins, 
+filters and weightings.
 
 .. _leading_muon_energy_ratio:
-.. figure:: images/plots/pre_filter/leading_muon_energy_ratio.pdf
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH3a.png
 
-    : Investigating the impact of the muon and HQ filter on level 2 for the leading muon energy at entry.
+    : Investigating the impact of several filters on level 2 for the leading muon energy at surface.
 
-.. _fration_of_rejected_events:
-.. list-table:: Fraction of rejected events 
-    :widths: 33 33 33 33
-    :header-rows: 1 
+.. _cos_zenith_ratio:
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GaisserH3a.png
 
-    * - 
-      - All energies 
-      - Leading energy :math:`> 10\,\mathrm{TeV}`
-      - Leading energy :math:`> 100\,\mathrm{TeV}`
-    * - MuonFilter 
-      - 0.93 
-      - 0.28 
-      - 0.06 
-    * - HQFilter 
-      - 0.99 
-      - 0.74 
-      - 0.18
+    : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle. 
 
-Energy Bins and Weights
-=======================
-
+.. _fration_of_passed_events:
 .. list-table:: Fraction of events passed filters for different energy bins and weightings. Muon energy at surface is considered.
    :header-rows: 1
 
@@ -185,11 +189,15 @@ Energy Bins and Weights
 
 
 
-     
-In the final analysis, the lower energy cut will probably be between :math:`10\,\mathrm{TeV}` and :math:`100\,\mathrm{TeV}`. Since we do not expect many events in 
-total in this high energy regime for ten years of experimental data, the HQFilter rejects too many high-energetic events. 
-For this analysis, we apply the MuonFilter, which rejects only :math:`6\,\%` of events above :math:`100\,\mathrm{TeV}` (leading muon energy at entry). The corresponding 
-energy cut for each network is shown in the legend.
+In the final analysis, the lower bound of the muon energy at surface is 10 TeV. As presented in :numref:`fration_of_passed_events`, the MuonFilter 
+rejects in total 98.8% of the events, but keeps the most events for the 4 energy intervals between 10 TeV and 100 PeV. Regarding the cosine zenith distribution, 
+the HighQFilter removes more horizontal events than the MuonFilter. This is caused by the fact, that horizontal, high energy events travel through a large amount of 
+ice and thus have a large amount of energy losses. In the detector, they are not able to pass the high-charge filter, since they arrive with a lower energy. 
+Since we want to reconstruct the muon energy at surface, we want to keep these events.  
+Hence, the MuonFilter is used.
+
+The rates after the application of the MuonFilter are 15.24 Hz (H3a), 15.52 Hz (H4a), 14.88 Hz (GST) and 15.34 Hz (GSF). The number of events per run is 
+438,942 (H3a). This results in a runtime of 122h per run with a processing time of 1s per event. This is still too long.
 
 
 Bundle energy pre cut 

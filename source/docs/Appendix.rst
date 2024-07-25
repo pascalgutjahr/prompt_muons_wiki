@@ -586,3 +586,4 @@ Energy reconstruction: leading muon
 .. figure:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_entry_energy.pdf
 
 .. figure:: images/plots/data_mc/leading_energy.pdf
+
