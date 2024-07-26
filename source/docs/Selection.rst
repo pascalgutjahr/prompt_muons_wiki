@@ -12,7 +12,8 @@ is not feasible. Hence, a fast selection is necessary to remove
 statistics. As presented in :numref:`mceq_flux`, the prompt 
 muon flux becomes more dominant towards higher energies, and it is 
 suppressed by orders of magnitude at lower energies. Thus, low energy muons need 
-to be removed. 
+to be removed. The rate of the prompt muons is 16 Hz (H3a), which makes 
+1.2% of the total rate.
 
 In a first step, several filters are investigated in regard 
 to the energy of the leading muon at surface and the cosine zenith angle. The muon filter results as the best choice. Afterwards, a cut on the bundle energy at surface is applied to remove more low energy events. These two steps define 

@@ -5,147 +5,21 @@ New CORSIKA datasets are simulated and stored at:
 
 * /data/sim/IceCube/2023/generated/CORSIKA_EHISTORY/
 
-The simulation is divided into 4 different energy ranges. Since the simulation is done out ourselves, the dataset numbers are not provided in iceprod.
+At first, in 2023 test simulations were performed using the software `simulation_scripts <https://github.com/tudo-astroparticlephysics/simulation_scripts>`_. 
+This software is a framework similar to IceProd, but it is used for local simulations on our Madison cluster. It imports all the icetray functions that are used in 
+any other IceCube simulation. The main difference is that this framework is maintained locally in Dortmund and thus it's easier to adapt to our needs.
 
-* 30010: 600 GeV - 1 PeV
-
-* 30011: 1 PeV - 100 PeV
-
-* 30012: 100 PeV - 1 EeV
-
-* 30013: 1 EeV - 50 EeV
-
-The following settings are used:
-
-* CORSIKA version 77420 
-
-* SIBYLL 2.3d 
-
-* Icetray 1.5.1
-
-* 5 components (p, He, N, Al, Fe)
-
-* Component norm: [10, 5, 3, 2, 1]
-
-* Zenith angle: 0 - 90 degrees
-
-* Polyplopia: True 
-
-* Ecuts1: 273 GeV (hadron min energy)
-
-* Ecuts2: 273 GeV (muon min energy)
-
-* Ecuts3: :math:`10^{20}` GeV (electron min energy)
-
-* Ecuts4: :math:`10^{20}` GeV (photon min energy)
-
-* TrimShower: True 
-
-* Atmosphere: ``ratmo: 4`` (April) 
-
-* Spectrum : -1 (increase high energy statistics)
-
-This simulation is performed to test the extended history and prompt tagging software. Thus, the statistics are not yet sufficient.
-The built CORSIKA software is stored at: ``/data/user/pgutjahr/software/CORSIKA/corsika-77420/bin/`` and also available in the cvmfs:
-``/cvmfs/icecube.opensciencegrid.org/users/pgutjahr/software/CORSIKA/``
-
-Dataset exploration - Level 2
-+++++++++++++++++++++++++++++
-
-For the dataset exploration, the definition of a leading muon is defined as following: 
-The leading muon is the muon with the highest energy in the muon bundle. This can be expressed in "Leadingness".
-Leadingness :math:`L_{\mathrm{E}}` describes the ratio of the highest energetic muon :math:`E_{\mathrm{max}}` 
-in a muon bundle to the total energy :math:`E_{\mathrm{tot}}` of the muon bundle:
-
-.. math:: 
-
-    L_{\mathrm{E}} = \frac{E_{\mathrm{max}}}{E_{\mathrm{tot}}}
-
-If there is no specific leadingness stated, the term leading muon refers to the muon with the highest energy in the muon bundle.
+The test datasets are named ``30010``, ``30011``, ``30012`` and ``30013``. Caution, these numbers do **not** correspond to the official dataset numbers.
+We used these simulations to develop and test this analysis of the prompt component of the atmospheric muon flux. 
+First dataset explorations are stored in :ref:`Appendix/First extended history simulations <first extended history simulations paragraph>`. 
 
 
-In the following, unweighted and weighted distributions of the simulated events are shown. In :numref:`simulated_events_primary_energy` and 
-:numref:`simulated_events_primary_energy_weighted`, the primary distributions are shown 
-for each dataset.
-
-.. _simulated_events_primary_energy:
-.. figure:: images/plots/dataset_exploration/simulated_events_primary_energy.png 
-
-    : The energy distribution of primary particles is shown for the four different simulation datasets.
-
-.. _simulated_events_primary_energy_weighted:
-.. figure:: images/plots/dataset_exploration/simulated_events_primary_energy_weighted.png
-
-    : The energy distribution of primary particles is shown for the four different simulation datasets, weighted to GlobalSplineFit5Comp (GSF).
-
-In :numref:`simulated_events_5_components_primary_energy` and :numref:`simulated_events_5_components_primary_energy_weighted`, 
-the primary distributions are shown for each dataset, separated by the primary particle type.
-
-.. _simulated_events_5_components_primary_energy: 
-.. figure:: images/plots/dataset_exploration/simulated_events_5_components_primary_energy.png
-
-    : The energy distribution of primary particles is shown for the four different simulation datasets, separated by the primary particle type.
-
-.. _simulated_events_5_components_primary_energy_weighted:
-.. figure:: images/plots/dataset_exploration/simulated_events_5_components_primary_energy_weighted.png
-
-    : The energy distribution of primary particles is shown for the four different simulation datasets, separated by the primary particle type, weighted to GlobalSplineFit5Comp (GSF).
-
-In :numref:`simulated_events_leading_muon_energy` and :numref:`simulated_events_leading_muon_energy_weighted`, the energy distribution of the leading muon is shown for each dataset. The leading muon is defined 
-as the muon with the highest energy in the muon bundle. The shown energy corresponds to the energy at the detector entry.
-
-.. _simulated_events_leading_muon_energy:
-.. figure:: images/plots/dataset_exploration/simulated_events_leading_muon_energy.png
-
-    : The energy distribution of the leading muon is shown for the four different simulation datasets.
-
-.. _simulated_events_leading_muon_energy_weighted:
-.. figure:: images/plots/dataset_exploration/simulated_events_leading_muon_energy_weighted.png
-
-    : The energy distribution of the leading muon is shown for the four different simulation datasets, weighted to GlobalSplineFit5Comp (GSF).
+For the official analysis, we will provide 
+an official dataset simulated with IceProd to make it re-producible for the entire IceCube community.
     
-In :numref:`simulated_events_bundle_muon_energy` and :numref:`simulated_events_bundle_muon_energy_weighted`, the energy distribution of the muon bundle is shown for each dataset. 
-The muon bundle is defined as the
-the sum of the energy of all muons entering the detector.
-
-.. _simulated_events_bundle_muon_energy:
-.. figure:: images/plots/dataset_exploration/simulated_events_bundle_muon_energy.png
-
-    : The energy distribution of the muon bundle is shown for the four different simulation datasets.
-
-.. _simulated_events_bundle_muon_energy_weighted:
-.. figure:: images/plots/dataset_exploration/simulated_events_bundle_muon_energy_weighted.png
-
-    : The energy distribution of the muon bundle is shown for the four different simulation datasets, weighted to GlobalSplineFit5Comp (GSF).
-    
-
-Estimation of the simulated statistics
-++++++++++++++++++++++++++++++++++++++
-
-The estimation of the simulated statistics needed for this analysis is not easy to determine. The statistics should be sufficient in the 
-phase space of the analysis. This will probably be defined by the zenith angle of the incoming muon and the muon energy. Here, 
-both the leading and bundle energy at detector entry and at the surface are considered. Furthermore, the systematic uncertainties in this 
-phase space need to be known to create a simulation with statistical uncertainties lower than the systematic uncertainties.
-However, to get a first impression of the statistics simulated so far, :numref:`energy_spectrum_primary_energy_simulation_muonfilter_bundle_cut_1e5` 
-and :numref:`energy_spectrum_leading_muon_energy_simulation_muonfilter_bundle_cut_1e5` show the energy spectrum of the primary and leading muon energy. The 
-simulated events are shown in blue, in orange the events are weighted to the expected statistics of 1 year of IceCube data using GlobalSplineFit5Comp (GSF) 
-weightig. Here, the muon filter is applied and an energy cut of 200 TeV is applied to the muon bundle energy at the surface. For leading muon energies 
-above 1 PeV, more muons are simulated than expected for 1 year. (The cuts applied here are not the final cuts for the analysis.)
-
-.. _energy_spectrum_primary_energy_simulation_muonfilter_bundle_cut_1e5:
-.. figure:: images/plots/dataset_exploration/energy_spectrum_primary_energy_simulation_muonfilter_bundle_cut_1e5.png
-
-    : Primary energy spectrum is shown to estimate the simulated statistics.
-    
-.. _energy_spectrum_leading_muon_energy_simulation_muonfilter_bundle_cut_1e5:
-.. figure:: images/plots/dataset_exploration/energy_spectrum_leading_muon_energy_simulation_muonfilter_bundle_cut_1e5.png
-    
-    : Leading muon energy spectrum is shown to estimate the simulated statistics.
-
-
  
-Large scale simulation 
-++++++++++++++++++++++
+Official CORSIKA Ehist IceProd simulation 
++++++++++++++++++++++++++++++++++++++++++
 
 ----
 
@@ -188,37 +62,23 @@ The following settings are used:
 
 * TrimShower: False 
 
-* Atmosphere: all 12 seasons 
+* Atmosphere: all 12 seasons (defined `here <https://wiki.icecube.wisc.edu/index.php/Real_atmosphere_for_CORSIKA>`_)
 
 The detailed settings can be found in the config files at `IceProd <https://iceprod2.icecube.wisc.edu>`_
 
 
-General Simulation Questions 
-++++++++++++++++++++++++++++
+---- 
 
-Before we have started the large-scale IceProd simulation, we have discussed the following questions:
+In the following two figures, the primary energy distribution of the simulated CORSIKA Ehist IceProd datasets is shown on level 2 
+for the different primary particles. No cuts or filters are applied. This is not the entire statistics, but a subset of the data.
 
-* Does cutting of the electromagnetic shower component have any impact on our phase space (high energy muons)? This is done by `Ecuts3` and `Ecuts4`.
-    - 10% effect possible on the muon energy spectrum, but no significant effect on the runtime and disk space -> EM component will be turned on, which is 
-    done by setting `Ecuts3` and `Ecuts4` to the same value as `Ecuts2` and `Ecuts1`, thus 273 GeV.
+.. figure:: images/plots/simulation/simulated_primary_energy_level2.png
 
-* Shall we stay with Icetray 1.5.1 which was used for the first test simulation?
-    - Use latest version of Icetray to include any possible bug fixes and up-to-date software + latest ice model
+    : Primary energy distribution of the simulated CORSIKA Ehist IceProd datasets is shown on level 2. Not cuts or filters 
+    are applied. This is not the entire statistics, but a subset of the data.
 
-* We haven't oversampled our showers yet. Which factor for oversampling is usual? 
-    - At low energies, oversampling up to 10 is common, but this should be decreased at higher energies. 
-    -> We decided not to oversample the showers, since this results in a "fake statistics".
 
-* How can we reduce the disk space?
-    - For the final simulation, we will store step 0 and level 2 files. The extended I3MCTrees can be removed, since we can re-simulate them using PROPOSAL if needed.
+.. figure:: images/plots/simulation/simulated_primary_energy_level2_simweights_GaisserH3a.png
 
-* How much disk storage do we need for the final simulation? 
-    - Roughly 50 TB 
-
-* Which seasons do we want to simulate? 4 seasons?
-    - We want to simulate all 12 seasons as defined `here <https://wiki.icecube.wisc.edu/index.php/Real_atmosphere_for_CORSIKA>`_. 
-    This enables further studies of the seasonal variations in the future.
-
-* Do we want to set the TrimShower option?
-    - For large zenith angles, even high energy muon can be cut off. For the calculation of the effective area, we have to turn off trimshower
-    - Thus, we don't use the TrimShower option
+    : Primary energy distribution of the simulated CORSIKA Ehist IceProd datasets is shown on level 2. The weights are applied 
+    using the GaisserH3a flux model.
