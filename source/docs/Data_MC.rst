@@ -1,13 +1,9 @@
+.. _data-mc paragraph:
 Data-MC
 #######
 
-The data-mc comparisons are performed on level 4. From the years 2012, 2016 und 2020 the first day of each month is processed. This results in a total experimental livetime 
-of :math:`841.47\,\mathrm{h}`. The rate per run is shown in :numref:`rate_per_run`. 
-
-.. _rate_per_run:
-.. figure:: images/plots/data_mc/level4/rate_per_run.pdf 
-
-    : Rate per run is shown. The oscillation indicates the seasonal variations.
+The data-mc comparisons are performed on level 4. From the years 2012, 2016 und 2020 the first and 15th day of each month is processed. This results in a total experimental livetime 
+of :math:`2487\,\mathrm{h}`. 
 
 Energy 
 ------
@@ -15,6 +11,12 @@ Energy
 
 Bundle energy at entry 
 ++++++++++++++++++++++
+
+
+
+
+
+
 
 .. _data_mc_energy_hist_00:
 .. figure:: images/plots/data_mc/level4/data_mc_energy_hist_00.png

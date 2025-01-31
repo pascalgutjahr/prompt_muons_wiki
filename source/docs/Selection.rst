@@ -4,16 +4,32 @@ Selection
 #########
 
 The starting point for the selection is level 2.  
-The rate for all events depends on the underlying primary model. For the common primary models, the rates are 1308 Hz (H3a), 1335 Hz (H4a), 1280 Hz (GST) and 1324 Hz (GSF). For example, using H3a, the number of total 
-events per run (8h) can be estimated, which is 37,664,347. A single run 
+The rate for all events depends on the underlying primary model. For the common primary models H3a, H4a, GST and GSF, the rates on level2 are shown in 
+:numref:`level2_rate`. For example, using H3a, the number of total 
+events per run (8h) can be estimated, which is more than 83 Mio. events. 
+A single run 
 is processed by a single processor unit. Assuming an average processing time 
-of 1 second per event, the runtime per run would be 10462.32 hours, which 
+of 1 second per event, the runtime per run would be longer than 23k hours, which 
 is not feasible. Hence, a fast selection is necessary to remove 
 statistics. As presented in :numref:`mceq_flux`, the prompt 
 muon flux becomes more dominant towards higher energies, and it is 
 suppressed by orders of magnitude at lower energies. Thus, low energy muons need 
-to be removed. The rate of the prompt muons is 16 Hz (H3a), which makes 
-1.2% of the total rate.
+to be removed. 
+
+.. _level2_rate:
+.. list-table:: Rates on level 2 before applying any filter for different primary models.
+  :header-rows: 1
+
+  * - Model
+    - H3a
+    - H4a
+    - GST
+    - GSF
+  * - Level2 rate / Hz
+    - 2887.86
+    - 2956.16
+    - 2725.19
+    - 2941.80
 
 In a first step, several filters are investigated in regard 
 to the energy of the leading muon at surface and the cosine zenith angle. The muon filter results as the best choice. Afterwards, a cut on the bundle energy at surface is applied to remove more low energy events. These two steps define 
@@ -21,22 +37,10 @@ level 3. In level 4, DNN reconstructions for several properties are added.
 In level 5, quality cuts are applied to improve the data-MC agreement.
 
 **Note**
-The rates mentioned above are based on the simulations 22774-22778. In this simulation, the lower 
-energy bound of the primary energy is 10 TeV. Thus, the rates expected 
-for the experimental data are higher, since also primaries with energies 
-below 10 TeV produce muons that are detected by IceCube.
-
-----
-
-**old text**
-
-The rate for all events is :math:`369.43\,\mathrm{Hz}`. This rate is dominated by the conventional component with 
-:math:`365.21\,\mathrm{Hz}`. The prompt rate is :math:`4.23\,\mathrm{Hz}`.
-The application of the muon filter leads to a rate of :math:`24.62\,\mathrm{Hz}`. This means, 708932 events are expected per run of 8h. 
-If a single process step would take 1s per event, the runtime per run would be 197h, which is not feasible. If we target a runtime of 1h per run with 
-a processing time of 1s per event, a rate of :math:`125\,\mathrm{mHz}` is required.
-
-----
+The rates mentioned above are based on the simulations 22774-22778 and the dataset 22875. 
+The set 22875 was produced for primary energies from 500 GeV to 10 TeV with very small statistics to estimate the correct rates. 
+As presented below in :numref:`efficiency_primary_energy`, due to an energy cut, primary energies below 10 TeV are not relevant 
+for this high-energy analysis. Hence, these energies were not considered in the full-statistics CORSIKA simulation.
 
 Level 3 
 +++++++
@@ -197,37 +201,58 @@ ice and thus have a large amount of energy losses. In the detector, they are not
 Since we want to reconstruct the muon energy at surface, we want to keep these events.  
 Hence, the MuonFilter is used.
 
-The rates after the application of the MuonFilter are 15.24 Hz (H3a), 15.52 Hz (H4a), 14.88 Hz (GST) and 15.34 Hz (GSF). The number of events per run is 
-438,942 (H3a). This results in a runtime of 122h per run with a processing time of 1s per event. This is still too long.
+The rates after the application of the MuonFilter are shown in :numref:`level2_rate_muon_filter`. This results in a runtime of 150h per run with a processing time of 1s per event. This is still too long.
 
+.. _level2_rate_muon_filter:
+.. list-table:: Rates on level 2 after applying the muon filter for different primary models.
+  :header-rows: 1
+
+  * - Model
+    - H3a
+    - H4a
+    - GST
+    - GSF
+  * - Leve2 rate after muon / Hz
+    - 18.43
+    - 18.83
+    - 17.41
+    - 17.85 
 
 Bundle energy pre cut 
 ---------------------
 To further reduce the number of events in the low energy region, a cut on the bundle energy at surface is applied. For this, 
-the efficiency as a ratio of the number of events before and after the cut is calculated. The efficiency is shown for 
-different zenith ranges. The cut is applied in a way, that the remaining rate is :math:`125\,\mathrm{mHz}`.
+the efficiency as a ratio of the number of events before and after the cut is calculated. The cut is applied in a way, that the remaining rate is :math:`125\,\mathrm{mHz}`. Additionally, a cut of :math:`500\,\mathrm{TeV}` is applied on the bundle energy at surface. The rate of :math:`125\,\mathrm{mHz}` is motivated by the estimation of a feasible runtime of 1h per run with a processing time of 1s per event.
 
-.. _efficiency_comparison__bundle_energy_in_mctree_zenith_0_90:
-.. figure:: images/plots/model_evaluation/precut/efficiency_comparison__bundle_energy_in_mctree_zenith_0_90.pdf
+In the following, 5 plots are shown which present the efficiency for 
+the bundle and leading muon energy at surface and detector entry and 
+for the primary energy.
 
-    : Events left after application of a muon bundle cut for a zenith range of 0 to 90 degrees.
+.. _efficiency_bundle_energy_at_entry:
+.. figure:: images/plots/pre_filter/efficiency_bundle_energy_at_entry.png
 
-.. _efficiency_comparison__bundle_energy_in_mctree_zenith_0_45:
-.. figure:: images/plots/model_evaluation/precut/efficiency_comparison__bundle_energy_in_mctree_zenith_0_45.pdf
+    : Efficiency for the bundle energy at entry.
 
-    : Events left after application of a muon bundle cut for a zenith range of 0 to 45 degrees.
+.. _efficiency_bundle_energy_at_surface:
+.. figure:: images/plots/pre_filter/efficiency_bundle_energy_at_surface.png
 
-.. _efficiency_comparison__bundle_energy_in_mctree_zenith_70_90:
-.. figure:: images/plots/model_evaluation/precut/efficiency_comparison__bundle_energy_in_mctree_zenith_70_90.pdf
+    : Efficiency for the bundle energy at entry.
 
-    : Events left after application of a muon bundle cut for a zenith range of 70 to 90 degrees.
+.. _efficiency_muon_energy_at_entry:
+.. figure:: images/plots/pre_filter/efficiency_muon_energy_at_entry.png
 
-For the first 17 networks, a cut on the bundle energy at entry is applied. But for large zenith angles, high energy events are removed that appear as low energy events in the detector 
-due to the large path length through the earth and thus the accumulated energy losses. Hence, the last two (red and dark red) networks apply a cut on the bundle energy at surface.
-In :numref:`efficiency_comparison__bundle_energy_in_mctree_zenith_70_90`, the efficiency is shown for a zenith range of :math:`70` to :math:`90` degrees. This plot proofs this statement.
-The cuts are :math:`211\,\mathrm{TeV}` and :math:`228\,\mathrm{TeV}`. 
+    : Efficiency for the bundle energy at entry.
 
-For our level 3, we apply the MuonFilter and a cut of :math:`200\,\mathrm{TeV}` on the bundle energy at surface. The remaining rate is :math:`144.3\,\mathrm{mHz}`. The network 
+.. _efficiency_muon_energy_at_surface:
+.. figure:: images/plots/pre_filter/efficiency_bundle_energy_at_surface.png
+
+    : Efficiency for the bundle energy at entry.
+
+.. _efficiency_primary_energy:
+.. figure:: images/plots/pre_filter/efficiency_primary_energy.png
+
+    : Efficiency for the bundle energy at entry.
+
+For our level 3, we apply the MuonFilter and a cut of :math:`500\,\mathrm{TeV}` on the bundle energy at surface. The remaining rate is :math:`144.3\,\mathrm{mHz}`. The network 
 ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01`` is used. 
 
 Level 4 
@@ -276,4 +301,78 @@ The CPU and GPU times are the runtimes needed to apply the DNNs on the respectiv
 Level 5
 +++++++
 
-- level not yet defined, depends on quality cuts of data-mc comparison
+Cuts presented here are based on the plots in :ref:`Data-MC <data-mc paragraph>`.
+
+
+For level 5, quality cuts are performed to improve the data-MC agreement. Furthermore, some additional cuts are performed to remove neutrino background events. For the reconstruction of the bundle energy, the 
+network learns, that if an event is entering the detector from the 
+horizon, it must be very high-energetic because it was able to pass the 
+Earth. Cutting away events from the horizon removes these neutrino events. 
+The third category of cuts is based on the uncertainty estimation 
+provided by the DNN reconstructions as mentioned before. 
+
+In :numref:`containment_cuts`, the cuts to improve data-MC based on the detector geometry are presented. In :numref:`neutrino_cuts`, the cuts to remove neutrino background events are shown. :numref:`uncertainty_cuts` shows the cuts based on the uncertainty estimation.
+
+.. _containment_cuts:
+.. list-table:: Containment Cuts
+   :header-rows: 1
+
+   * - Containment Cuts
+     - >
+     - <
+   * - length in detector
+     - 1000 m
+     - 2000 m
+   * - entry pos x, y
+     - -750 m
+     - 750 m
+   * - entry pos z
+     - -500 m
+     - 750 m
+   * - center pos x, y
+     - -550 m
+     - 550 m
+   * - center pos z
+     - -650 m
+     - 650 m
+
+.. _neutrino_cuts:
+.. list-table:: Neutrino Cuts
+   :header-rows: 1
+
+   * - Neutrino Cuts
+     - >
+     - <
+   * - cos(zenith)
+     - 0.2
+     - 
+   * - length
+     - 5000 m
+     - 15000 m
+
+.. _uncertainty_cuts:
+.. list-table:: Uncertainty Cuts
+   :header-rows: 1
+
+   * - Uncertainty Cuts
+     - <
+   * - bundle energy at entry
+     - 0.9 log10(GeV)
+   * - bundle energy at surface
+     - 2.0 log10(GeV)
+   * - zenith
+     - 0.1 rad
+   * - azimuth
+     - 0.2 rad
+   * - entry pos x, y, z
+     - 42 m
+   * - center pos x, y, z
+     - 50 m
+   * - entry pos time
+     - 200 ns
+   * - center pos time
+     - 600 ns
+   * - length in detector
+     - 160 m
+   * - length
+     - 2000 m

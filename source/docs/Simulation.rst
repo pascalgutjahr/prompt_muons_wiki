@@ -71,6 +71,8 @@ The detailed settings can be found in the config files at `IceProd <https://icep
 
 In the following two figures, the primary energy distribution of the simulated CORSIKA Ehist IceProd datasets is shown on level 2 
 for the different primary particles. No cuts or filters are applied. This is not the entire statistics, but a subset of the data.
+The relative ratios of the primaries are different for each dataset to match the contributions of the 
+primaries to the weighted, physical primary flux.
 
 .. figure:: images/plots/simulation/simulated_primary_energy_level2.png
 
