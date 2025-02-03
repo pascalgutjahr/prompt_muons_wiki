@@ -40,8 +40,15 @@ Useful links:
 List of presented talks:
 ------------------------
 
+2025:
++++++
+
+* 7 February: CR WG `Update on prompt unfolding`
+
 2024:
 +++++
+
+* 25 September: Fall Collaboration Meeting Madison `Measuring the prompt component of the atmospheric muon flux <https://events.icecube.wisc.edu/event/213/contributions/10315/attachments/8068/10565/pgutjahr_prompt_muons_madison_2024.pdf>`_
 
 * 18 March: Spring Collaboration Meeting Münster `Details on the high-energy atmospheric muon sample <https://events.icecube.wisc.edu/event/180/contributions/10135/attachments/7678/9940/2024_03_18_Muenster_IceCube.pdf>`_
 
