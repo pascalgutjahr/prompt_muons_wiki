@@ -6,10 +6,10 @@ In this section, we list the next steps for the analysis.
 Forward fit 
 +++++++++++
 
-- Include systematics
+- Include systematics (new Master's student is working on this)
 
 
 Unfolding 
 +++++++++
 
-- Fine tune binning when fitting with systematics
+- 

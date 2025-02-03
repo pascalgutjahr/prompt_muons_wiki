@@ -14,7 +14,7 @@ We used these simulations to develop and test this analysis of the prompt compon
 First dataset explorations are stored in :ref:`Appendix/First extended history simulations <first extended history simulations paragraph>`. 
 
 
-For the official analysis, we will provide 
+For the official analysis, we provide 
 an official dataset simulated with IceProd to make it re-producible for the entire IceCube community.
     
  
@@ -24,8 +24,7 @@ Official CORSIKA Ehist IceProd simulation
 ----
 
 *Note*: In the icetray version 1.11.0-rc1, a bug was introduced that we fixed locally without committing to move on 
-with our simulation to perform further tests. Hence, this is still a preliminary simulation since we want to provide 
-a simulation that is re-producible (using an official icetray version tag).
+with our simulation. This fix is mentioned below in the :ref:`code changes <diff_changes>`.
 
 ----
 
@@ -84,3 +83,85 @@ primaries to the weighted, physical primary flux.
 
     : Primary energy distribution of the simulated CORSIKA Ehist IceProd datasets is shown on level 2. The weights are applied 
     using the GaisserH3a flux model.
+
+v1.11.0-rc1 code fix 
+++++++++++++++++++++
+
+.. _diff_changes:
+
+The following code modifications were made:
+
+.. code-block:: diff
+
+    diff --git a/KalmanFilter/python/KalmanFilter.py b/KalmanFilter/python/KalmanFilter.py
+    index 8e6c04d..1616a90 100644
+    --- a/KalmanFilter/python/KalmanFilter.py
+    +++ b/KalmanFilter/python/KalmanFilter.py
+    @@ -30,8 +30,12 @@ class SlowMPHit:
+    
+     def hitfilter(frame, inputMapName, ignoreDC=False):
+    
+    -    inputMap = dataclasses.I3RecoPulseSeriesMap.from_frame(frame, inputMapName)
+    -
+    +    #inputMap = dataclasses.I3RecoPulseSeriesMap.from_frame(frame, inputMapName)
+    +    if type(frame[inputMapName]) == dataclasses.I3RecoPulseSeriesMapMask:
+    +        inputMap = frame[inputMapName].apply(frame)
+    +    else:
+    +        inputMap = frame[inputMapName]
+    +
+         hitlist = [
+             SlowMPHit(omkey, pulse.time, pulse)
+             for omkey, recoPulseVector in inputMap
+    diff --git a/sim-services/private/sim-services/MCPEMCPulseTools.cxx b/sim-services/private/sim-services/MCPEMCPulseTools.cxx
+    index b29234f..1d02365 100644
+    --- a/sim-services/private/sim-services/MCPEMCPulseTools.cxx
+    +++ b/sim-services/private/sim-services/MCPEMCPulseTools.cxx
+    @@ -118,11 +118,11 @@ public:
+                 PushFrame(frame);
+                 return;
+             }
+    -        if(frame->Has(inputName+"ParticleIDMap")){
+    -            log_warn_stream("Frame already contains " << (inputName+"ParticleIDMap")
+    -                             << " suggesting that " << inputName << " is already compressed!"
+    -                             << " Make sure that merging again is what you intent do.");
+    -        }
+    +        //if(frame->Has(inputName+"ParticleIDMap")){
+    +        //    log_warn_stream("Frame already contains " << (inputName+"ParticleIDMap")
+    +        //                     << " suggesting that " << inputName << " is already compressed!"
+    +        //                     << " Make sure that merging again is what you intent do.");
+    +        //}
+
+             //We have to copy all of the input data. This is gonna hurt.
+             boost::shared_ptr<I3Map<OMKey,std::vector<I3MCPE>>> hits=
+    diff --git a/topeventcleaning/private/topeventcleaning/I3TankPulseMerger.cxx b/topeventcleaning/private/topeventcleaning/I3TankPulseMerger.cxx
+    index e57d647..6977da4 100644
+    --- a/topeventcleaning/private/topeventcleaning/I3TankPulseMerger.cxx
+    +++ b/topeventcleaning/private/topeventcleaning/I3TankPulseMerger.cxx
+    @@ -144,10 +144,10 @@ void I3TankPulseMerger::GrabBadTanksAndDOMs(I3FramePtr frame)
+         if (badDOMList) {
+           badDOMs_.clear();
+           badDOMs_.insert(badDOMList->begin(), badDOMList->end());
+    -    } else {
+    -      log_warn("Bad DOM list '%s' not in the frame. Not updating.",
+    -	       badDOMListName_.c_str());
+    -    }
+    +    }// else {
+    +    //  log_warn("Bad DOM list '%s' not in the frame. Not updating.",
+    +    //      badDOMListName_.c_str());
+    +    //}
+       }
+
+       if (!badTankListName_.empty()) {
+    @@ -156,10 +156,10 @@ void I3TankPulseMerger::GrabBadTanksAndDOMs(I3FramePtr frame)
+         if (badTankList) {
+           badTanks_.clear();
+           badTanks_.insert(badTankList->begin(), badTankList->end());
+    -    } else {
+    -      log_warn("Bad tank list '%s' not in the frame. Not updating.",
+    -	       badTankListName_.c_str());
+    -    }
+    +    }// else {
+    +     // log_warn("Bad tank list '%s' not in the frame. Not updating.",
+    +     //     badTankListName_.c_str());
+    +    //}
+       }

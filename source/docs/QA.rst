@@ -3,6 +3,27 @@ Q & A
 
 In this section, a collection of all questions and answers from the presentations is given. The presentations are listed :ref:`here <main paragraph>`.
 
+September 25, 2024
+==================
+
+`Q (Tianlu): Why do you correct for the z-position if it is not important in your analysis? How can you ensure that the mismatch in z does not impact your phyiscs analysis? So the prompt component?`
+
+A: I don't use the z-vertex as an analysis variable, hence it should not affect my analysis. I have also shown,
+that correcting the z-distribution does not affect the energy reconstruction. The cos-zenith distribution is also
+not much affected, maybe there is even a small improvement. Currently, I don't correct the z-distribution in my analysis, but I checked if I could correct it and I wanted to check, if there is any impact of this correction.
+
+`Q: (Agnieszka): The unfolding starts at 10 TeV, how can you be sure that at these energies you don't have any impact from muon bundles?`
+
+A: For the forward fit, I am interested in the prompt component. Since this component is not dominating at a leadingness of 1, I have never selected leading muons. For the unfolding, we are using a neural network 
+to reconstruct the leading muon energy. Of course, if the leading muon is entering the detector with a 
+high energy muon bundle, the reconstruction is difficult, but this smearing is considered in the unfolding.
+
+`Q (Jakob): Have you tried to fit the systematics to fix the z-mismatch?`
+
+A: Not yet. 
+
+
+
 March 18, 2024
 ==============
 
