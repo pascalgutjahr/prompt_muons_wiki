@@ -1,6 +1,10 @@
 Analysis - Forward Fit
 ######################
 
+.. warning::
+    This page is outdated. In the past, the focus was on the unfolding. Currently, a new Master's student is 
+    working on the forward fit. Updates on the forward fit will be provided soon.
+
 This forward fit aims to measure the normalization of the prompt component. At first, some MC studies are shown. Afterwards, a pseudo analysis 
 is performed to set up a baseline for the real data analysis. Finally, we plan to use the tool NNMFit to perform the forward fit, since it is 
 already established in IceCube and a duplication of the code is not necessary. Looking to the future, this tool already includes the possibility
