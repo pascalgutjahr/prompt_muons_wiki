@@ -90,7 +90,8 @@ List of presented talks:
    docs/PromptDefinition.rst
    docs/Reconstructions.rst
    docs/Selection.rst
-   docs/Data_MC.rst
+   docs/Data_MC_level4.rst
+   docs/Data_MC_level5.rst
    docs/Analysis_forward_fit.rst
    docs/Analysis_unfolding.rst
    docs/QA.rst

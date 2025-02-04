@@ -260,9 +260,9 @@ Level 4
 
 On level 4, we do not apply any filters and we do not remove any events. We just add the DNN reconstructions mentioned in the reconstruction section. For this, the following networks are added:
 
-* ``DeepLearningReco_direction_9inputs_uncleaned_medium_01``
-* ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``
-* ``DeepLearningReco_track_geometry_9inputs_uncleaned_01``
+* ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``
+* ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``
+* ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``
 
 Already added in step 3:
 
@@ -301,7 +301,7 @@ The CPU and GPU times are the runtimes needed to apply the DNNs on the respectiv
 Level 5
 +++++++
 
-Cuts presented here are based on the plots in :ref:`Data-MC <data-mc paragraph>`.
+Cuts presented here are based on the plots in :ref:`Data-MC <data-mc level 4 paragraph>`.
 
 
 For level 5, quality cuts are performed to improve the data-MC agreement. Furthermore, some additional cuts are performed to remove neutrino background events. For the reconstruction of the bundle energy, the 

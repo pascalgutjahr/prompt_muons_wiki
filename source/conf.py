@@ -53,7 +53,7 @@ templates_path = ['_templates']
 #  source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
 
-#  The encoding of source files.
+#  The encoding of source files.  
 # source_encoding = 'utf-8-sig'
 
 #  The master toctree document.
@@ -158,6 +158,9 @@ html_static_path = ['_static']
 def setup(app):
     app.add_css_file('custom.css')
 
+# html_context = {
+#     "css_files": ["_static/custom.css"]
+# }
 #  Add any extra paths that contain custom files (such as robots.txt or
 #  .htaccess) here, relative to this directory. These files are copied
 #  directly to the root of the documentation.

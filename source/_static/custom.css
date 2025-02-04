@@ -2,3 +2,13 @@
 .wy-nav-content {
     max-width: 150%; /* Change this value to whatever width you prefer */
 }
+
+img {
+    max-width: 600px;  /* Change this to your preferred default width */
+    height: auto;
+}
+
+.figure img {
+    max-width: 50px;  /* Adjust as needed */
+    height: auto;
+}

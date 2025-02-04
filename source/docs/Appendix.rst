@@ -764,3 +764,143 @@ Energy reconstruction: leading muon
 
 .. figure:: images/plots/data_mc/leading_energy.pdf
 
+
+.. _data_mc_L4_center_pos_z_investigation paragraph:
+Z-vertex investigations (L4)
+++++++++++++++++++++++++++++
+
+Cos zenith cuts
+--------------- 
+
+.. _data_mc_L4_center_pos_z_cos_zenith_cut_GSF:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_GSF.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_cos_zenith_cut_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_GST.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_cos_zenith_cut_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_H3a.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_cos_zenith_cut_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_H4a.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+Distance to center cuts 
+-----------------------
+
+.. _data_mc_L4_center_pos_z_distance_cut_GSF:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_radius_GSF.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_distance_cut_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_radius_GST.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_distance_cut_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_radius_H3a.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_distance_cut_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_radius_H4a.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+
+Energy cuts
+-----------
+
+.. _data_mc_L4_center_pos_z_energy_cut_GSF:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_energy_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_GSF.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_energy_cut_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_energy_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_GST.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_energy_cut_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_energy_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_H3a.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_energy_cut_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_combined_energy_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_H4a.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+Cos zenith 2D correlation
+-------------------------
+
+.. _data_mc_L4_center_pos_z_cos_zenith_2D_GSF:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF_2d_cos_zenith.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_cos_zenith_2D_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST_2d_cos_zenith.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_cos_zenith_2D_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a_2d_cos_zenith.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_cos_zenith_2D_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a_2d_cos_zenith.png
+    :width: 800px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+Increase neutrino impact by factor 200
+--------------------------------------
+
+.. _data_mc_L4_center_pos_z_nugen_200_GSF:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_nugen_scaling_GSF.png
+    :width: 600px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_nugen_200_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_nugen_scaling_GST.png
+    :width: 600px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_nugen_200_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_nugen_scaling_H3a.png
+    :width: 600px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_nugen_200_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_nugen_scaling_H4a.png
+    :width: 600px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
