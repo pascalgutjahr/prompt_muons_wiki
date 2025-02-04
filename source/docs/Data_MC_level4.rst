@@ -19,18 +19,54 @@ Bundle energy at entry
 
 
 
-.. _data_mc_L4_bundle_energy_at_entry:
+.. _data_mc_L4_bundle_energy_at_entry_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_GSF.png
     :width: 600px
 
     : Bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. 
 
+.. _data_mc_L4_bundle_energy_at_entry_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_GST.png
+    :width: 600px
+
+    : Bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``. 
+
+.. _data_mc_L4_bundle_energy_at_entry_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_H3a.png
+    :width: 600px
+
+    : Bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_entry_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_H4a.png
+    :width: 600px
+
+    : Bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
 
 Leading muon energy at entry 
 ++++++++++++++++++++++++++++
 
-.. _data_mc_L4_leading_muon_energy_at_entry:
+.. _data_mc_L4_leading_muon_energy_at_entry_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_GSF.png
+    :width: 600px
+
+    : Leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_entry_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_GST.png
+    :width: 600px
+
+    : Leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_entry_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_H3a.png
+    :width: 600px
+
+    : Leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_entry_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_H4a.png
     :width: 600px
 
     : Leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
@@ -40,26 +76,82 @@ Leading muon energy at entry
 Bundle energy at surface 
 ++++++++++++++++++++++++
 
-.. _data_mc_L4_bundle_energy_at_surface:
+.. _data_mc_L4_bundle_energy_at_surface_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_GSF.png
     :width: 600px
 
     : Bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
-.. _data_mc_L4_bundle_energy_at_surface_precut:
+.. _data_mc_L4_bundle_energy_at_surface_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_GST.png
+    :width: 600px
+
+    : Bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_surface_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_H3a.png
+    :width: 600px
+
+    : Bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_surface_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_H4a.png
+    :width: 600px
+
+    : Bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_surface_precut_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_GSF.png
     :width: 600px
 
     : Bundle energy at surface reconstructed by pre-cut network  ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
 
+.. _data_mc_L4_bundle_energy_at_surface_precut_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_GST.png
+    :width: 600px
+
+    : Bundle energy at surface reconstructed by pre-cut network  ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+
+.. _data_mc_L4_bundle_energy_at_surface_precut_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_H3a.png
+    :width: 600px
+
+    : Bundle energy at surface reconstructed by pre-cut network  ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+
+.. _data_mc_L4_bundle_energy_at_surface_precut_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_H4a.png
+    :width: 600px
+
+    : Bundle energy at surface reconstructed by pre-cut network  ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+
+
 Leading muon energy at surface 
 ++++++++++++++++++++++++++++++
 
-.. _data_mc_L4_leading_muon_energy_at_surface:
+.. _data_mc_L4_leading_muon_energy_at_surface_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_GSF.png
     :width: 600px
 
     : Leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_surface_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_GST.png
+    :width: 600px
+
+    : Leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_surface_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_H3a.png
+    :width: 600px
+
+    : Leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_surface_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_H4a.png
+    :width: 600px
+
+    : Leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
 
 ----
 
@@ -69,8 +161,26 @@ Energy uncertainty
 Bundle energy at entry - uncertainty
 ++++++++++++++++++++++++++++++++++++
 
-.. _data_mc_L4_bundle_energy_at_entry_uncertainty:
+.. _data_mc_L4_bundle_energy_at_entry_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_GSF.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_entry_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_GST.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_entry_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_H3a.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_entry_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_H4a.png
     :width: 600px
 
     : Uncertainty of bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
@@ -79,8 +189,26 @@ Bundle energy at entry - uncertainty
 Leading muon energy at entry - uncertainty
 ++++++++++++++++++++++++++++++++++++++++++
 
-.. _data_mc_L4_leading_muon_energy_at_entry_uncertainty:
+.. _data_mc_L4_leading_muon_energy_at_entry_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_GSF.png
+    :width: 600px
+
+    : Uncertainty of leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_entry_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_GST.png
+    :width: 600px
+
+    : Uncertainty of leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_entry_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_H3a.png
+    :width: 600px
+
+    : Uncertainty of leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_at_entry_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_H4a.png
     :width: 600px
 
     : Uncertainty of leading muon energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
@@ -90,14 +218,50 @@ Leading muon energy at entry - uncertainty
 Bundle energy at surface - uncertainty
 ++++++++++++++++++++++++++++++++++++++
 
-.. _data_mc_L4_bundle_energy_at_surface_uncertainty:
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_GSF.png
     :width: 600px
 
     : Uncertainty of bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
-.. _data_mc_L4_bundle_energy_at_surface_uncertainty_precut:
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_GST.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_H3a.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_H4a.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_precut_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_GSF.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at surface reconstructed by pre-cut network ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_precut_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_GST.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at surface reconstructed by pre-cut network ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_precut_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_H3a.png
+    :width: 600px
+
+    : Uncertainty of bundle energy at surface reconstructed by pre-cut network ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+
+.. _data_mc_L4_bundle_energy_at_surface_uncertainty_precut_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_bundle_energy_in_mctree_H4a.png
     :width: 600px
 
     : Uncertainty of bundle energy at surface reconstructed by pre-cut network ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
@@ -105,13 +269,29 @@ Bundle energy at surface - uncertainty
 Leading muon energy at surface - uncertainty
 ++++++++++++++++++++++++++++++++++++++++++++
 
-.. _data_mc_L4_leading_muon_energy_surface_uncertainty:
+.. _data_mc_L4_leading_muon_energy_surface_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_GSF.png
     :width: 600px
 
     : Uncertainty of leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
+.. _data_mc_L4_leading_muon_energy_surface_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_GST.png
+    :width: 600px
 
+    : Uncertainty of leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_surface_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_H3a.png
+    :width: 600px
+
+    : Uncertainty of leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
+
+.. _data_mc_L4_leading_muon_energy_surface_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_energy_hist_log_uncertainty_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_H4a.png
+    :width: 600px
+
+    : Uncertainty of leading muon energy at surface reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
 
 Zenith 
@@ -273,12 +453,48 @@ Position x
 
     : Center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_center_pos_x_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_x_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_x_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_x_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_x_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_x_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
+
+    : Center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
 
 Position x - uncertainty
 ++++++++++++++++++++++++
 
 .. _data_mc_L4_center_pos_x_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF.png
+    :width: 600px
+
+    : Uncertainty of center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_x_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_x_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_x_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
     :width: 600px
 
     : Uncertainty of center position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
@@ -294,12 +510,47 @@ Position y
 
     : Center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_center_pos_y_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_y_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_y_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_y_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_y_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_y_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
+
+    : Center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
 Position y - uncertainty
 ++++++++++++++++++++++++
 
 .. _data_mc_L4_center_pos_y_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF.png
+    :width: 600px
+
+    : Uncertainty of center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_y_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_y_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_y_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
     :width: 600px
 
     : Uncertainty of center position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
@@ -316,37 +567,48 @@ Further investigations of the z-vertex can be found in the
 
     : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_center_pos_z_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
 
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
-.. _data_mc_center_pos_z_combined_energy:
-.. figure:: images/plots/data_mc/level4/data_mc_center_pos_z_combined_energy.png
+.. _data_mc_L4_center_pos_z_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
 
-    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01`` for different 
-    bundle energy at surface bins applied by ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
-.. _data_mc_center_pos_z_combined_radius:
-.. figure:: images/plots/data_mc/level4/data_mc_center_pos_z_combined_radius.png
+.. _data_mc_L4_center_pos_z_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
 
-    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01`` for different 
-    distance to center bins applied by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
-.. _data_mc_center_pos_z_combined:
-.. figure:: images/plots/data_mc/level4/data_mc_center_pos_z_combined.png
-
-    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01`` for different 
-    zenith bins applied by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``.
-
-.. _data_mc_coincident:
-.. figure:: images/plots/data_mc/level4/data_mc_coincident.pdf
-
-    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``. Coincident events are chosen 
-    by the MC truth information.
 
 Position z - uncertainty
 ++++++++++++++++++++++++
 
 .. _data_mc_L4_center_pos_z_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF.png
+    :width: 600px
+
+    : Uncertainty of center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_center_pos_z_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_center_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
     :width: 600px
 
     : Uncertainty of center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
@@ -384,11 +646,47 @@ Position x
 
     : Entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_entry_pos_x_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_x_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_x_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_x_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_x_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_x_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
+
+    : Entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
 Position x - uncertainty
 ++++++++++++++++++++++++
 
 .. _data_mc_L4_entry_pos_x_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF.png
+    :width: 600px
+
+    : Uncertainty of entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_x_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_x_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_x_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_x_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
     :width: 600px
 
     : Uncertainty of entry position x reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
@@ -402,11 +700,47 @@ Position y
 
     : Entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_entry_pos_y_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_y_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_y_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_y_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_y_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_y_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
+
+    : Entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
 Position y - uncertainty
 ++++++++++++++++++++++++
 
 .. _data_mc_L4_entry_pos_y_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF.png
+    :width: 600px
+
+    : Uncertainty of entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_y_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_y_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_y_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_y_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
     :width: 600px
 
     : Uncertainty of entry position y reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
@@ -423,30 +757,48 @@ Further investigations of the z-vertex can be found in the
 
     : Entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_entry_pos_z_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
 
-.. _data_mc_entry_pos_z_combined_energy:
-.. figure:: images/plots/data_mc/level4/data_mc_entry_pos_z_combined_energy.png
+    : Entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
-    : Entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01`` for different 
-    bundle energy at surface bins applied by ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``.
+.. _data_mc_L4_entry_pos_z_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
 
-.. _data_mc_entry_pos_z_combined_radius:
-.. figure:: images/plots/data_mc/level4/data_mc_entry_pos_z_combined_radius.png
+    : Entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
-    : Entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01`` for different 
-    distance to center bins applied by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+.. _data_mc_L4_entry_pos_z_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_z_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
 
-.. _data_mc_entry_pos_z_combined:
-.. figure:: images/plots/data_mc/level4/data_mc_entry_pos_z_combined.png
+    : Entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
-    : Entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01`` for different 
-    zenith bins applied by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``.
 
 Position z - uncertainty
 ++++++++++++++++++++++++
 
 .. _data_mc_L4_entry_pos_z_uncertainty_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF.png
+    :width: 600px
+
+    : Uncertainty of entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_z_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_z_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_entry_pos_z_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_entry_pos_z_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
     :width: 600px
 
     : Uncertainty of entry position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
@@ -464,11 +816,47 @@ Total propagation length
 
     : Propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_total_propagation_length_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_total_propagation_length_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_total_propagation_length_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
+
+    : Propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
 Length in detector 
 ++++++++++++++++++
 
 .. _data_mc_L4_length_in_detector_GSF:
 .. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_in_detector_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GSF.png
+    :width: 600px
+
+    : Length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_length_in_detector_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_in_detector_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_length_in_detector_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_in_detector_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_length_in_detector_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_in_detector_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
     :width: 600px
 
     : Length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
@@ -482,6 +870,24 @@ Total propagation length - uncertainty
 
     : Uncertainty of propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_total_propagation_length_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_total_propagation_length_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_total_propagation_length_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_length_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
+
+    : Uncertainty of propagation length reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
 Length in detector - uncertainty
 ++++++++++++++++++++++++++++++++
 
@@ -491,8 +897,28 @@ Length in detector - uncertainty
 
     : Uncertainty of length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
+.. _data_mc_L4_length_in_detector_uncertainty_GST:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_LengthInDetector_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_GST.png
+    :width: 600px
+
+    : Uncertainty of length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_length_in_detector_uncertainty_H3a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_LengthInDetector_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H3a.png
+    :width: 600px
+
+    : Uncertainty of length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
+.. _data_mc_L4_length_in_detector_uncertainty_H4a:
+.. figure:: images/plots/data_mc/data_mc_level4/data_mc_LengthInDetector_uncertainty_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_H4a.png
+    :width: 600px
+
+    : Uncertainty of length in detector reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
+
 Systematics
 -----------
+
+Further plots with all 4 primary models can be found in the Google docs `here <https://drive.google.com/drive/u/1/folders/1DCiLb7GxM6WJzLVRHaaIL0W5t0gb3QTB?ths=true>`_.
 
 Bundle energy at entry
 ++++++++++++++++++++++
