@@ -307,7 +307,7 @@ Systematics
 
 The systematic uncertainties are estimated by varying the systematic parameters in the simulation chain. The systematic parameters are fitted to the data as additional nuisance parameters. The detector response matrix then depends on these additional parameters. For each systematic, new simulation sets are used. These simulation sets are created with the systematic parameters varying within their defined range. This enables to construct weighting functions that present the relative change of the bin content compared to the baseline simulation. To consider all parameters in a single bin, the functions are multiplied. The response matrix is then calculated as the product of the weighting functions and the baseline response matrix. The likelihood now also depends on the nuisance parameters, which makes it possible to fit these parameters in the unfolding.
 
-For the simulation, the snowstorm parameters for the ice model "spice_ftp-v3m" are used as defined in :numref:`systematics_table` taken from `here <https://wiki.icecube.wisc.edu/index.php/SnowStorm_MC>`_ (from April 2024).
+For the simulation, the snowstorm parameters for the ice model "spice_ftp-v3m" are used as defined in :numref:`systematics_table` taken from `wiki <https://wiki.icecube.wisc.edu/index.php/SnowStorm_MC>`_ (from April 2024).
 
 .. _systematics_table:
 .. list-table:: Systematics Table
@@ -335,7 +335,7 @@ For the simulation, the snowstorm parameters for the ice model "spice_ftp-v3m" a
 
 
 Visualize impact of systematics on muon energy at entry (proxy)
-===========================================================
+===============================================================
 
 Absorption and DOMEfficiency have the largest impact on the leading muon energy at entry as shown below.
 
@@ -371,7 +371,7 @@ Absorption and DOMEfficiency have the largest impact on the leading muon energy 
 
 
 Chi2 test impact of systematics on muon energy at entry (proxy)
-===========================================================
+===============================================================
 
 Perform a chi2 test to estimate the impact of the systematics on the proxy variable. For this, the highest and the lowest systematic bin are used. There is no significant impact of the HoleIce Forward p1 systematic on the proxy variable and a small impact of the HoleIce Forward p0 systematic. 
 
@@ -509,3 +509,20 @@ As an example, 3 bins (bin 0, 5 and 10 of 18 total bins) for each of the 5 syste
 
 Results: Unfolding with systematics
 -----------------------------------
+
+The muon flux is unfolded with the leading muon energy at entry as a proxy. All 5 systematics are included in the unfolding as described above. For the minimization, MCMC is used.
+
+.. _unfolding_muon_flux_systematics:
+.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_0.png
+  :width: 600px
+
+  : Unfolded differential muon flux at surface with systematics. The true distribution using the entire dataset is shown 
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
+  Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+.. _unfolding_muon_flux_systematics_gamma_37:
+.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_3.7.png
+  :width: 600px
+
+  : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. The true distribution using the entire dataset is shown 
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
