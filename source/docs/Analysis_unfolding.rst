@@ -47,6 +47,7 @@ quantity.
 
 .. _unfolding:
 .. figure:: images/plots/unfolding/unfolding_sketch.jpg
+  :width: 600px
 
   : Schematic representation of unfolding. The underlying physical
   truth is smeared in the detection process. This is described by the
@@ -243,7 +244,7 @@ which makes it possible to fit these parameters in the unfolding.
 Unfolding
 ---------
 
-In this analysis, we would like to unfold the energy of the leading muon at the surface. This is variable is called our 
+In this analysis, we would like to unfold the energy of the leading muon at the surface. This variable is called our 
 target variable. For the unfolding, we need proxies, that correlate with our target. 
 
 Proxy Variable
@@ -254,87 +255,257 @@ leading muon at entry is used as a proxy variable. The target is the energy of t
 
 
 .. _proxy_variable:
-.. figure:: images/plots/unfolding/DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02_entry_energy_vs_muon_energy_first_mctree.png 
+.. figure:: images/plots/unfolding/proxy_target.png
+  :width: 600px
 
   : Proxy variable for unfolding. Here, the muon energy of the leading muon at entry is used. The target is the leading muon energy 
-  at surface.
+  at surface. The grey, dashed lines represent the binning for the proxy and target variable. This binning serves as an example. The final binning can change slightly. 
 
 
-Unfold Event Rate - one proxy
-=============================
+Unfold Event Rate
+=================
 
-In Figure :numref:`unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps`, the unfolded event rate of the muon energy of the leading muon at the surface is shown. 
-In Figure :numref:`unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps`, the same unfolding is performed with more steps and walkers. 
+In Figure :numref:`unfolding_event_rate`, the unfolded event rate of the muon energy of the leading muon at the surface is shown for a 
+statistic of 10 years. The legend shows the used minimizer, here minuit, and the regularization strength, here :math:`\tau = None`.
 
 
-.. _unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps:
-.. figure:: images/plots/unfolding/unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps.png 
+.. _unfolding_event_rate:
+.. figure:: images/plots/unfolding/event_rate.png
+  :width: 600px 
 
-  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution is shown in blue, the unfolded 
-  distribution in red. 
+  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution using the entire dataset is shown 
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
 
-.. _unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps:
-.. figure:: images/plots/unfolding/unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps.png 
 
-  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution is shown in blue, the unfolded 
-  distribution in red. 
-
-Unfold Event Rate - multiple proxies / tree binning 
-===================================================
-
-Instead of using just one proxy, multiple proxies can be used. Due to the high dimensionality, a decision tree is used to bin the data. 
-This is done in a way, that the tree is used to solve our problem: estimating the energy of the leading muon at the surface. But then, 
-we don't use the estimation of the energy, but just the leafs for the binning. This way, we can use the tree to bin the data. Of course, 
-this approach can also be used with only one proxy. This is presented first, to compare the results with the classical binning by hand.
-
-In Figures :numref:`decision_tree_regression_1D_only_leading_energy` and :numref:`decision_tree_regression_2D_only_leading_energy`, 
-the decision tree regression for the leading muon energy at the surface is shown. The tree is able to reconstruct the target variable.
-
-.. _decision_tree_regression_1D_only_leading_energy:
-.. figure:: images/plots/unfolding/decision_tree_regression_1D_only_leading_energy.png 
-
-  : Decision tree regression for the leading muon energy at the surface. The tree is used to bin the data.
-
-.. _decision_tree_regression_2D_only_leading_energy:
-.. figure:: images/plots/unfolding/decision_tree_regression_2D_only_leading_energy.png 
-
-  : Decision tree regression for the leading muon energy at the surface in 2D. The tree is used to bin the data.
-
-Using this binning and the same number of steps and walkers a in Figure :numref:`unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_few_steps`, 
-the unfolding of the event rate results as in Figure :numref:`tree_binning_unfolding_rate_only_leading_energy`. The tree binning improves 
-the unfolding result.
-
-.. _tree_binning_unfolding_rate_only_leading_energy:
-.. figure:: images/plots/unfolding/tree_binning_unfolding_rate_only_leading_energy.png
-
-  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution is shown in blue, the unfolded in red. 
-  Tree binning is used. As a proxy, only the leading muon energy at entry is used.
-
-Following, the leading muon energy at entry and the zenith angle are used as proxies. The tree binning is shown in 
-Figure :numref:`binning_tree`. The result of the unfolded event rate is shown in Figure :numref:`tree_binning_unfolding_rate_leading_energy_and_zenith`.
-
-.. _binning_tree: 
-.. figure:: images/plots/unfolding/binning_tree.png
-
-  : 2D binning of the data using a decision tree. The tree is used to bin the data.
-
-.. _tree_binning_unfolding_rate_leading_energy_and_zenith: 
-.. figure:: images/plots/unfolding/tree_binning_unfolding_rate_leading_energy_and_zenith.png
-
-  : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution is shown in blue, the unfolded in red. 
-  Tree binning is used. As proxies, the leading muon energy at entry and the zenith angle are used.
-
-Unfold Muon Flux - one proxy 
-============================ 
+Unfold Muon Flux
+================
 
 For the unfolding of the muon flux at surface, an effective area is needed. This area is basically the information, 
-how many muons correspond to a certain event measured by the detector. 
+how many muons correspond to a certain event measured by the detector. The calculation of the effective area is 
+done similar to the analysis of stopping muons (`Stopping muons wiki <https://user-web.icecube.wisc.edu/~lwitthaus/StoppingMuonAnalysis/docs/Effective_Area/effective_area.html>`_). We build a ratio of all muons at surface generated in step 0 to the muons that are detected on our final level.
 
-In Figure :numref:`unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps_02_regNone_None_MCLabelsLeadingMuons_muon_energy_first_mctree` the muon flux at surface is unfolded using the leading muon energy at entry as a proxy with classical binning. 
+In Figure :numref:`unfolding_muon_flux` the muon flux at surface is unfolded using the leading muon energy at entry as a proxy with classical binning. 
 
-.. _unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps_02_regNone_None_MCLabelsLeadingMuons_muon_energy_first_mctree:
-.. figure:: images/plots/unfolding/unfolding_muon_energy_first_mctree_1.0e+04_5.0e+07_12bins_tauNone_GaisserH3a_more_steps_02_regNone_None_MCLabelsLeadingMuons_muon_energy_first_mctree.png
+.. _unfolding_muon_flux:
+.. figure:: images/plots/unfolding/muon_flux_gamma_0.png
+  :width: 600px
 
-  : Unfolded muon flux at surface. The true distribution is shown in blue, the unfolded in red.
+  : Unfolded differential muon flux at surface. The true distribution using the entire dataset is shown 
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
+  Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+.. _unfolding_muon_flux_gamma_37:
+.. figure:: images/plots/unfolding/muon_flux_gamma_37.png
+  :width: 600px
+
+  : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. The true distribution using the entire dataset is shown 
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
 
 
+Systematics 
+-----------
+
+The systematic uncertainties are estimated by varying the systematic parameters in the simulation chain. The systematic parameters are fitted to the data as additional nuisance parameters. The detector response matrix then depends on these additional parameters. For each systematic, new simulation sets are used. These simulation sets are created with the systematic parameters varying within their defined range. This enables to construct weighting functions that present the relative change of the bin content compared to the baseline simulation. To consider all parameters in a single bin, the functions are multiplied. The response matrix is then calculated as the product of the weighting functions and the baseline response matrix. The likelihood now also depends on the nuisance parameters, which makes it possible to fit these parameters in the unfolding.
+
+For the simulation, the snowstorm parameters for the ice model "spice_ftp-v3m" are used as defined in :numref:`systematics_table` taken from `here <https://wiki.icecube.wisc.edu/index.php/SnowStorm_MC>`_ (from April 2024).
+
+.. _systematics_table:
+.. list-table:: Systematics Table
+   :header-rows: 1
+   :widths: 20 30 30
+
+   * - Systematic
+     - Sampling Distribution
+     - Sampling Range
+   * - Scattering
+     - uniform
+     - [0.913, 1.087]
+   * - Absorption
+     - uniform
+     - [0.913, 1.087]
+   * - DOM Efficiency
+     - uniform
+     - [0.9, 1.1]
+   * - HoleIce Forward p0
+     - uniform
+     - [-0.1, 0.5]
+   * - HoleIce Forward p1
+     - uniform
+     - [-0.1, 0.0]
+
+
+Visualize impact of systematics on muon energy at entry (proxy)
+===========================================================
+
+Absorption and DOMEfficiency have the largest impact on the leading muon energy at entry as shown below.
+
+.. _Absorption_proxy_impact:
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_Absorption_H3a_5_sys_bins.png
+  :width: 600px  
+
+  : Impact of the Absorption systematic on the muon energy at entry. The dataset is divided into 5 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _DOMEfficency_proxy_impact:
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_DOMEfficiency_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Impact of the DOMEfficiency systematic on the muon energy at entry. The dataset is divided into 5 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p0_proxy_impact:
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_HoleIceForward_Unified_p0_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Impact of the HoleIceForward_p0 systematic on the muon energy at entry. The dataset is divided into 5 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p1_proxy_impact:
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_HoleIceForward_Unified_p1_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Impact of the HoleIceForward_p1 systematic on the muon energy at entry. The dataset is divided into 5 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _Scattering_proxy_impact:
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_Scattering_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Impact of the Scattering systematic on the muon energy at entry. The dataset is divided into 5 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+
+Chi2 test impact of systematics on muon energy at entry (proxy)
+===========================================================
+
+Perform a chi2 test to estimate the impact of the systematics on the proxy variable. For this, the highest and the lowest systematic bin are used. There is no significant impact of the HoleIce Forward p1 systematic on the proxy variable and a small impact of the HoleIce Forward p0 systematic. 
+
+.. _Absorption_proxy_chi2:
+.. figure:: images/plots/data_mc/data_mc_level5/chi2_sys_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_Absorption_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Chi2 test for the Absorption systematic on the muon energy at entry. The dataset is divided into 5 systematic bins and the lowest and highest bin are used for the chi2 test.
+
+.. _DOMEfficency_proxy_chi2:
+.. figure:: images/plots/data_mc/data_mc_level5/chi2_sys_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_DOMEfficiency_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Chi2 test for the DOMEfficiency systematic on the muon energy at entry. The dataset is divided into 5 systematic bins and the lowest and highest bin are used for the chi2 test.
+
+.. _HoleIceForward_p0_proxy_chi2:
+.. figure:: images/plots/data_mc/data_mc_level5/chi2_sys_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_HoleIceForward_Unified_p0_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Chi2 test for the HoleIceForward_p0 systematic on the muon energy at entry. The dataset is divided into 5 systematic bins and the lowest and highest bin are used for the chi2 test.
+
+.. _HoleIceForward_p1_proxy_chi2:
+.. figure:: images/plots/data_mc/data_mc_level5/chi2_sys_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_HoleIceForward_Unified_p1_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Chi2 test for the HoleIceForward_p1 systematic on the muon energy at entry. The dataset is divided into 5 systematic bins and the lowest and highest bin are used for the chi2 test.
+
+.. _Scattering_proxy_chi2:
+.. figure:: images/plots/data_mc/data_mc_level5/chi2_sys_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_Scattering_H3a_5_sys_bins.png
+  :width: 600px
+
+  : Chi2 test for the Scattering systematic on the muon energy at entry. The dataset is divided into 5 systematic bins and the lowest and highest bin are used for the chi2 test.
+
+
+Fit systematic impact on muon energy at entry (proxy)
+=====================================================
+
+Each proxy bin is divided into three different datasets corresponding to the equidistant cuts on the 
+systematic parameter. Then, the ratio of the sub-datasets to the baseline dataset is calculated.
+These three ratios are fitted with a linear function. Therefore, at first a chi2 test is performed 
+if a constant :math:`y = 1` is compatible with the data with a p-value of 0.05. If this is not the case, a linear fit with the lowest slope that is compatible with the data under a p-value of 0.2 is performed. A requirement that the fit is going through the baseline point is added. This procedure is done instead of fitting all three ratios because the uncertainties on the ratios are large in some of the bins. In addition, some bins have very small uncertainties, which would lead to a large impact on the fit. This is caused by insufficient statistics in the sub-datasets. Hence, when fitting the ratios, some unphysical parametrization with either an extreme slope, or an offset is obtained.
+
+As an example, 3 bins (bin 0, 5 and 10 of 18 total bins) for each of the 5 systematics are shown below. A complete set of systematic fits can be found in the Google docs `here <https://drive.google.com/drive/folders/17r4pLPrKjZmZW83lhMTzp-gXytVQDk83?ths=true>`_. As expected from the distributions above, for Scattering, HoleIce p0 and HoleIce p1, most of the fits are compatible with a constant, thus they don't have an impact on my proxy variable. For Absorption and DOMEfficiency, in some bins there is an impact on the proxy variable, in some bins not.
+
+.. _Absorption_proxy_fit_bin0:
+.. figure:: images/plots/unfolding/systematics/Absorption_bin0_page1.png
+  :width: 600px
+
+  : Fit of the Absorption systematic on the muon energy at entry for bin 0. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _Absorption_proxy_fit_bin5:
+.. figure:: images/plots/unfolding/systematics/Absorption_bin5_page1.png
+  :width: 600px
+
+  : Fit of the Absorption systematic on the muon energy at entry for bin 5. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _Absorption_proxy_fit_bin10:
+.. figure:: images/plots/unfolding/systematics/Absorption_bin10_page1.png
+  :width: 600px
+
+  : Fit of the Absorption systematic on the muon energy at entry for bin 10. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _DOMEfficency_proxy_fit_bin0:
+.. figure:: images/plots/unfolding/systematics/DOMEfficiency_bin0_page1.png
+  :width: 600px
+
+  : Fit of the DOMEfficiency systematic on the muon energy at entry for bin 0. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _DOMEfficency_proxy_fit_bin5:
+.. figure:: images/plots/unfolding/systematics/DOMEfficiency_bin5_page1.png
+  :width: 600px
+
+  : Fit of the DOMEfficiency systematic on the muon energy at entry for bin 5. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _DOMEfficency_proxy_fit_bin10:
+.. figure:: images/plots/unfolding/systematics/DOMEfficiency_bin10_page1.png
+  :width: 600px
+
+  : Fit of the DOMEfficiency systematic on the muon energy at entry for bin 10. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p0_proxy_fit_bin0:
+.. figure:: images/plots/unfolding/systematics/HoleIceForward_Unified_p0_bin0_page1.png
+  :width: 600px
+
+  : Fit of the HoleIceForward_p0 systematic on the muon energy at entry for bin 0. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p0_proxy_fit_bin5:
+.. figure:: images/plots/unfolding/systematics/HoleIceForward_Unified_p0_bin5_page1.png
+  :width: 600px
+
+  : Fit of the HoleIceForward_p0 systematic on the muon energy at entry for bin 5. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p0_proxy_fit_bin10:
+.. figure:: images/plots/unfolding/systematics/HoleIceForward_Unified_p0_bin10_page1.png
+  :width: 600px
+
+  : Fit of the HoleIceForward_p0 systematic on the muon energy at entry for bin 10. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p1_proxy_fit_bin0:
+.. figure:: images/plots/unfolding/systematics/HoleIceForward_Unified_p1_bin0_page1.png
+  :width: 600px
+
+  : Fit of the HoleIceForward_p1 systematic on the muon energy at entry for bin 0. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p1_proxy_fit_bin5:
+.. figure:: images/plots/unfolding/systematics/HoleIceForward_Unified_p1_bin5_page1.png
+  :width: 600px
+
+  : Fit of the HoleIceForward_p1 systematic on the muon energy at entry for bin 5. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _HoleIceForward_p1_proxy_fit_bin10:
+.. figure:: images/plots/unfolding/systematics/HoleIceForward_Unified_p1_bin10_page1.png
+  :width: 600px
+
+  : Fit of the HoleIceForward_p1 systematic on the muon energy at entry for bin 10. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _Scattering_proxy_fit_bin0:
+.. figure:: images/plots/unfolding/systematics/Scattering_bin0_page1.png
+  :width: 600px
+
+  : Fit of the Scattering systematic on the muon energy at entry for bin 0. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+.. _Scattering_proxy_fit_bin5:
+.. figure:: images/plots/unfolding/systematics/Scattering_bin5_page1.png
+  :width: 600px
+
+  : Fit of the Scattering systematic on the muon energy at entry for bin 5. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.  
+
+.. _Scattering_proxy_fit_bin10:
+.. figure:: images/plots/unfolding/systematics/Scattering_bin10_page1.png
+  :width: 600px
+
+  : Fit of the Scattering systematic on the muon energy at entry for bin 10. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+
+Results: Unfolding with systematics
+-----------------------------------

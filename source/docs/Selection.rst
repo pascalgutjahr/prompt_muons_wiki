@@ -53,11 +53,13 @@ filters and weightings.
 
 .. _leading_muon_energy_ratio:
 .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH3a.png
+  :width: 600px
 
     : Investigating the impact of several filters on level 2 for the leading muon energy at surface.
 
 .. _cos_zenith_ratio:
 .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GaisserH3a.png
+  :width: 600px
 
     : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle. 
 

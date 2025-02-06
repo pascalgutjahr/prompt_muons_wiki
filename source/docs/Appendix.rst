@@ -739,30 +739,30 @@ in the performance in comparison to the plots presented above. Thus, this networ
 
 Angular reconstructions 
 -----------------------
-.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryAzimuth.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryAzimuth.png
 
-.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith.png
 
-.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith_angle_deviation.pdf 
+.. figure:: images/plots/data_mc/DeepLearningReco_direction_big_PrimaryZenith_angle_deviation.png 
 
 Left side: only L2 muon filter, right side: L2 muon filter and cut on bundle energy: :math:`E > 10\,\mathrm{TeV}`
 
-.. figure:: images/plots/data_mc/zenith.pdf 
+.. figure:: images/plots/data_mc/zenith.png 
 
-.. figure:: images/plots/data_mc/zenith_cut_1e4.pdf 
+.. figure:: images/plots/data_mc/zenith_cut_1e4.png 
 
 
 Energy reconstructions: muon bundle 
 -----------------------------------
-.. figure:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_bundle_energy_at_entry.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_bundle_energy_at_entry.png
 
-.. figure:: images/plots/data_mc/bundle_energy.pdf
+.. figure:: images/plots/data_mc/bundle_energy.png
 
 Energy reconstruction: leading muon 
 -----------------------------------
-.. figure:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_entry_energy.pdf
+.. figure:: images/plots/data_mc/DeepLearningReco_exported_model_PromptMu_L2_energy_entry_energy.png
 
-.. figure:: images/plots/data_mc/leading_energy.pdf
+.. figure:: images/plots/data_mc/leading_energy.png
 
 
 .. _data_mc_L4_center_pos_z_investigation paragraph:

@@ -83,11 +83,13 @@ higher energies, I don't expect a significant result. The classification of the 
 
 .. _multiplicity_charmed_vs_unflavored:
 .. figure:: images/plots/QA/multiplicity_charmed_vs_unflavored.png
+    :width: 600px
 
     : The multiplicity of charmed and unflavoured mesons is shown as a rate.
 
 .. _multiplicity_charmed_vs_unflavored_10_years:
 .. figure:: images/plots/QA/multiplicity_charmed_vs_unflavored_10_years.png
+    :width: 600px
 
     : The multiplicity of charmed and unflavoured mesons is shown for the expeceted events for 10 years.
 
@@ -247,6 +249,7 @@ definitely needs more investigation. Since I used some assumptions, uploading th
 
 .. _neutrino_background_bundle_energy_at_entry:
 .. figure:: images/plots/QA/bundle_energy_at_entry.png
+    :width: 600px
 
     : Bundle energy at entry is shown to estimate the neutrion background. The NuGen background in purple includes both atmospheric 
     and astrophysical neutrinos. The atmospheric 
@@ -269,12 +272,12 @@ we will simulate the EM component, if the simulation of the EM component is feas
 :numref:`energy_distribution` and :numref:`num_and_energy_ratio`.
 
 .. _energy_distribution:
-.. figure:: images/plots/QA/energy_distribution.pdf 
+.. figure:: images/plots/QA/energy_distribution.png 
 
     : CORSIKA 8 was used to simulate 500 PeV proton showers to estimate the impact of the electromagnetic shower component. 
 
 .. _num_and_energy_ratio:
-.. figure:: images/plots/QA/num_and_energy_ratio.pdf
+.. figure:: images/plots/QA/num_and_energy_ratio.png
 
     : The ratio of the number of muons and the energy of the muons is shown for 500 PeV proton showers. On average, 4.8 % of the energy is carried by muons originating 
     from the electromagnetic shower component.

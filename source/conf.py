@@ -132,7 +132,7 @@ html_theme_options = {
 }
 
 #  Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 #  The name for this set of Sphinx documents.  If None, it defaults to
 #  "<project> v<release> documentation".
@@ -307,6 +307,10 @@ texinfo_documents = [
 
 
 #  Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+# intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None)
+}
 
 numfig = True

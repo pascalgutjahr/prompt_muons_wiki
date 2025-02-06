@@ -74,12 +74,14 @@ The relative ratios of the primaries are different for each dataset to match the
 primaries to the weighted, physical primary flux.
 
 .. figure:: images/plots/simulation/simulated_primary_energy_level2.png
+    :width: 600px
 
     : Primary energy distribution of the simulated CORSIKA Ehist IceProd datasets is shown on level 2. Not cuts or filters 
     are applied. This is not the entire statistics, but a subset of the data.
 
 
 .. figure:: images/plots/simulation/simulated_primary_energy_level2_simweights_GaisserH3a.png
+    :width: 600px
 
     : Primary energy distribution of the simulated CORSIKA Ehist IceProd datasets is shown on level 2. The weights are applied 
     using the GaisserH3a flux model.

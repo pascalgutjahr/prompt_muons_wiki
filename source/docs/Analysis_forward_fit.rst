@@ -30,7 +30,7 @@ The leadingness is shown for the prompt and conventional component for two diffe
 :numref:`leading_bundle_energy_fraction`.
 
 .. _leading_bundle_energy_fraction:
-.. figure:: images/plots/dataset_exploration/leading_bundle_energy_fraction.pdf 
+.. figure:: images/plots/dataset_exploration/leading_bundle_energy_fraction.png 
   
     : The leadingness is shown for the prompt and conventional component for two different energy cuts. The prompt component is shown as dashed lines 
     and the conventional component as solid lines.
@@ -44,20 +44,20 @@ Leading vs. bundle energy
 The production of prompt an conventional particles is shown in relation to the GaisserH3a prediction. The GST and GSF model predict the 
 most prompt muons.
 
-.. figure:: images/plots/dataset_exploration/prompt_production_primary_models.pdf
+.. figure:: images/plots/dataset_exploration/prompt_production_primary_models.png
 
 The energy spectra for the leading muon (most energetic muon inside a muon bundle) and muon bundle are presented for different primary models.
 
-.. figure:: images/plots/dataset_exploration/bundle_energy_at_entry_4_primary_models.pdf 
+.. figure:: images/plots/dataset_exploration/bundle_energy_at_entry_4_primary_models.png 
 
-.. figure:: images/plots/dataset_exploration/leading_energy_at_entry_4_primary_models.pdf
+.. figure:: images/plots/dataset_exploration/leading_energy_at_entry_4_primary_models.png
 
 The GSF model is state-of-the-art and thus used in any plot, if only one primary weighting is shown. The leading muon energy is more sensitive to the prompt 
 component in comparison to the muon bundle energy. 
 
-.. figure:: images/plots/dataset_exploration/pr_conv_MCLabelsLeadingMuons_bundle_energy_at_entry.pdf 
+.. figure:: images/plots/dataset_exploration/pr_conv_MCLabelsLeadingMuons_bundle_energy_at_entry.png 
 
-.. figure:: images/plots/dataset_exploration/pr_conv_MCLabelsLeadingMuons_entry_energy.pdf
+.. figure:: images/plots/dataset_exploration/pr_conv_MCLabelsLeadingMuons_entry_energy.png
 
 
 
@@ -68,9 +68,9 @@ Pseudo analysis means an analysis performed on our simulated data. The goal is t
 bundle energy at entry is applied which requires a minimum energy of :math:`100\,\mathrm{TeV}`.
 At first, a re-sampling method is created to generate pseudo data from the simulated data. The sampled data are shown for an expected livetime of 10 years using the GSF weighting. 
 
-.. figure:: images/plots/toy_analysis_10year/energy_spectrum_leading_muon_energy_simulation_muonfilter_bundle_cut_1e5_pseudodata.pdf 
+.. figure:: images/plots/toy_analysis_10year/energy_spectrum_leading_muon_energy_simulation_muonfilter_bundle_cut_1e5_pseudodata.png 
 
-.. figure:: images/plots/toy_analysis_10year/energy_spectrum_leading_muon_energy_simulation_muonfilter_bundle_cut_1e5_pseudodata_scale.pdf 
+.. figure:: images/plots/toy_analysis_10year/energy_spectrum_leading_muon_energy_simulation_muonfilter_bundle_cut_1e5_pseudodata_scale.png 
 
 The actual fitting is performed by a maximum likelihood fit assuming a Poisson distribution in each energy bin. 
 
@@ -79,13 +79,13 @@ The actual fitting is performed by a maximum likelihood fit assuming a Poisson d
 
 The true and fitted norm are presented below to estimate the bias of the fit. 
 
-.. figure:: images/plots/toy_analysis_10year/norm_bias.pdf 
+.. figure:: images/plots/toy_analysis_10year/norm_bias.png 
 
 The application of Wilks' theorem requires a :math:`\chi^2` test statistic, which is tested for the background statistic assuming no prompt component (:math:`n_{\mathrm{pr}} = 0`).
 
-.. figure:: images/plots/toy_analysis_10year/background_statistic.pdf 
+.. figure:: images/plots/toy_analysis_10year/background_statistic.png 
 
-.. figure:: images/plots/toy_analysis_10year/background_statistic_chi2.pdf
+.. figure:: images/plots/toy_analysis_10year/background_statistic_chi2.png
 
 Since the background statistic seems to be :math:`\chi^2` distributed, we can calculate the sensitivity and discovery potential using Wilks' theorem.
 The sensitivity :math:`s_{\mathrm{pr}}` is defined as the prompt normalization which results in a distribution test statistics, where :math:`90\,\%` of all trials result in a test statistic larger than the median of the distribution of 
@@ -98,7 +98,7 @@ These results use a limited statistic of the simulated MC events. In the pseudo 
 
 In the figure below, the test statistics are presented for several prompt normalizations. 
 
-.. figure:: images/plots/toy_analysis_10year/test_statistics.pdf
+.. figure:: images/plots/toy_analysis_10year/test_statistics.png
 
 
 
