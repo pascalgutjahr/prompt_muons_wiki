@@ -512,6 +512,8 @@ Results: Unfolding with systematics
 
 The muon flux is unfolded with the leading muon energy at entry as a proxy. All 5 systematics are included in the unfolding as described above. For the minimization, MCMC is used.
 
+In the following, the result is shown without applying any regularization. 
+
 .. _unfolding_muon_flux_systematics:
 .. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_0.png
   :width: 600px
@@ -526,3 +528,39 @@ The muon flux is unfolded with the leading muon energy at entry as a proxy. All 
 
   : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. The true distribution using the entire dataset is shown 
   in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+The correlation between the systematics and the unfolded bins
+are shown in the following figure.
+
+.. _correlation_systematics_unfolding:
+.. figure:: images/plots/unfolding/unfolding_systematics/corner.png
+  :width: 800px
+
+  : Correlation between the systematics and the unfolded bins. The first five bins represent the systematics, the next one is the underflow bin, followed by the unfolding bins, and the last bin is the overflow bin.
+
+
+In the following, the result for a regularization of :math:`\tau = 0.001` is shown.
+
+.. _unfolding_muon_flux_systematics_tau001:
+.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_0_tau001.png
+  :width: 600px
+
+  : Unfolded differential muon flux at surface with systematics. A regularization of :math:`\tau = 0.001` is used. The true distribution using the entire dataset is shown 
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
+  Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+.. _unfolding_muon_flux_systematics_gamma_37_tau001:
+.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_3.7_tau001.png
+  :width: 600px
+
+  : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. A regularization of :math:`\tau = 0.001` is used. The true distribution using the entire dataset is shown 
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+The correlation between the systematics and the unfolded bins 
+are shown in the following figure. The regularization reduces the correlation.
+
+.. _correlation_systematics_unfolding_tau001:
+.. figure:: images/plots/unfolding/unfolding_systematics/corner_tau001.png
+  :width: 800px
+
+  : Correlation between the systematics and the unfolded bins. A regularization of :math:`\tau = 0.001` is used. The first five bins represent the systematics, the next one is the underflow bin, followed by the unfolding bins, and the last bin is the overflow bin. 
