@@ -228,7 +228,158 @@ single muons, we would lose statistics and the analysis would be less sensitive.
 
 `Q (Spencer): Regarding the zenith-problem: Maybe you can estimate the impact of the magnetic field of the earth on high energy muons. Could this help to solve the problem?` 
 
-A: TODO
+A: 
+
+The radius of curvature :math:`R` of a charged particle moving perpendicular to a magnetic field is given by the balance between the Lorentz force and the centripetal force:
+
+.. math::
+   
+   q\,v\,B = \frac{p\,v}{R} \quad \Longrightarrow \quad R = \frac{p}{qB} \,,
+
+where
+   - :math:`p` is the momentum,
+   - :math:`q` is the charge,
+   - :math:`B` is the magnetic field strength.
+
+For a highly relativistic muon, the momentum can be approximated by
+
+.. math::
+   
+   p \approx \frac{E}{c} \,,
+
+with :math:`E` the energy and :math:`c` the speed of light.
+
+Below are the calculations for both a 1 PeV muon and a 1 TeV muon.
+
+
+**Calculation for a 1 PeV Muon**
+
+
+**Step 1. Convert the Muon Energy to SI Units**
+
+A muon with 1 PeV energy has
+
+.. math::
+   
+   E = 1\,\mathrm{PeV} = 1 \times 10^{15}\,\mathrm{eV} \,.
+
+Using
+
+.. math::
+   
+   1\,\mathrm{eV} = 1.602 \times 10^{-19}\,\mathrm{J} \,,
+
+we obtain
+
+.. math::
+   
+   E = 1 \times 10^{15} \times 1.602 \times 10^{-19}\,\mathrm{J}
+     = 1.602 \times 10^{-4}\,\mathrm{J} \,.
+
+**Step 2. Calculate the Momentum**
+
+For an ultra-relativistic muon,
+
+.. math::
+   
+   p \approx \frac{E}{c} \,,
+
+with :math:`c = 3.00 \times 10^{8}\,\mathrm{m/s}`, so
+
+.. math::
+   
+   p \approx \frac{1.602 \times 10^{-4}\,\mathrm{J}}{3.00 \times 10^{8}\,\mathrm{m/s}}
+     \approx 5.34 \times 10^{-13}\,\mathrm{kg\,m/s} \,.
+
+**Step 3. Calculate the Radius of Curvature**
+
+The muon’s charge is
+
+.. math::
+   
+   q = 1.602 \times 10^{-19}\,\mathrm{C} \,,
+
+and a typical Earth magnetic field is about
+
+.. math::
+   
+   B \approx 5.0 \times 10^{-5}\,\mathrm{T} \,.
+
+Substitute these values into
+
+.. math::
+   
+   R = \frac{p}{qB} \,:
+
+.. math::
+   
+   R = \frac{5.34 \times 10^{-13}\,\mathrm{kg\,m/s}}
+         {(1.602 \times 10^{-19}\,\mathrm{C})(5.0 \times 10^{-5}\,\mathrm{T})}
+     \approx 6.67 \times 10^{10}\,\mathrm{m} \,.
+
+This radius of curvature (~67 million kilometers) is extremely large, implying that over any typical experimental or atmospheric distance the deflection of a 1 PeV muon by the Earth's magnetic field is negligible.
+
+
+**Calculation for a 1 TeV Muon**
+
+
+**Step 1. Convert the Muon Energy to SI Units**
+
+A muon with 1 TeV energy has
+
+.. math::
+   
+   E = 1\,\mathrm{TeV} = 1 \times 10^{12}\,\mathrm{eV} \,,
+
+so
+
+.. math::
+   
+   E = 1 \times 10^{12} \times 1.602 \times 10^{-19}\,\mathrm{J}
+     = 1.602 \times 10^{-7}\,\mathrm{J} \,.
+
+**Step 2. Calculate the Momentum**
+
+Again, using
+
+.. math::
+   
+   p \approx \frac{E}{c} \,,
+
+with :math:`c = 3.00 \times 10^{8}\,\mathrm{m/s}`, we have
+
+.. math::
+   
+   p \approx \frac{1.602 \times 10^{-7}\,\mathrm{J}}{3.00 \times 10^{8}\,\mathrm{m/s}}
+     \approx 5.34 \times 10^{-16}\,\mathrm{kg\,m/s} \,.
+
+**Step 3. Calculate the Radius of Curvature**
+
+Using the same charge and magnetic field:
+
+.. math::
+   
+   q = 1.602 \times 10^{-19}\,\mathrm{C} \,,
+   
+.. math::
+   
+   B \approx 5.0 \times 10^{-5}\,\mathrm{T} \,,
+
+the radius is
+
+.. math::
+   
+   R = \frac{p}{qB}
+     = \frac{5.34 \times 10^{-16}\,\mathrm{kg\,m/s}}
+            {(1.602 \times 10^{-19}\,\mathrm{C})(5.0 \times 10^{-5}\,\mathrm{T})}
+     \approx 6.67 \times 10^{7}\,\mathrm{m} \,.
+
+This gives a radius of curvature of roughly :math:`6.67 \times 10^{7}\,\mathrm{m}` (or about 66,700 kilometers). Although this is smaller than the 1 PeV case by a factor of 1000, it is still extremely large compared to typical distances encountered in experiments or in the atmosphere.
+
+Interpretation
+
+In both cases, the large radius of curvature means that the deflection of the muon due to the Earth’s magnetic field is negligible over the scales of most experiments. For a 1 PeV muon the radius is on the order of :math:`10^{10}\,\mathrm{m}`, and for a 1 TeV muon it is on the order of :math:`10^{7}\,\mathrm{m}`.
+
 
 ----
 
