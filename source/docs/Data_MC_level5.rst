@@ -13,6 +13,20 @@ of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a ve
 Energy 
 ------
 
+First of all, the energy distributions of the muon energy at surface and the reconstructed leading muon energy at entry is shown for the 
+four different primary flux models to see their impact. 
+
+.. figure:: images/plots/data_mc/data_mc_level5/primary_flux_ratio_MCLabelsLeadingMuons_muon_energy_first_mctree.png
+    :width: 600px
+
+    : Muon energy at surface for different primary flux models.
+
+.. figure:: images/plots/data_mc/data_mc_level5/primary_flux_ratio_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy.png
+    :width: 600px
+
+    : Reconstructed muon energy at entry for different primary flux models
+    (``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``).
+
 
 Bundle energy at entry 
 ++++++++++++++++++++++
