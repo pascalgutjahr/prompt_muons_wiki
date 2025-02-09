@@ -44,8 +44,8 @@ In the past, three analyses were performed focused on high energetic muons arisi
 and Hans-Peter Bretz. 
 In Tomasz's thesis, which included an unfolding of the energy spectrum with one year of experimental data, the analysis was limited by MC statistics. 
 This caused the analysis to result in a prompt normalization that is compatible with zero. 
-In Patrick's thesis, a mismatch between MC and data was found in the :math:`\cos(\theta)` distribution. This issue leads to systematic uncertainties resulting the 
-final significance of the detection of the prompt component to be lower than :math:`3.5 \sigma`.
+In Patrick's thesis, a mismatch between MC and data was found in the :math:`\cos(\theta)` distribution, which could not be resolved.
+The detection of the prompt component was done with :math:`3.5 \sigma`, for the primary flux model of Gaisser H3a, for example. The largest uncertainty arises from the assumption of the primary flux model.
 Hans-Peter performed an analysis with three years of data, but a final muon spectrum as a function of the actual 
 muon energy has never been derived.
 

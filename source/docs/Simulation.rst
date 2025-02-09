@@ -21,13 +21,6 @@ an official dataset simulated with IceProd to make it re-producible for the enti
 Official CORSIKA Ehist IceProd simulation 
 +++++++++++++++++++++++++++++++++++++++++
 
-----
-
-*Note*: In the icetray version 1.11.0-rc1, a bug was introduced that we fixed locally without committing to move on 
-with our simulation. This fix is mentioned below in the :ref:`code changes <diff_changes>`.
-
-----
-
 A preliminary large-scale simulation is currently performed with Iceprod. 
 The datasets are:
 
@@ -88,6 +81,8 @@ primaries to the weighted, physical primary flux.
 
 v1.11.0-rc1 code fix 
 ++++++++++++++++++++
+
+.. note:: In the icetray version 1.11.0-rc1, a bug was introduced that we fixed locally without committing to move on with our simulation. This fix is mentioned below.
 
 .. _diff_changes:
 

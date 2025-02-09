@@ -239,6 +239,8 @@ The response matrix is then calculated as
 
 The likelihood :math:`\mathcal{L}` now also depends on the nuisance parameters :math:`\vec{\xi}`, 
 which makes it possible to fit these parameters in the unfolding.
+More detailed information about the systematics used for this analysis can 
+be found :ref:`below <systematics_unfolding>`.
 
 
 Unfolding
@@ -302,6 +304,7 @@ In Figure :numref:`unfolding_muon_flux` the muon flux at surface is unfolded usi
   in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
 
 
+.. _systematics_unfolding:
 Systematics 
 -----------
 
@@ -332,6 +335,15 @@ For the simulation, the snowstorm parameters for the ice model "spice_ftp-v3m" a
    * - HoleIce Forward p1
      - uniform
      - [-0.1, 0.0]
+
+Absorption scales the global ice absorption coefficient with reference to 
+the baseline ice model. This effect is depth-dependent. DOM Efficiency scales the DOM efficiency of all 
+DOMs with reference to the baseline ice model. Scattering scales the ice 
+scattering coefficient. The HoleIce Forward parameters p0 and p1 model 
+the angular acceptance of the DOMs, 
+because the re-refreezing of the
+ice causes a change in the ice properties after the deployment.
+This has an effect on the light propagation in the ice.
 
 
 Visualize impact of systematics on muon energy at entry (proxy)

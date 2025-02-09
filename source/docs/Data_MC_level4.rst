@@ -918,6 +918,9 @@ Length in detector - uncertainty
 Systematics
 -----------
 
+Detailed information about the systematics used for this analysis can 
+be found :ref:`here <systematics_unfolding>`.
+
 Further plots with all 4 primary models can be found in the Google docs `here <https://drive.google.com/drive/u/1/folders/1DCiLb7GxM6WJzLVRHaaIL0W5t0gb3QTB?ths=true>`_.
 
 Bundle energy at entry
