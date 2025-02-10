@@ -205,6 +205,8 @@ by means of a simple grid search which aims to minimize the chi-squared distance
     \chi^2 = \sum_\limits{i} \frac{(f_{\mathrm{true},i} - f_{\mathrm{unf},i})^2}{\sigma_{\mathrm{unf},i}^2}
   \end{equation}
 
+
+.. _systematic_uncertainties_in_unfolding:
 Systematic Uncertainties
 ========================
 Certain parameters in the simulation chain have uncertainties, which is why it is 

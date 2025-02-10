@@ -3,6 +3,26 @@ Q & A
 
 In this section, a collection of all questions and answers from the presentations is given. The presentations are listed :ref:`here <main paragraph>`.
 
+February 7, 2025
+================
+
+`Q (Dennis): Can you please show a zenith distribution with conv and prompt?`
+
+A: TODO 
+
+`Q (Stef): Can you explain how the systematics were fit in the unfolding?`
+
+A: The systematics were fit as nuisance parameters. More details are provided :ref:`here <systematic_uncertainties_in_unfolding>`.
+
+`Q (Hermann): How do you calculate the leading muon energy?`
+
+A: The leading muon energy is reconstructed by a neural network, as explained :ref:`here <CNN_reconstructions paragraph>`.
+
+`Q (Hermann): What is the definition of prompt in the Berghaus paper, is it the same as in your analysis? What is the difference between all these definitions?`
+
+A: A detailed study of the different definitions of the prompt component 
+was performed by Ludwig Neste and can be found in his master's thesis `here <https://user-web.icecube.wisc.edu/~pgutjahr/PromptMuons/_static/downloads/2023_Master_Neste_Ludwig.pdf>`_. In my analysis, conventional muons arise from pions and kaons, while prompt muons arise from all other particles. This is very similar to a lifetime and decay length definition. In the past, prompt was often defined as muons arising from charmed particles, but there is a similar contribution from unflavoured mesons, as shown in :numref:`mceq_flux`.
+
 September 25, 2024
 ==================
 
