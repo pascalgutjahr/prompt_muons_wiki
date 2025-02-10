@@ -10,6 +10,10 @@ February 7, 2025
 
 A: TODO 
 
+`Q (Dennis): Can you re-weight the prompt component to the ERS model and QCD predictions to get rid of the SIBYLL 2.3d only calculation?`
+
+A: TODO
+
 `Q (Stef): Can you explain how the systematics were fit in the unfolding?`
 
 A: The systematics were fit as nuisance parameters. More details are provided :ref:`here <systematic_uncertainties_in_unfolding>`.
