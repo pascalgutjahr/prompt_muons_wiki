@@ -941,31 +941,31 @@ Bundle energy at entry
 ++++++++++++++++++++++
 
 .. _data_mc_L5_sys_bundle_energy_at_entry_Absorption_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_Absorption_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_Absorption_GSF_5_sys_bins.png
     :width: 600px
 
     : Absorption effect on bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
 .. _data_mc_L5_sys_bundle_energy_at_entry_DOMEfficiency_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_DOMEfficiency_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_DOMEfficiency_GSF_5_sys_bins.png
     :width: 600px
 
     : DOM efficiency effect on bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
 .. _data_mc_L5_sys_bundle_energy_at_entry_HoleiceForward_Unified_p0_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_HoleiceForward_Unified_p0_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_HoleiceForward_Unified_p0_GSF_5_sys_bins.png
     :width: 600px 
 
     : Hole ice forward unified p0 effect on bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
 .. _data_mc_L5_sys_bundle_energy_at_entry_HoleiceForward_Unified_p1_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_HoleiceForward_Unified_p1_GSF.png 
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_HoleiceForward_Unified_p1_GSF_5_sys_bins.png 
     :width: 600px
 
     : Hole ice forward unified p1 effect on bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
 
 .. _data_mc_L5_sys_bundle_energy_at_entry_Scattering_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_Scattering_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_energy_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_Scattering_GSF_5_sys_bins.png
     :width: 600px
 
     : Scattering effect on bundle energy at entry reconstructed by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``.
@@ -974,31 +974,31 @@ Cosine zenith
 +++++++++++++
 
 .. _data_mc_L5_sys_cos_zenith_Absorption_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_Absorption_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_Absorption_GSF_5_sys_bins.png
     :width: 600px
 
     : Absorption effect on cosine zenith reconstructed by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``.
 
 .. _data_mc_L5_sys_cos_zenith_DOMEfficiency_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_DOMEfficiency_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_DOMEfficiency_GSF_5_sys_bins.png
     :width: 600px
 
     : DOM efficiency effect on cosine zenith reconstructed by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``.
 
 .. _data_mc_L5_sys_cos_zenith_HoleiceForward_Unified_p0_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_HoleIceForward_Unified_p0_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_HoleIceForward_Unified_p0_GSF_5_sys_bins.png
     :width: 600px
 
     : Hole ice forward unified p0 effect on cosine zenith reconstructed by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``.
 
 .. _data_mc_L5_sys_cos_zenith_HoleiceForward_Unified_p1_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_HoleIceForward_Unified_p1_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_HoleIceForward_Unified_p1_GSF_5_sys_bins.png
     :width: 600px
 
     : Hole ice forward unified p1 effect on cosine zenith reconstructed by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``.
 
 .. _data_mc_L5_sys_cos_zenith_Scattering_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_Scattering_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_Scattering_GSF_5_sys_bins.png
     :width: 600px
 
     : Scattering effect on cosine zenith reconstructed by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``.
@@ -1008,31 +1008,31 @@ Center position z
 +++++++++++++++++
 
 .. _data_mc_L5_sys_center_pos_z_Absorption_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_Absorption_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_Absorption_GSF_5_sys_bins.png
     :width: 600px
 
     : Absorption effect on center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``. 
 
 .. _data_mc_L5_sys_center_pos_z_DOMEfficiency_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_DOMEfficiency_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_DOMEfficiency_GSF_5_sys_bins.png
     :width: 600px 
 
     : DOM efficiency effect on center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
 .. _data_mc_L5_sys_center_pos_z_HoleiceForward_Unified_p0_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_HoleIceForward_Unified_p0_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_HoleIceForward_Unified_p0_GSF_5_sys_bins.png
     :width: 600px
 
     : Hole ice forward unified p0 effect on center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
 .. _data_mc_L5_sys_center_pos_z_HoleiceForward_Unified_p1_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_HoleIceForward_Unified_p1_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_HoleIceForward_Unified_p1_GSF_5_sys_bins.png
     :width: 600px
 
     : Hole ice forward unified p1 effect on center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
 .. _data_mc_L5_sys_center_pos_z_Scattering_GSF:
-.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_Scattering_GSF.png
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_sys_DeepLearningReco_track_geometry_9inputs_6ms_medium_01_center_pos_z_Scattering_GSF_5_sys_bins.png
     :width: 600px
 
     : Scattering effect on center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
