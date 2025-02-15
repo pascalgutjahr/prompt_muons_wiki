@@ -769,7 +769,7 @@ Energy reconstruction: leading muon
 Z-vertex investigations (L4)
 ++++++++++++++++++++++++++++
 
-In the following, the center position z is investigated on level 4. Several zenith cuts, distance to center cuts, and energy cuts are applied. Even more plots can be found `here <https://drive.google.com/drive/u/1/folders/1T9T7xpoCvaQAn4DqLHDC6DmHLtJMyFZ6?ths=true>`_.
+In the following, the center position z is investigated on level 4. Several zenith cuts, distance to center cuts, and energy cuts are applied. Even more plots can be found `here <https://drive.google.com/drive/u/1/folders/1hxokdpjcrMH0kZ4wx5T_J1tCFHwdWimb>`_.
 
 Cos zenith cuts
 --------------- 
@@ -911,7 +911,7 @@ Increase neutrino impact by factor 200
 Z-vertex investigations (L5)
 ++++++++++++++++++++++++++++
 
-In the following, the center position z is investigated on level 5. Several zenith cuts, distance to center cuts, and energy cuts are applied. Even more plots can be found `here <https://drive.google.com/drive/u/1/folders/1tZ2YUh4X1eMs0ttxtqrxxRPoo9ljs6xP?ths=true>`_.
+In the following, the center position z is investigated on level 5. Several zenith cuts, distance to center cuts, and energy cuts are applied. Even more plots can be found `here <https://drive.google.com/drive/u/1/folders/1OSw3dmom8jBVAOkkJ-cN8ViW392_kHim>`_.
 
 Cos zenith cuts
 --------------- 

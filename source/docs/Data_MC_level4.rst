@@ -8,7 +8,7 @@ of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a ve
 .. note::
     In :numref:`level2_rate_muon_filter` the rates for the different primary flux models are shown. There is a mismatch of the normalization of the data and the MC.
     For the data-mc comparisons, the following plots use scaled weights. Therefore, the weights are normalized to the data for each weighting. This helps to analyze the shape of the different primary flux models.
-    Additional data-mc plots to investigate cuts and all primary flux models are dumped `here <https://drive.google.com/drive/folders/1IPzO5pljheKvjhR9IrF94yJ4mnKgyD4x?ths=true>`_.
+    Additional data-mc plots to investigate cuts and all primary flux models are dumped `here <https://drive.google.com/drive/u/1/folders/1QGxdgnuxVyl9J4hnhMrVsSGG4uDjip6D>`_.
 
 Energy 
 ------
@@ -921,7 +921,7 @@ Systematics
 Detailed information about the systematics used for this analysis can 
 be found :ref:`here <systematics_unfolding>`.
 
-Further plots with all 4 primary models can be found in the Google docs `here <https://drive.google.com/drive/u/1/folders/1DCiLb7GxM6WJzLVRHaaIL0W5t0gb3QTB?ths=true>`_.
+Further plots with all 4 primary models can be found in the Google docs `here <https://drive.google.com/drive/u/1/folders/1aWz55UQg5KuZkmrEd9lC1cK727EJogT3>`_.
 
 Bundle energy at entry
 ++++++++++++++++++++++
