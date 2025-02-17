@@ -7,12 +7,12 @@ of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a ve
 
 .. note::
     In :numref:`level3_rate_500TeV` the rates for the different primary flux models are shown for level 3. There is a mismatch of the normalization of the data and the MC.
-    For the data-mc comparisons, the following plots use scaled weights. Therefore, the weights are normalized to the data for each weighting. This helps to analyze the shape of the different primary flux models.
-    The rates and the rescaling factors are shown in :numref:`level3_rate_500TeV_with_scale_`.
+    For the data-mc comparisons, the following plots use scaled weights. Therefore, the weights are normalized to the data for each weighting. This helps to analyze the shape of the different primary flux models. The rescaling is done based on the rates on level 4.
+    The rates and the rescaling factors are shown in :numref:`level4_rate_500TeV_with_scale_`.
     Additional data-mc plots to investigate cuts and all primary flux models are dumped `here <https://drive.google.com/drive/u/1/folders/1I2AD9wdWzaljAYM9xC5AESsnW1lxuq96>`_.
 
-.. _level3_rate_500TeV_with_scale_:
-.. list-table:: Rates on level 3 after applying the muon filter and a :math:`500\,\mathrm{TeV}` bundle energy cut at surface for different primary models. The rescale factors are the ratio between the experimental rate and the MC rate.
+.. _level4_rate_500TeV_with_scale_:
+.. list-table:: Rates on level 4 after applying the muon filter and a :math:`500\,\mathrm{TeV}` bundle energy cut at surface for different primary models and level 5 with the quality cuts are shown. The rescale factors are the ratio between the experimental rate and the MC rate. The rescaling is done based on the rates on level 4.
   :header-rows: 1
 
   * - Model
@@ -21,7 +21,7 @@ of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a ve
     - GST
     - GSF
     - Exp
-  * - Level 5 / mHz
+  * - Level 4 / mHz
     - 21.62
     - 21.09
     - 20.92
@@ -33,6 +33,35 @@ of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a ve
     - 0.89
     - 1.32
     - 
+  * - Level 5 / mHz
+    - 15.16
+    - 14.76
+    - 14.79
+    -  9.68
+    - 12.36
+
+Seasonal Variations 
+------------------- 
+
+As presented in the analysis of Karolin Hymon, there are seasonal 
+variations in the production of leptons in the atmosphere (`wiki page <https://user-web.icecube.wisc.edu/~khymon/SeasonalVariationsUnfolding/Index.html>`_). These variations are caused by the temperature and pressure changes in the atmosphere. Our new dataset allows us to investigate these variations, since we have simulated all 12 months/atmospheres per year (usually, only 4 atmospheres are simulated). The following plot :numref:`data_mc_L5_seasonal_variations` shows the rate per month for the different primary flux models. 
+
+
+.. _data_mc_L5_seasonal_variations:
+.. figure:: images/plots/data_mc/data_mc_level5/rate_per_month_level5.png
+    :width: 600px
+
+    : Rate per month for different primary flux models.
+
+As already mentioned above, there is a mismatch of the normalization of the data and the MC. 
+In :numref:`data_mc_L5_seasonal_variations_rescaled`, the rates are rescaled. The shape is in agreement for all primary flux models. 
+
+.. _data_mc_L5_seasonal_variations_rescaled:
+.. figure:: images/plots/data_mc/data_mc_level5/rate_per_month_level5_scaled_weights.png
+    :width: 600px
+
+    : Rate per month for different primary flux models with scaled weights.
+
 
 Energy 
 ------

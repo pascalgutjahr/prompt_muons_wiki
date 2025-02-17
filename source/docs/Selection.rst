@@ -268,7 +268,7 @@ and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
     - GST
     - GSF
     - Exp
-  * - Level 5 / mHz
+  * - Level 3 / mHz
     - 173.4
     - 171.9
     - 164.3
@@ -285,7 +285,7 @@ and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
     - GST
     - GSF
     - Exp
-  * - Level 5 / mHz
+  * - Level 3 / mHz
     - 21.62
     - 21.09
     - 20.92
