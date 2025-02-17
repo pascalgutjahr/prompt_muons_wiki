@@ -6,9 +6,33 @@ The data-mc comparisons are performed on level 5. From the years 2012, 2016 und 
 of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a vertical black line in the plots.
 
 .. note::
-    In :numref:`level2_rate_muon_filter` the rates for the different primary flux models are shown. There is a mismatch of the normalization of the data and the MC.
+    In :numref:`level3_rate_500TeV` the rates for the different primary flux models are shown for level 3. There is a mismatch of the normalization of the data and the MC.
     For the data-mc comparisons, the following plots use scaled weights. Therefore, the weights are normalized to the data for each weighting. This helps to analyze the shape of the different primary flux models.
+    The rates and the rescaling factors are shown in :numref:`level3_rate_500TeV_with_scale_`.
     Additional data-mc plots to investigate cuts and all primary flux models are dumped `here <https://drive.google.com/drive/u/1/folders/1I2AD9wdWzaljAYM9xC5AESsnW1lxuq96>`_.
+
+.. _level3_rate_500TeV_with_scale_:
+.. list-table:: Rates on level 3 after applying the muon filter and a :math:`500\,\mathrm{TeV}` bundle energy cut at surface for different primary models. The rescale factors are the ratio between the experimental rate and the MC rate.
+  :header-rows: 1
+
+  * - Model
+    - H3a
+    - H4a
+    - GST
+    - GSF
+    - Exp
+  * - Level 5 / mHz
+    - 21.62
+    - 21.09
+    - 20.92
+    - 14.07
+    - 18.55
+  * - Rescale factor
+    - 0.86
+    - 0.88
+    - 0.89
+    - 1.32
+    - 
 
 Energy 
 ------

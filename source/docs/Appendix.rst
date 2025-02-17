@@ -1050,6 +1050,121 @@ Increase neutrino impact by factor 200
     : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``.
 
 
+z-vertex re-weighting (L5)
+++++++++++++++++++++++++++
+
+Overall, the data-MC agreement is good. However, the z-vertex distribution shows a slope in the data. This slope is removed by re-weighting the z-vertex distribution. The re-weighting is done bin-wise to get a flat distribution in the data-MC agreement. This is shown in Figure :numref:`data_mc_L5_reweighting_z`. 
+
+.. _data_mc_L5_reweighting_z:
+.. figure:: images/plots/data_mc/data_mc_level5/reweighting_z.png
+    :width: 600px 
+
+    : Center position z reconstructed by ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``. The solid line represent a reweighted distribution of the z-vertex, the dashed line the original distribution. The reweighting is done bin-wise to get a flat distribution in the data-MC agreement. 
+
+By re-weighting the z-vertex distribution, the impact on other variables needs to be investigated. This is 
+done in the following plots for the several energy reconstructions and the cos zenith angle distribution. In all distributions, the re-weighting has only a small impact on the energy reconstructions and the cos zenith
+distribution. Additionally, the small impact leads to an improvement in the data-MC agreement. 
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_GSF_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_GST_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_H3a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_H4a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_GSF_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_GST_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_H3a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_in_mctree_H4a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_GSF_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_GST_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_H3a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_H4a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_GSF_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_GST_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_H3a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_muon_energy_first_mctree_H4a_z-reweighting.png
+    :width: 600px 
+
+    : Energy reconstruction by ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_GSF_z-reweighting.png
+    :width: 600px 
+
+    : Zenith reconstruction by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_GST_z-reweighting.png
+    :width: 600px
+
+    : Zenith reconstruction by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_H3a_z-reweighting.png
+    :width: 600px 
+
+    : Zenith reconstruction by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03`` to check the impact of the z-vertex re-weighting.
+
+.. figure:: images/plots/data_mc/data_mc_level5/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_H4a_z-reweighting.png
+    :width: 600px 
+
+    : Zenith reconstruction by ``DeepLearningReco_direction_9inputs_6ms_medium_02_03`` to check the impact of the z-vertex re-weighting.
+
 Old unfolding plots
 +++++++++++++++++++
 

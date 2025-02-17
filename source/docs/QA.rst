@@ -8,24 +8,76 @@ February 7, 2025
 
 `Q (Dennis): Can you please show a zenith distribution with conv and prompt?`
 
-A: TODO 
+A: In the following, the cos(zenith) distribution is shown for the 4 different primary weightings. At first, the distributions include all produced charm particles. For the next four plots, 
+the charm component for both mesons and baryons is removed, as stated in the title. Overall, as visualized by the blue, dashed line, the prompt component contributes less than one order of magnitude to 
+the entire rate. Hence, the impact of the charm is nearly negligible. The plots are presented for level 5, thus after all cuts and selections.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_GSF_prompt_conv.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for GSF. The distributions include all produced particles.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_GST_prompt_conv.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for GST. The distributions include all produced particles.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_H3a_prompt_conv.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for H3a. The distributions include all produced particles.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_H4a_prompt_conv.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for H4a. The distributions include all produced particles.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_GSF_prompt_conv_no_charm.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for GSF. The distributions do not include muons produced by charmed particles.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_GST_prompt_conv_no_charm.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for GST. The distributions do not include muons produced by charmed particles.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_H3a_prompt_conv_no_charm.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for H3a. The distributions do not include muons produced by charmed particles.
+
+.. figure:: images/plots/QA/data_mc_cos_zenith_hist_DeepLearningReco_direction_9inputs_6ms_medium_02_03_cos_zenith_H4a_prompt_conv_no_charm.png
+      :width: 600px
+   
+      : The cos(zenith) distribution is shown for H4a. The distributions do not include muons produced by charmed particles.
+   
+----
 
 `Q (Dennis): Can you re-weight the prompt component to the ERS model and QCD predictions to get rid of the SIBYLL 2.3d only calculation?`
 
 A: TODO
 
+----
+
 `Q (Stef): Can you explain how the systematics were fit in the unfolding?`
 
 A: The systematics were fit as nuisance parameters. More details are provided :ref:`here <systematic_uncertainties_in_unfolding>`.
+
+----
 
 `Q (Hermann): How do you calculate the leading muon energy?`
 
 A: The leading muon energy is reconstructed by a neural network, as explained :ref:`here <CNN_reconstructions paragraph>`.
 
+----
+
 `Q (Hermann): What is the definition of prompt in the Berghaus paper, is it the same as in your analysis? What is the difference between all these definitions?`
 
 A: A detailed study of the different definitions of the prompt component 
 was performed by Ludwig Neste and can be found in his master's thesis `here <https://user-web.icecube.wisc.edu/~pgutjahr/PromptMuons/_static/downloads/2023_Master_Neste_Ludwig.pdf>`_. In my analysis, conventional muons arise from pions and kaons, while prompt muons arise from all other particles. This is very similar to a lifetime and decay length definition. In the past, prompt was often defined as muons arising from charmed particles, but there is a similar contribution from unflavoured mesons, as shown in :numref:`mceq_flux`.
+
+----
 
 September 25, 2024
 ==================
@@ -36,17 +88,21 @@ A: I don't use the z-vertex as an analysis variable, hence it should not affect 
 that correcting the z-distribution does not affect the energy reconstruction. The cos-zenith distribution is also
 not much affected, maybe there is even a small improvement. Currently, I don't correct the z-distribution in my analysis, but I checked if I could correct it and I wanted to check, if there is any impact of this correction.
 
+----
+
 `Q: (Agnieszka): The unfolding starts at 10 TeV, how can you be sure that at these energies you don't have any impact from muon bundles?`
 
 A: For the forward fit, I am interested in the prompt component. Since this component is not dominating at a leadingness of 1, I have never selected leading muons. For the unfolding, we are using a neural network 
 to reconstruct the leading muon energy. Of course, if the leading muon is entering the detector with a 
 high energy muon bundle, the reconstruction is difficult, but this smearing is considered in the unfolding.
 
+----
+
 `Q (Jakob): Have you tried to fit the systematics to fix the z-mismatch?`
 
 A: Not yet. 
 
-
+----
 
 March 18, 2024
 ==============

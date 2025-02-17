@@ -254,6 +254,44 @@ for the primary energy.
 
     : Efficiency for the bundle energy at entry.
 
+In the following, the remaining rate after applying the MuonFilter and a bundle energy cut at surface of :math:`200\,\mathrm{TeV}` is shown in :numref:`level3_rate_200TeV`, 
+and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
+
+
+.. _level3_rate_200TeV:
+.. list-table:: Rates on level 3 after applying the muon filter and a :math:`200\,\mathrm{TeV}` bundle energy cut at surface for different primary models.
+  :header-rows: 1
+
+  * - Model
+    - H3a
+    - H4a
+    - GST
+    - GSF
+    - Exp
+  * - Level 5 / mHz
+    - 173.4
+    - 171.9
+    - 164.3
+    - 124.1
+    - 158.2
+
+.. _level3_rate_500TeV:
+.. list-table:: Rates on level 3 after applying the muon filter and a :math:`500\,\mathrm{TeV}` bundle energy cut at surface for different primary models.
+  :header-rows: 1
+
+  * - Model
+    - H3a
+    - H4a
+    - GST
+    - GSF
+    - Exp
+  * - Level 5 / mHz
+    - 21.62
+    - 21.09
+    - 20.92
+    - 14.07
+    - 18.55
+
 For our level 3, we apply the MuonFilter and a cut of :math:`500\,\mathrm{TeV}` on the bundle energy at surface. The remaining rate is :math:`144.3\,\mathrm{mHz}`. The network 
 ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01`` is used. 
 
@@ -378,3 +416,23 @@ In :numref:`containment_cuts`, the cuts to improve data-MC based on the detector
      - 160 m
    * - length
      - 2000 m
+
+
+In :numref:`level5_rate`, the rates after applying the muon filter, the :math:`500\,\mathrm{TeV}` bundle energy cut at surface and the quality cuts for different primary models are shown.
+
+.. _level5_rate:
+.. list-table:: Rates on level 5 after applying the muon filter, the :math:`500\,\mathrm{TeV}` bundle energy cut at surface and the quality cuts for different primary models.
+  :header-rows: 1
+
+  * - Model
+    - H3a
+    - H4a
+    - GST
+    - GSF
+    - Exp 
+  * - Level 5 / mHz
+    - 15.16
+    - 14.76
+    - 14.79
+    - 9.68
+    - 12.36
