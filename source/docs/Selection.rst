@@ -51,17 +51,54 @@ The detection of atmospheric prompt muons requires high energy events. Thus, fiv
 while keeping as many as possible high energy events. :numref:`fration_of_passed_events` shows the fraction of passed events for different energy bins, 
 filters and weightings.
 
-.. _leading_muon_energy_ratio:
+.. _leading_muon_energy_ratio_H3a:
 .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH3a.png
   :width: 600px
 
-    : Investigating the impact of several filters on level 2 for the leading muon energy at surface.
+  : Investigating the impact of several filters on level 2 for the leading muon energy at surface for H3a.
 
-.. _cos_zenith_ratio:
+.. _leading_muon_energy_ratio_H4a:
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH4a.png
+  :width: 600px
+
+  : Investigating the impact of several filters on level 2 for the leading muon energy at surface for H4a.
+
+.. _leading_muon_energy_ratio_GST:
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalFitGST.png
+  :width: 600px
+
+  : Investigating the impact of several filters on level 2 for the leading muon energy at surface for GST.
+
+.. _leading_muon_energy_ratio_GSF:
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalSplineFit5Comp.png
+  :width: 600px
+
+  : Investigating the impact of several filters on level 2 for the leading muon energy at surface for GSF.
+
+.. _cos_zenith_ratio_H3a:
 .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GaisserH3a.png
   :width: 600px
 
-    : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle. 
+  : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for H3a.
+
+.. _cos_zenith_ratio_H4a:
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GaisserH4a.png
+  :width: 600px
+
+  : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for H4a.
+
+.. _cos_zenith_ratio_GST:
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GlobalFitGST.png
+  :width: 600px
+
+  : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for GST.
+
+.. _cos_zenith_ratio_GSF:
+.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GlobalSplineFit5Comp.png
+  :width: 600px
+
+  : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for GSF.
+ 
 
 .. _fration_of_passed_events:
 .. list-table:: Fraction of events passed filters for different energy bins and weightings. Muon energy at surface is considered.
@@ -226,33 +263,84 @@ To further reduce the number of events in the low energy region, a cut on the bu
 the efficiency as a ratio of the number of events before and after the cut is calculated. The cut is applied in a way, that the remaining rate is :math:`125\,\mathrm{mHz}`. Additionally, a cut of :math:`500\,\mathrm{TeV}` is applied on the bundle energy at surface. The rate of :math:`125\,\mathrm{mHz}` is motivated by the estimation of a feasible runtime of 1h per run with a processing time of 1s per event.
 
 In the following, 5 plots are shown which present the efficiency for 
-the bundle and leading muon energy at surface and detector entry and 
+the leading muon energy at surface and detector entry and 
 for the primary energy.
 
-.. _efficiency_bundle_energy_at_entry:
-.. figure:: images/plots/pre_filter/efficiency_bundle_energy_at_entry.png
+.. _efficiency_primary_energy_H3a:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GaisserH3a_zoom.png
+  :width: 600px
 
-    : Efficiency for the bundle energy at entry.
+  : Efficiency for the primary energy for H3a.
 
-.. _efficiency_bundle_energy_at_surface:
-.. figure:: images/plots/pre_filter/efficiency_bundle_energy_at_surface.png
+.. _efficiency_primary_energy_H4a:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GaisserH4a_zoom.png
+  :width: 600px
 
-    : Efficiency for the bundle energy at entry.
+  : Efficiency for the primary energy for H4a.
 
-.. _efficiency_muon_energy_at_entry:
-.. figure:: images/plots/pre_filter/efficiency_muon_energy_at_entry.png
+.. _efficiency_primary_energy_GST:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GlobalFitGST_zoom.png
+  :width: 600px
 
-    : Efficiency for the bundle energy at entry.
+  : Efficiency for the primary energy for GST.
 
-.. _efficiency_muon_energy_at_surface:
-.. figure:: images/plots/pre_filter/efficiency_bundle_energy_at_surface.png
+.. _efficiency_primary_energy_GSF:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GlobalSplineFit5Comp_zoom.png
+  :width: 600px
 
-    : Efficiency for the bundle energy at entry.
+  : Efficiency for the primary energy for GSF.
 
-.. _efficiency_primary_energy:
-.. figure:: images/plots/pre_filter/efficiency_primary_energy.png
+.. _efficiency_muon_energy_at_surface_H3a:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH3a_zoom.png
+  :width: 600px
 
-    : Efficiency for the bundle energy at entry.
+  : Efficiency for the leading muon energy at surface for H3a.
+
+.. _efficiency_muon_energy_at_surface_H4a:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH4a_zoom.png
+  :width: 600px
+
+  : Efficiency for the leading muon energy at surface for H4a.
+
+.. _efficiency_muon_energy_at_surface_GST:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalFitGST_zoom.png
+  :width: 600px
+
+  : Efficiency for the leading muon energy at surface for GST.
+
+.. _efficiency_muon_energy_at_surface_GSF:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalSplineFit5Comp_zoom.png
+  :width: 600px
+
+  : Efficiency for the leading muon energy at surface for GSF.
+
+.. _efficiency_muon_energy_at_entry_H3a:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GaisserH3a_zoom.png
+  :width: 600px
+
+  : Efficiency for the leading muon energy at entry for H3a.
+
+.. _efficiency_muon_energy_at_entry_H4a:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GaisserH4a_zoom.png
+  :width: 600px
+
+  : Efficiency for the leading muon energy at entry for H4a.
+
+.. _efficiency_muon_energy_at_entry_GST:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GlobalFitGST_zoom.png
+  :width: 600px
+
+  : Efficiency for the leading muon energy at entry for GST.
+
+.. _efficiency_muon_energy_at_entry_GSF:
+.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GlobalSplineFit5Comp_zoom.png
+  :width: 600px
+
+  : Efficiency for the leading muon energy at entry for GSF.
+
+
+  
+
 
 In the following, the remaining rate after applying the MuonFilter and a bundle energy cut at surface of :math:`200\,\mathrm{TeV}` is shown in :numref:`level3_rate_200TeV`, 
 and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
