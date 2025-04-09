@@ -32,3 +32,5 @@ in MCEq version 2.3c is used.
 This work is based on the Master thesis of Ludwig Neste, which can be downloaded 
 `here <https://user-web.icecube.wisc.edu/~pgutjahr/PromptMuons/_static/downloads/2023_Master_Neste_Ludwig.pdf>`_.
 Other definitions of the prompt component are possible as well and can be found in Ludwig's thesis.
+
+These investigations and even further studies are uploaded to the arxiv and available `here <https://arxiv.org/pdf/2502.10951>`_. The manuscript has been submitted to EPJ C and it will be accepted after working on some minor comments. 

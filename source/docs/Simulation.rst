@@ -3,7 +3,10 @@ New CORSIKA extended history simulations
 
 New CORSIKA datasets are simulated and stored at: 
 
-* /data/sim/IceCube/2023/generated/CORSIKA_EHISTORY/
+* /data/sim/IceCube/2023/generated/CORSIKA_EHISTORY/ 
+    (test datasets: 30010, 30011, 30012, 30013)
+* /data/sim/IceCube/2023/generated/CORSIKA_EHISTORY/generated/ 
+    (official datasets: 22774, 22775, 22776, 22777, 22778)
 
 At first, in 2023 test simulations were performed using the software `simulation_scripts <https://github.com/tudo-astroparticlephysics/simulation_scripts>`_. 
 This software is a framework similar to IceProd, but it is used for local simulations on our Madison cluster. It imports all the icetray functions that are used in 

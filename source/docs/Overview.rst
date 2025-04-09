@@ -17,8 +17,7 @@ This muon flux is divided into two different components, depending on their spec
     \end{equation}
 
 One is the conventional component with a 
-spectral index :math:`\gamma = 3.7`. This flux contains muons arising from pions and kaons, which are the particles produced the most in the 
-first interactions, because they are the lightest hadrons. The other part is build by the prompt component, which are in general all 
+spectral index :math:`\gamma = 3.7`. This flux contains muons arising from pions and kaons, which are the particles produced the most, because they are the lightest hadrons. The other part is build by the prompt component, which are in general all 
 other muons that originate not from pions and kaons. The flux has a spectral index :math:`\gamma = 2.7`. Thus, it is shifted to higher energies 
 in comparison to the conventional flux. In other words, the prompt spectrum is flatter than the conventional one. 
 The prompt produced particles have short lifetimes which lead in first order to 

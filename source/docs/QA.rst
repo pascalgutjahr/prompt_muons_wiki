@@ -3,6 +3,135 @@ Q & A
 
 In this section, a collection of all questions and answers from the presentations is given. The presentations are listed :ref:`here <main paragraph>`.
 
+April 1, 2025 (CRWG review)
+===========================
+
+`Q (Dennis): I think many aspects described in the "physics motivation“ part should go in the "Overview“ section. For example, you explain air showers here. If you want to keep this explanation, I think it belongs to the Overview. Also, it would not harm to move the goals of this analysis to the Overview section. Otherwise, I think this section is great.`
+
+A: I agree that some parts of the physics motivation explain basics like air showers. However, here I just want to give a short introduction to explain the physics relevant for the machine learning based reconstructions. For example, that not only one muon but several muons were created and detected in the in-ice array. The goals are also mentioned in the overview section. I mentioned them in the CNN section again to introduce the section. Thus, I would like to keep the physics motivation as it is.
+
+----
+
+`Q (Dennis): Pascal: "This flux contains muons arising from pions and kaons, which are the particles produced the most in the first interactions, because they are the lightest hadrons.” — Sry, what exactly is incorrect here? Dennis: Well, I guess strictly speaking the statement is not wrong, however, why do you single out the first interaction (this is what I was referring to)? Pions and kaons are the most abundant ones in all interactions (because they are the lightest hadrons). I don’t understand the relevance of the reference to the 1st interaction here.`
+
+A: OK. You are right, the "first interaction" is not necessary. I removed it. 
+
+---- 
+
+`Q (Dennis): I think the part "v1.11.0-rc1 code fix“ in "New CORSIKA Ehist IceProd simulation“ could also go into the appendix as it is not needed for the analysis review.`
+
+A: The appendix includes all information about our first test simulations, referred to as datasets 30010-30013. I agree that the code fix for the new simulation is not needed for the analysis review, 
+however, this chapter is not very long and I would like to keep it here to make sure there was a minor code fix in case somebody wants to reproduce the simulation. 
+
+----
+
+`Q (Dennis): One question that arises from the CORSIKA settings: You do not simulate coincident events, but data will include coincident events. Can you show that this does not cause any problems? Is there any dedicated selection to remove coincident events? If not, which of the cuts removes them?`
+
+A: TODO
+
+---- 
+
+`Q (Dennis): Datasets 30010-30013 are not used anymore?`
+
+A: No. They were used for feasibility studies and to test the machine learning based reconstructions. 
+
+---- 
+
+`Q (Dennis): Do you simulate only one atmospheric season or several? In 30010-30013 on April was simulated.`
+
+A: For the final datasets (2277X) all 12 seasons were simulated. For example, this enables to make data-MC comparisons for 12 different seasons, as presented in :numref:`data_mc_L5_seasonal_variations`.
+
+----
+
+`Q (Dennis): Did you turn on the electromagnetic component in the shower simulation for your final simulation datasets?`
+
+A: Yes. 
+
+----
+
+`Q (Dennis): What is the reason to choose the muon filter? That being said, previous analyses used (to my knwledge) EHE-filtered events. What is the reasoning to use the muon filter in this analysis? Isn't there some zenith-dependent cut that reduces vertical events or so? Going by memory here, so please correct me if I'm wrong.`
+
+A: Filters are studied :ref:`here <filter paragraph>`. The EHE filters remove a lot of events in the high energy region, which is not in our interest. We would like to keep 
+as many high energetic events as possible. The cos(zenith) distributions show the difference between the muon filter and the high Q filter. The high Q filter removes more events coming from the horizon. This is expected, since this filter is designed to select events with a high charge and muons coming from the horizon have already lost a large amount of energy during their propagation through the ice. However, at the surface, these muon are very high energetic. Since we are interested in an unfolding of the muon energy spectrum at the surface, we would like to keep these events. This leads to the conclusion that the muon filter is the best choice for our analysis.
+
+----
+
+`Q (Dennis): How do you reconstruct the energy losses / stochasticity, from millipede or truncated energy or what? I did not find any information on which reconstruction is used which is important information.`
+
+A: All of my reconstructions are machine learning based using the dnn_reco framework invented by Mirco Huennefeld. I do not reconstruct individual muon energy losses or the stochasticity. For example, I reconstruct the energy of the entire muon bundle at the entry of the detector and the energy of the most energetic muon in that bundle. More information are provided :ref:`here <CNN_reconstructions paragraph>`.
+
+----
+
+`Q (Dennis): I am a little confused now as you describe in the physics motivation for the CNN at length that stochastic losses are important to select single muons. Which of the 
+input features of the CNN measures those? I only see "total charges“ or "sum of charges“ as inputs, but those should not carry any information about the stochastic losses, or? 
+How does the CNN actually recognize stochastic losses? If it is not used at all, why do you have the lengthy explanation of stochastic losses in the appendix? I am a bit confused 
+here...`
+
+A: The physics motivation includes the explanation about the stochastic losses to explain that a very leading muon is distinguishable from a bundle of muons. These stochastic losses will cause a different charge over time distribution per DOM in comparison to a muon bundle without a very leading muon. Hence, these information are included in the 
+charge over time distribution. Our features, as described :ref:`here <dnn input data paragraph>`, are based on the charge and the time. Thus, the information about the 
+stochastic losses are included in these features. However, it is not obvious to see this per feature. This is the reason, why we bring in a convolutional neural network (CNN). 
+The CNN is able to convolute the information and to learn the correlations between the features and the labels, for example the leading muon energy at the detector entry. 
+I still keep the explanation and studies about the stochastic losses in the appendix, because it is interesting to see how the leading muon energy correlates with the energy loss of the entire bundle.
+
+----
+
+`Q (Dennis): Subsection Stochasticity: This explanation is not very clear if one does not know what you want to say in advance. I would start to explain that while low-energy muons lose energy mainly due to ionization, stochastic losses start to dominate at high muon energies. These losses produce cascades along the track and the fluctuations of those are large. I recommend to re-phrase the entire subsection. Maybe one can also show the Bethe-Bloch plot which nicely shows how stochastic losses start to dominate at high energies. I think this would be helpful. Also, you write "the largest energy losses are caused by the most energetic muon in the bundle" but further down you say about Fig. 18 "The largest energy loss is not a good indicator for the leadingness.". For Fig. 19 you then say "The larger the energy loss, the higher the energy of the leading muon.". Isn't the leadingness typically larger the higher the energy of the leading muons? This seems somewhat to be in contradiction... at least it is confusing and needs some explanation.`
+
+A: First of all, we do not use the stochasticity as a parameter in our analysis. At the beginning, we thought that it might be helpful to select and/or reconstruct the energy of the leading muon, but we found out, that possible cuts would remove almost the entire statistics. We moved these investigations to the appendix because it is still very interesting to see the correlations, even though it is not needed for my analysis. The largest energy loss has no information about the leadingness, but the largest energy loss correlates with the leading muon energy. (leadingness = E_leading_muon / E_bundle)
+ (Disclaimer: The numbers of the figures do not refer to the original figure numbers anymore).
+
+----
+
+`Q (Dennis): "The bundle radius is defined as the radius of the circle that contains a certain fraction of the energy." Radius around the projected primary particle direction?`
+
+A: Bundle radius is now defined in the physics motivation. Basically, it is not a radius, but a distance from the outer bundle muons to the leading muon.
+
+----
+
+`Q (Dennis): Why do you discuss bundle radius, stochasticity and multiplicity in details in the appendix even though you do not use them in your analysis? This can be confusing.`
+
+A: As mentioned above, we moved these investigations to the appendix because it is still very interesting to see the correlations, even though it is not needed for my analysis. I would like to keep them in the appendix to refer to them in the future, if needed. 
+
+----
+
+`Q (Dennis): What is "the duration of SplineMPE?`
+
+A: The duration of SplineMPE means the time needed to reconstruct the angle using the SplineMPE module. Running SplineMPE with the recommended settings takes about 690ms and the DNN reconstruction takes only about 6ms. The comparisons are presented :ref:`here <SplineMPE vs DNN paragraph>`.
+
+----
+
+`Q (Dennis): "The network DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01 is used." This is meaningless to me without explanation.`
+
+A: The pre cut network is explained now. It is a network that uses only three input variables (instead of 9 as the other 3 networks). Hence, only three instead of 9 inputs need to be calculated, which fastens the processing. This is necessary, because it needs to be done for all events that pass the muon filter and these are about 6 billion events for 10 years of data.
+
+----
+
+`Q (Dennis): "For this, the following networks are added:" and "Already added in step 3:": The list is meaningless to me without explanation. You explain the computing time etc. but not the physics details of the networks. Please put the focus on the physics not technicalities (the latter are not relevant for me or anyone else, as long as it is computationally feasible).`
+
+A: All the information about the networks, inputs, and physics motivation was added. I still keep the times because it’s helpful to get a feeling about the speed, and in principle, these networks could be used by anybody for their reconstructions as well. Hence, others could estimate if the speed of the reconstructions would fit their needs. 
+
+Dennis: OK. It is still not very clear what is the difference between the 3 networks (the pre-cut network is clear now) and what they are used for...
+
+A: I added which network is reconstructing which quantity :ref:`here <selection level4 paragraph>`. There are only minor differences in the architecture of the networks which are only technical without providing any further information. 
+
+----
+
+`Q (Dennis): Systematics: Can you start this subsection with a list/description of all the systematics considered and add which MC are used for these studies?`
+
+A: Systematics are explained :ref:`here <systematics_unfolding>`. 
+
+----
+
+`Q (Dennis): The data-MC section includes too many plots. I suggest to show these plots for only one primary model and move the others to a section in the appendix. This can be overwhelming for the reader.`
+
+A: TODO
+
+----
+
+`Q (Dennis): We have seen in previous analyses that the primary spectrum assumption caused the largest uncertainty in MC. Can you show how your distributions, at least the most important ones for the muon energy determination, compare for different primary flux assumptions?`
+
+A: The data-MC sections for level 4 and level 5 include plots for four different primary models.
+
 February 7, 2025
 ================
 

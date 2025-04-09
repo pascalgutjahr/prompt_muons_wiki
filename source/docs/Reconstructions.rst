@@ -95,6 +95,8 @@ This loss function ensures that the network not only minimizes the difference be
     : A sketch of the neural network architecture is shown. Data from the three sub-arrays are sequenced into convolutional layers. The result is flattened, combined, and passed on to two fully-connected sub-networks which perform the reconstruction and uncertainty estimation. The uncertainty-estimating sub-network also obtains the prediction output as an additional input. Figure taken from `CNN paper <https://iopscience.iop.org/article/10.1088/1748-0221/16/07/P07041>`_.
 
 
+.. _dnn input data paragraph:
+
 Input data 
 ----------
 
@@ -427,6 +429,8 @@ with the azimuth angles :math:`\phi_{\mathrm{true}},\,\phi_{\mathrm{pred}}` and 
 
     : The angular resolution is shown for the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``. It uses 9 inputs and a 6ms time window.
 
+
+.. _SplineMPE vs DNN paragraph:
 
 SplineMPE vs. DNN 
 ----------------- 

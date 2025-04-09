@@ -45,6 +45,8 @@ for this high-energy analysis. Hence, these energies were not considered in the 
 Level 3 
 +++++++
 
+.. _filter paragraph:
+
 Filters 
 -------
 The detection of atmospheric prompt muons requires high energy events. Thus, five different filters focusing on high energy events are tested to get rid of low energy events 
@@ -262,9 +264,12 @@ Bundle energy pre cut
 To further reduce the number of events in the low energy region, a cut on the bundle energy at surface is applied. For this, 
 the efficiency as a ratio of the number of events before and after the cut is calculated. The cut is applied in a way, that the remaining rate is :math:`125\,\mathrm{mHz}`. Additionally, a cut of :math:`500\,\mathrm{TeV}` is applied on the bundle energy at surface. The rate of :math:`125\,\mathrm{mHz}` is motivated by the estimation of a feasible runtime of 1h per run with a processing time of 1s per event.
 
-In the following, 5 plots are shown which present the efficiency for 
+In the following, 12 plots are shown which present the efficiency for 
 the leading muon energy at surface and detector entry and 
 for the primary energy.
+
+-- Primary Energy --
+--------------------
 
 .. _efficiency_primary_energy_H3a:
 .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GaisserH3a_zoom.png
@@ -290,6 +295,9 @@ for the primary energy.
 
   : Efficiency for the primary energy for GSF.
 
+-- Leading Muon Energy at Surface --
+------------------------------------
+
 .. _efficiency_muon_energy_at_surface_H3a:
 .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH3a_zoom.png
   :width: 600px
@@ -313,6 +321,9 @@ for the primary energy.
   :width: 600px
 
   : Efficiency for the leading muon energy at surface for GSF.
+
+-- Leading Muon Energy at Entry --
+----------------------------------
 
 .. _efficiency_muon_energy_at_entry_H3a:
 .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GaisserH3a_zoom.png
@@ -383,18 +394,24 @@ and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
 For our level 3, we apply the MuonFilter and a cut of :math:`500\,\mathrm{TeV}` on the bundle energy at surface. The remaining rate is :math:`144.3\,\mathrm{mHz}`. The network 
 ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01`` is used. 
 
+.. _selection level4 paragraph:
+
 Level 4 
 +++++++
 
 On level 4, we do not apply any filters and we do not remove any events. We just add the DNN reconstructions mentioned in the reconstruction section. For this, the following networks are added:
 
 * ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``
+  reconstructs: zenith and azimuth of the leading muon 
 * ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``
+  reconstructs: bundle/leading muon energy at surface/detector entry
 * ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``
+  reconstructs: propagation length, entry and center position
 
 Already added in step 3:
 
 * ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``
+  reconstructs: bundle energy at surface
 
 In :numref:`DNN_reconstruction_runtimes`, the runtimes for the DNN reconstructions are shown. The preprocessing time is needed to create the input features for the DNNs based on the 
 input pulses. The preprocessing time of the precut network is faster, since only 3 input features instead of 9 features are calculated. 
