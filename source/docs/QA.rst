@@ -77,8 +77,12 @@ I still keep the explanation and studies about the stochastic losses in the appe
 
 `Q (Dennis): Subsection Stochasticity: This explanation is not very clear if one does not know what you want to say in advance. I would start to explain that while low-energy muons lose energy mainly due to ionization, stochastic losses start to dominate at high muon energies. These losses produce cascades along the track and the fluctuations of those are large. I recommend to re-phrase the entire subsection. Maybe one can also show the Bethe-Bloch plot which nicely shows how stochastic losses start to dominate at high energies. I think this would be helpful. Also, you write "the largest energy losses are caused by the most energetic muon in the bundle" but further down you say about Fig. 18 "The largest energy loss is not a good indicator for the leadingness.". For Fig. 19 you then say "The larger the energy loss, the higher the energy of the leading muon.". Isn't the leadingness typically larger the higher the energy of the leading muons? This seems somewhat to be in contradiction... at least it is confusing and needs some explanation.`
 
-A: First of all, we do not use the stochasticity as a parameter in our analysis. At the beginning, we thought that it might be helpful to select and/or reconstruct the energy of the leading muon, but we found out, that possible cuts would remove almost the entire statistics. We moved these investigations to the appendix because it is still very interesting to see the correlations, even though it is not needed for my analysis. The largest energy loss has no information about the leadingness, but the largest energy loss correlates with the leading muon energy. (leadingness = E_leading_muon / E_bundle)
- (Disclaimer: The numbers of the figures do not refer to the original figure numbers anymore).
+A: First of all, we do not use the stochasticity as a parameter in our analysis. At the beginning, we thought that it might be helpful to select and/or reconstruct the energy of 
+the leading muon, but we found out, that possible cuts would remove almost the entire statistics. We moved these investigations to the appendix because it is still very interesting 
+to see the correlations, even though it is not needed for my analysis. The largest energy loss has no information about the leadingness, but the largest energy loss correlates with 
+the leading muon energy. (leadingness = E_leading_muon / E_bundle) 
+
+(Disclaimer: The numbers of the figures do not refer to the original figure numbers anymore).
 
 ----
 
