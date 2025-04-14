@@ -43,6 +43,8 @@ List of presented talks:
 2025:
 +++++
 
+* 11 April: CR WG `CRWG review and unblinding plans <https://drive.google.com/drive/u/1/folders/1FwxCoYhGYDDkdPPLKI6udMZ5WolkbfFe>`_
+
 * 7 February: CR WG `Update on prompt unfolding systematics <https://drive.google.com/file/d/1FFv3D3BO2I87-JOjXO6sdwigfau1J6aD/view?usp=sharing>`_
 
 2024:
@@ -97,4 +99,6 @@ List of presented talks:
    docs/QA.rst
    docs/NextSteps.rst
    docs/Appendix.rst
+   docs/Technical_review.rst
+
    
