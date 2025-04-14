@@ -27,7 +27,14 @@ however, this chapter is not very long and I would like to keep it here to make 
 
 `Q (Dennis): One question that arises from the CORSIKA settings: You do not simulate coincident events, but data will include coincident events. Can you show that this does not cause any problems? Is there any dedicated selection to remove coincident events? If not, which of the cuts removes them?`
 
-A: TODO
+A: In :numref:`coincident_primary_check`, the probability of having coincident primary particles is shown. For a time window of 6 µs, the probability of having a coincident primary particle with an energy above 10 TeV is lower than 1 %. The time window of 6 µs is achieved by the time window cleaning applied to the pulses used for the DNN feature generation, as described :ref:`here <dnn input data paragraph>`. For the probability calculation we assumed that the DNN reconstruction would reconstruct the energy of the muon with the higher energy, in case there are two or more muon bundles entering the detector. Furthermore, for the unfolding, we will have a lower energy limit of muon flux at surface of 10 TeV, which obviously requires a primary energy even higher than 10 TeV and the probability of having coincident primary particles decreases with increasing primary energy.  
+
+.. _coincident_primary_check:
+.. figure:: images/plots/QA/coincident_primary_check.png
+      :width: 600px
+
+      : The probability of having coincident primary particles is shown. The top panel shows a linear y--scale, the bottom panels shows a logarithmic y--scale. Above 10 TeV, 
+      the probability of having a coincident primary particle with an energy above 10 TeV is lower equals 1 % for a time window of 6 µs.
 
 ---- 
 
