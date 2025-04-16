@@ -1,5 +1,5 @@
-Technical Review
-################
+Technical Documentation
+#######################
 
 This section includes instructions to reproduce the results of the analysis.
 
@@ -732,8 +732,50 @@ they end up being hold. In this case, just kill the jobs as usual by ``condor_rm
 
 Now we are done with the processing. In the output directory you will find the processed hdf5 files, which can now be loaded in the analysis notebooks.
 
+Technical review 
+----------------
+
+Processing all files needs a lot of resources and time. Thus, I created some configs for the technical review to process just a subset of the entire dataset. 
+I prepared these configs to process CORSIKA, NuGen and exp data to Level 5. In this case, I just added the quality cuts to the configs. These are the exact same cuts that are applied in the analysis notebooks, but instead of the function ``apply_quality_cuts``, I just added the cuts directly to the config using the module ``ic3_processing.modules.processing.filter_events.filter_events``, which is also used to apply the pre-cut. The configs are stored here: 
+
+* CORSIKA: ``/home/pgutjahr/dnn_selections/resources/configs/atmospheric_muon_leading/tech_review/tech_review_level5_CORSIKA.yaml``
+
+* NuGen: ``/home/pgutjahr/dnn_selections/resources/configs/atmospheric_muon_leading/tech_review/tech_review_level5_NuGen.yaml``
+
+* exp data: ``/home/pgutjahr/dnn_selections/resources/configs/atmospheric_muon_leading/tech_review/tech_review_level5_exp.yaml``
+
+Now you can create the jobs files and submit the jobs as described above. One CORSIKA job will require about 13 GB memory. You can do the steps mentioned above to adjust 
+the memory in the ``OneJob.submit`` file and submit the job again. 
+
+
+Data-MC
++++++++
+
 Unfolding
 +++++++++
+
+To run the unfolding, there is a script ``run_funfolding.py``. This script is used to run the unfolding on the processed hdf5 files. This can be done on a cobalt machine 
+in a tmux session. Check the available memory before running the script, because it can take up to 70 GB of memory. This could be done with ``free -h`` or ``htop``. 
+Then, you can run the script like this:
+
+.. code-block:: bash 
+
+    # log in to a cobalt machine and check the availale memory
+    htop
+
+    # start a tmux session
+    tmux new -s unfolding
+
+    # load the software environment
+    source /home/pgutjahr/py3421_env/bin/activate
+
+    python run_funfolding.py <path-to-config>
+
+* Unfolding script: ``/home/pgutjahr/dnn_selections/notebooks/atmospheric_muon_leading/selection_performance/unfolding/scratch/run_funfolding.py``
+
+* Unfolding config: ``/home/pgutjahr/dnn_selections/resources/configs/atmospheric_muon_leading/unfolding/test_primary_models/mcmc_train_H4a_test_GSF_01_tau001.yaml`` 
+
+To run the script with this config, you have to set the path to the final output directory. This is done in the config file with the key ``plot_dir``.
 
 Install software 
 ++++++++++++++++
