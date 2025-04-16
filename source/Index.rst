@@ -19,6 +19,7 @@ Reviewers:
 ----------
 * Cosmic Ray Working Group: dennis.soldin@utah.edu
 * Technical: karolin.hymon@icecube.wisc.edu
+* Collaboration: anatoli.fedynitch@icecube.wisc.edu
 
 
 Previous analyses
