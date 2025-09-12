@@ -44,6 +44,10 @@ List of presented talks:
 2025:
 +++++
 
+* 27 June: CR WG `Leadingness cut <https://drive.google.com/drive/u/1/folders/1RPI4DAfbvJAiQ46jB9uCBNKfSaxC_HXt>_`
+
+* 14 May: Spring Collaboration Meeting Stockholm `Unfolding the atmospheric muon flux <https://events.icecube.wisc.edu/event/275/contributions/10919/attachments/8387/11090/pgutjahr_Uppsala_2025.pdf>_`
+
 * 11 April: CR WG `CRWG review and unblinding plans <https://drive.google.com/drive/u/1/folders/1FwxCoYhGYDDkdPPLKI6udMZ5WolkbfFe>`_
 
 * 7 February: CR WG `Update on prompt unfolding systematics <https://drive.google.com/file/d/1FFv3D3BO2I87-JOjXO6sdwigfau1J6aD/view?usp=sharing>`_
