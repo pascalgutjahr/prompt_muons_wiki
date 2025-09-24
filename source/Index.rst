@@ -44,9 +44,11 @@ List of presented talks:
 2025:
 +++++
 
-* 27 June: CR WG `Leadingness cut <https://drive.google.com/drive/u/1/folders/1RPI4DAfbvJAiQ46jB9uCBNKfSaxC_HXt>_`
+* 15 August: CR WG `Systematics Update and Coincident Primaries <https://drive.google.com/file/d/1Oz50AvkDCoYXwE8-7bkFOhEX5IoPIYcC/view?usp=sharing>`_
 
-* 14 May: Spring Collaboration Meeting Stockholm `Unfolding the atmospheric muon flux <https://events.icecube.wisc.edu/event/275/contributions/10919/attachments/8387/11090/pgutjahr_Uppsala_2025.pdf>_`
+* 27 June: CR WG `Leadingness cut <https://drive.google.com/drive/u/1/folders/1RPI4DAfbvJAiQ46jB9uCBNKfSaxC_HXt>`_
+
+* 14 May: Spring Collaboration Meeting Stockholm `Unfolding the atmospheric muon flux <https://events.icecube.wisc.edu/event/275/contributions/10919/attachments/8387/11090/pgutjahr_Uppsala_2025.pdf>`_
 
 * 11 April: CR WG `CRWG review and unblinding plans <https://drive.google.com/drive/u/1/folders/1FwxCoYhGYDDkdPPLKI6udMZ5WolkbfFe>`_
 
@@ -99,7 +101,7 @@ List of presented talks:
    docs/Selection.rst
    docs/Data_MC_level4.rst
    docs/Data_MC_level5.rst
-   docs/Analysis_forward_fit.rst
+   docs/Final_Level.rst
    docs/Analysis_unfolding.rst
    docs/QA.rst
    docs/NextSteps.rst
@@ -107,3 +109,4 @@ List of presented talks:
    docs/Technical_review.rst
 
    
+..  docs/Analysis_forward_fit.rst

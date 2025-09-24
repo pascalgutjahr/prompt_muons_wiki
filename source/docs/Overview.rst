@@ -52,21 +52,12 @@ The links to the analyses can be found :ref:`here <main paragraph>`.
 
 New analysis 
 ++++++++++++
-Our new analysis aims for two goals. On the one hand, we want to detect the prompt component of the atmospheric muon flux significantly. This 
-will be performed by a forward fit of the prompt normalization. 
-On the other hand, an unfolding of the muon energy spectrum will be done. 
+Our new analysis focuses on two main goals. The central part of this work is the unfolding of the atmospheric muon energy spectrum, which allows us to measure the flux and identify the contribution from the prompt component. The second goal is to develop a method to perform a forward folding fit of the prompt contribution, which can be used in future analyses.
 
-In the previous analyses, the true information whether a muon is prompt or conventional was not available.  
-To classify a muon as prompt, the type of the parent particle needs to be known (see prompt definition).  
-This information was never saved in the way the CORSIKA simulations have been run in IceCube. The additional information needs more disk storage
-and for neutrino source searches, these information are not valuable. Hence, it was not important to save the parent particles. 
+In earlier analyses, the distinction between prompt and conventional muons could not be made directly, since the parent particle information was not stored in the CORSIKA simulations used in IceCube. To classify a muon as prompt, the type of its parent particle needs to be known (see prompt definition). However, this information was previously omitted because it requires additional disk space and is not essential for neutrino source searches.
 
-To include the parent and grandparent particles of a muon in the I3MCTree, the ``EXTENDED HISTORY`` option needs to be set in CORSIKA. 
-We have started to run 
-simulations with this option, which enables the possibility to divide the atmospheric muon spectrum in a prompt and conventional component. 
-Thus, the spectrum can be adjusted by applying a scalar to scale the amount of prompt and conventional particles. This scalar is 
-the normalization which is measured in the final forward fit. 
-Since the runtime of CORSIKA simulations at high energies is on the order of magnitude of months to create sufficient statistics, 
-this scaling method allows a forward fit without running several CORSIKA simulations in which the hadronic interaction models 
-are adjusted. This has two advantages. First, it saves time and resources. Second, tuning the hadronic interaction models is not 
-simply to do and requires a close collaboration with the model builders. Hence, the scaling method is a good way to measure the prompt component.
+By enabling the ``EXTENDED HISTORY`` option in CORSIKA, the parent and grandparent particles of each muon can now be stored in the I3MCTree. We have started producing such simulations, which makes it possible to separate the atmospheric muon spectrum into prompt and conventional contributions. In principle, this allows us to apply a scaling factor to adjust the relative fraction of prompt and conventional particles. The value of this scaling factor corresponds to the prompt normalization that can be obtained in a forward folding fit.
+
+Since the production of sufficiently large CORSIKA samples at high energies requires several months of computing time, this scaling method enables a forward folding approach without the need to rerun large-scale simulations for different hadronic interaction models. This saves resources and avoids the complexity of retuning interaction models, which typically requires close collaboration with the model builders.
+
+While the current analysis presented here is focused on the unfolding of the muon spectrum, we are also developing a forward folding approach using this scaling method, which will be presented in the near future. Stay tuned!

@@ -17,7 +17,7 @@ suppressed by orders of magnitude at lower energies. Thus, low energy muons need
 to be removed. 
 
 .. _level2_rate:
-.. list-table:: Rates on level 2 before applying any filter for different primary models.
+.. list-table:: Rates on level 2 before applying any filter for different primary models based on simulations 22774-22778 and 22875.
   :header-rows: 1
 
   * - Model
@@ -31,16 +31,11 @@ to be removed.
     - 2725.19
     - 2941.80
 
-In a first step, several filters are investigated in regard 
-to the energy of the leading muon at surface and the cosine zenith angle. The muon filter results as the best choice. Afterwards, a cut on the bundle energy at surface is applied to remove more low energy events. These two steps define 
-level 3. In level 4, DNN reconstructions for several properties are added. 
-In level 5, quality cuts are applied to improve the data-MC agreement.
 
-**Note**
-The rates mentioned above are based on the simulations 22774-22778 and the dataset 22875. 
-The set 22875 was produced for primary energies from 500 GeV to 10 TeV with very small statistics to estimate the correct rates. 
-As presented below in :numref:`efficiency_primary_energy`, due to an energy cut, primary energies below 10 TeV are not relevant 
-for this high-energy analysis. Hence, these energies were not considered in the full-statistics CORSIKA simulation.
+In a first step, several filters are investigated in regard 
+to the energy of the leading muon at surface and the cosine zenith angle. The muon filter results as the best choice, defining Level 3. Afterwards, a cut on the bundle energy at surface is applied to remove more low energy events, and DNN reconstructions for several properties are added. This defines Level 4.
+In level 5, quality cuts are applied to improve the data-MC agreement. At last, events with a minimum leadingness are selected. This is the Final Level.
+The following sections describe the selection steps in detail.
 
 Level 3 
 +++++++
@@ -59,23 +54,23 @@ filters and weightings.
 
   : Investigating the impact of several filters on level 2 for the leading muon energy at surface for H3a.
 
-.. _leading_muon_energy_ratio_H4a:
-.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH4a.png
-  :width: 600px
+.. .. _leading_muon_energy_ratio_H4a:
+.. .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH4a.png
+..   :width: 600px
 
-  : Investigating the impact of several filters on level 2 for the leading muon energy at surface for H4a.
+..   : Investigating the impact of several filters on level 2 for the leading muon energy at surface for H4a.
 
-.. _leading_muon_energy_ratio_GST:
-.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalFitGST.png
-  :width: 600px
+.. .. _leading_muon_energy_ratio_GST:
+.. .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalFitGST.png
+..   :width: 600px
 
-  : Investigating the impact of several filters on level 2 for the leading muon energy at surface for GST.
+..   : Investigating the impact of several filters on level 2 for the leading muon energy at surface for GST.
 
-.. _leading_muon_energy_ratio_GSF:
-.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalSplineFit5Comp.png
-  :width: 600px
+.. .. _leading_muon_energy_ratio_GSF:
+.. .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalSplineFit5Comp.png
+..   :width: 600px
 
-  : Investigating the impact of several filters on level 2 for the leading muon energy at surface for GSF.
+..   : Investigating the impact of several filters on level 2 for the leading muon energy at surface for GSF.
 
 .. _cos_zenith_ratio_H3a:
 .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GaisserH3a.png
@@ -83,23 +78,23 @@ filters and weightings.
 
   : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for H3a.
 
-.. _cos_zenith_ratio_H4a:
-.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GaisserH4a.png
-  :width: 600px
+.. .. _cos_zenith_ratio_H4a:
+.. .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GaisserH4a.png
+..   :width: 600px
 
-  : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for H4a.
+..   : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for H4a.
 
-.. _cos_zenith_ratio_GST:
-.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GlobalFitGST.png
-  :width: 600px
+.. .. _cos_zenith_ratio_GST:
+.. .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GlobalFitGST.png
+..   :width: 600px
 
-  : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for GST.
+..   : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for GST.
 
-.. _cos_zenith_ratio_GSF:
-.. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GlobalSplineFit5Comp.png
-  :width: 600px
+.. .. _cos_zenith_ratio_GSF:
+.. .. figure:: images/plots/selection/filter_comparison_level2_MCLabelsLeadingMuons_PrimaryZenith_simweights_GlobalSplineFit5Comp.png
+..   :width: 600px
 
-  : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for GSF.
+..   : Investigating the impact of several filters on level 2 for the cosine of the primary zenith angle for GSF.
  
 
 .. _fration_of_passed_events:
@@ -239,7 +234,7 @@ In the final analysis, the lower bound of the muon energy at surface is 10 TeV. 
 rejects in total 98.8% of the events, but keeps the most events for the 4 energy intervals between 10 TeV and 100 PeV. Regarding the cosine zenith distribution, 
 the HighQFilter removes more horizontal events than the MuonFilter. This is caused by the fact, that horizontal, high energy events travel through a large amount of 
 ice and thus have a large amount of energy losses. In the detector, they are not able to pass the high-charge filter, since they arrive with a lower energy. 
-Since we want to reconstruct the muon energy at surface, we want to keep these events.  
+However, since we want to reconstruct the muon energy at surface, we want to keep these events.  
 Hence, the MuonFilter is used.
 
 The rates after the application of the MuonFilter are shown in :numref:`level2_rate_muon_filter`. This results in a runtime of 150h per run with a processing time of 1s per event. This is still too long.
@@ -259,12 +254,18 @@ The rates after the application of the MuonFilter are shown in :numref:`level2_r
     - 17.41
     - 17.85 
 
-Bundle energy pre cut 
----------------------
-To further reduce the number of events in the low energy region, a cut on the bundle energy at surface is applied. For this, 
-the efficiency as a ratio of the number of events before and after the cut is calculated. The cut is applied in a way, that the remaining rate is :math:`125\,\mathrm{mHz}`. Additionally, a cut of :math:`500\,\mathrm{TeV}` is applied on the bundle energy at surface. The rate of :math:`125\,\mathrm{mHz}` is motivated by the estimation of a feasible runtime of 1h per run with a processing time of 1s per event.
 
-In the following, 12 plots are shown which present the efficiency for 
+.. _selection level4 paragraph:
+
+Level 4
++++++++
+
+To further reduce the number of events in the low energy region, a cut on the bundle energy at surface is applied. For this, 
+the efficiency as a ratio of the number of events before and after the cut is calculated. 
+Here, two cuts are compared: a cut of :math:`200\,\mathrm{TeV}` and a cut of :math:`500\,\mathrm{TeV}`. The 200 TeV cut is motivated 
+by a target rate roughly about :math:`125\,\mathrm{mHz}`, which would refer to a runtime of 1h per run with a processing time of 1s per event for an 8h run. As shown below, for H3a, the rate is about :math:`176\,\mathrm{mHz}` for the 200 TeV cut. Since this cut still keeps almost all muons at surface above 500 TeV, a cut of 500 TeV is also investigated. This cut reduces the rate to :math:`22\,\mathrm{mHz}` for H3a, and it also keeps lots of events in the high energy region.
+
+In the following, 3 plots are shown which present the efficiency for 
 the leading muon energy at surface and detector entry and 
 for the primary energy.
 
@@ -277,23 +278,23 @@ for the primary energy.
 
   : Efficiency for the primary energy for H3a.
 
-.. _efficiency_primary_energy_H4a:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GaisserH4a_zoom.png
-  :width: 600px
+.. .. _efficiency_primary_energy_H4a:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GaisserH4a_zoom.png
+..   :width: 600px
 
-  : Efficiency for the primary energy for H4a.
+..   : Efficiency for the primary energy for H4a.
 
-.. _efficiency_primary_energy_GST:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GlobalFitGST_zoom.png
-  :width: 600px
+.. .. _efficiency_primary_energy_GST:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GlobalFitGST_zoom.png
+..   :width: 600px
 
-  : Efficiency for the primary energy for GST.
+..   : Efficiency for the primary energy for GST.
 
-.. _efficiency_primary_energy_GSF:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GlobalSplineFit5Comp_zoom.png
-  :width: 600px
+.. .. _efficiency_primary_energy_GSF:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_PrimaryEnergy_simweights_GlobalSplineFit5Comp_zoom.png
+..   :width: 600px
 
-  : Efficiency for the primary energy for GSF.
+..   : Efficiency for the primary energy for GSF.
 
 -- Leading Muon Energy at Surface --
 ------------------------------------
@@ -304,23 +305,23 @@ for the primary energy.
 
   : Efficiency for the leading muon energy at surface for H3a.
 
-.. _efficiency_muon_energy_at_surface_H4a:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH4a_zoom.png
-  :width: 600px
+.. .. _efficiency_muon_energy_at_surface_H4a:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GaisserH4a_zoom.png
+..   :width: 600px
 
-  : Efficiency for the leading muon energy at surface for H4a.
+..   : Efficiency for the leading muon energy at surface for H4a.
 
-.. _efficiency_muon_energy_at_surface_GST:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalFitGST_zoom.png
-  :width: 600px
+.. .. _efficiency_muon_energy_at_surface_GST:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalFitGST_zoom.png
+..   :width: 600px
 
-  : Efficiency for the leading muon energy at surface for GST.
+..   : Efficiency for the leading muon energy at surface for GST.
 
-.. _efficiency_muon_energy_at_surface_GSF:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalSplineFit5Comp_zoom.png
-  :width: 600px
+.. .. _efficiency_muon_energy_at_surface_GSF:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_muon_energy_first_mctree_simweights_GlobalSplineFit5Comp_zoom.png
+..   :width: 600px
 
-  : Efficiency for the leading muon energy at surface for GSF.
+..   : Efficiency for the leading muon energy at surface for GSF.
 
 -- Leading Muon Energy at Entry --
 ----------------------------------
@@ -331,23 +332,23 @@ for the primary energy.
 
   : Efficiency for the leading muon energy at entry for H3a.
 
-.. _efficiency_muon_energy_at_entry_H4a:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GaisserH4a_zoom.png
-  :width: 600px
+.. .. _efficiency_muon_energy_at_entry_H4a:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GaisserH4a_zoom.png
+..   :width: 600px
 
-  : Efficiency for the leading muon energy at entry for H4a.
+..   : Efficiency for the leading muon energy at entry for H4a.
 
-.. _efficiency_muon_energy_at_entry_GST:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GlobalFitGST_zoom.png
-  :width: 600px
+.. .. _efficiency_muon_energy_at_entry_GST:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GlobalFitGST_zoom.png
+..   :width: 600px
 
-  : Efficiency for the leading muon energy at entry for GST.
+..   : Efficiency for the leading muon energy at entry for GST.
 
-.. _efficiency_muon_energy_at_entry_GSF:
-.. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GlobalSplineFit5Comp_zoom.png
-  :width: 600px
+.. .. _efficiency_muon_energy_at_entry_GSF:
+.. .. figure:: images/plots/selection/bundle_cut_comparison_level3_MCLabelsLeadingMuons_entry_energy_simweights_GlobalSplineFit5Comp_zoom.png
+..   :width: 600px
 
-  : Efficiency for the leading muon energy at entry for GSF.
+..   : Efficiency for the leading muon energy at entry for GSF.
 
 
   
@@ -391,15 +392,10 @@ and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
     - 14.07
     - 18.55
 
-For our level 3, we apply the MuonFilter and a cut of :math:`500\,\mathrm{TeV}` on the bundle energy at surface. The remaining rate is :math:`144.3\,\mathrm{mHz}`. The network 
-``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01`` is used. 
+For our level 4, we apply the MuonFilter and a cut of :math:`500\,\mathrm{TeV}` on the bundle energy at surface. The remaining rate is :math:`21.62\,\mathrm{mHz}`. The pre-cut network
+``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01`` is used for this cut.
 
-.. _selection level4 paragraph:
-
-Level 4 
-+++++++
-
-On level 4, we do not apply any filters and we do not remove any events. We just add the DNN reconstructions mentioned in the reconstruction section. For this, the following networks are added:
+Furthermore, the DNN reconstructions mentioned in the reconstruction section are added at this stage. For this, the following networks are added:
 
 * ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``
   reconstructs: zenith and azimuth of the leading muon 
@@ -541,3 +537,9 @@ In :numref:`level5_rate`, the rates after applying the muon filter, the :math:`5
     - 14.79
     - 9.68
     - 12.36
+
+Final Level
++++++++++++
+
+At last, a cut on the leadingness (as defines in :ref:`leadingness`) is applied to improve the data-MC agreement of the proxy variable for the unfolding, the leading muon energy at entry. It is required, that the most energetic muon carries at least 
+40% of the total energy of the muon bundle. 

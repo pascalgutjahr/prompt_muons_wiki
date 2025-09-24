@@ -1,32 +1,20 @@
 New CORSIKA extended history simulations
 ########################################
 
-New CORSIKA datasets are simulated and stored at: 
+For this analysis, new CORSIKA simulations with the ``EXTENDED HISTORY`` option enabled have been performed using the official IceCube `IceProd <https://iceprod.icecube.aq>`_ framework.
 
-* /data/sim/IceCube/2023/generated/CORSIKA_EHISTORY/ 
-    (test datasets: 30010, 30011, 30012, 30013)
+New CORSIKA datasets are stored at: 
+
 * /data/sim/IceCube/2023/generated/CORSIKA_EHISTORY/generated/ 
-    (official datasets: 22774, 22775, 22776, 22777, 22778)
-
-At first, in 2023 test simulations were performed using the software `simulation_scripts <https://github.com/tudo-astroparticlephysics/simulation_scripts>`_. 
-This software is a framework similar to IceProd, but it is used for local simulations on our Madison cluster. It imports all the icetray functions that are used in 
-any other IceCube simulation. The main difference is that this framework is maintained locally in Dortmund and thus it's easier to adapt to our needs.
-
-The test datasets are named ``30010``, ``30011``, ``30012`` and ``30013``. Caution, these numbers do **not** correspond to the official dataset numbers.
-We used these simulations to develop and test this analysis of the prompt component of the atmospheric muon flux. 
-First dataset explorations are stored in :ref:`Appendix/First extended history simulations <first extended history simulations paragraph>`. 
+    (official datasets: 22875, 22774, 22775, 22776, 22777, 22778)
 
 
-For the official analysis, we provide 
-an official dataset simulated with IceProd to make it re-producible for the entire IceCube community.
-    
- 
 Official CORSIKA Ehist IceProd simulation 
 +++++++++++++++++++++++++++++++++++++++++
 
-A preliminary large-scale simulation is currently performed with Iceprod. 
-The datasets are:
+The different datasets correspond to different primary energy ranges:
 
+* 22875: 6e2 GeV - 1e4 GeV
 * 22774: 1e4 GeV - 1e6 GeV 
 * 22775: 1e6 GeV - 1e8 GeV
 * 22776: 1e8 GeV - 1e9 GeV
@@ -61,6 +49,8 @@ The following settings are used:
 
 The detailed settings can be found in the config files at `IceProd <https://iceprod2.icecube.wisc.edu>`_
 
+(Note: The low-energy dataset 22875 was simulated at a later time to check, whether some events would make it into the final sample after all cuts have been applied. For the number of generated Events (48k files times 3 million events per file), this is not the case. However, in all other plots shown in this wiki, this dataset is not included.)
+
 
 ---- 
 
@@ -85,7 +75,7 @@ primaries to the weighted, physical primary flux.
 v1.11.0-rc1 code fix 
 ++++++++++++++++++++
 
-.. note:: In the icetray version 1.11.0-rc1, a bug was introduced that we fixed locally without committing to move on with our simulation. This fix is mentioned below.
+.. note:: To reproduce the exact same simulation as we did, a simple code modification is necessary. In the icetray version 1.11.0-rc1, a bug was introduced that we fixed locally without committing to move on with our simulation. This fix is mentioned below.
 
 .. _diff_changes:
 
@@ -165,3 +155,20 @@ The following code modifications were made:
     +     //     badTankListName_.c_str());
     +    //}
        }
+
+
+First unofficial test simulations
++++++++++++++++++++++++++++++++++
+
+At first, in 2023 test simulations were performed using the software `simulation_scripts <https://github.com/tudo-astroparticlephysics/simulation_scripts>`_. 
+This software is a framework similar to IceProd, but it is used for local simulations on our Madison cluster. It imports all the icetray functions that are used in 
+any other IceCube simulation. The main difference is that this framework is maintained locally in Dortmund and thus it's easier to adapt to our needs.
+
+The test datasets are named ``30010``, ``30011``, ``30012`` and ``30013``. Caution, these numbers do **not** correspond to the official dataset numbers.
+We used these simulations to develop and test this analysis of the prompt component of the atmospheric muon flux. 
+First dataset explorations are stored in :ref:`Appendix/First extended history simulations <first extended history simulations paragraph>`. 
+
+These datasets can be found here:
+
+* /data/sim/IceCube/2023/generated/CORSIKA_EHISTORY/ 
+    (test datasets: 30010, 30011, 30012, 30013)

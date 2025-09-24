@@ -1,6 +1,6 @@
 .. _CNN_reconstructions paragraph:
-CNN reconstructions 
-###############
+CNN reconstructions
+###################
 
 The reconstructions used in this analysis are based on machine learning using the `dnn_reco <https://github.com/icecube/dnn_reco>`_ framework.
 
@@ -38,8 +38,15 @@ A muon bundle is defined as all muons that are produced by the same primary cosm
 the amount of muons in a bundle does change while the muons propagate through the Earth to the detector. In this analysis, typical defintions are 
 the bundle energy at the surface and the bundle energy at the detector entry, which are the sum of the muon energies at the surface and at the detector entry, respectively.
 
-The leading muon is the muon with the highest energy in the bundle. This can be defined by the leadingness, which is the ratio between the 
-energy of the leading muon and the total bundle energy. Since all muons in a bundle propagate close to each other, it is not possible to 
+The leading muon is the muon with the highest energy in the bundle. This can be defined by the ``leadingness``, where the
+leadingness :math:`L_{\mathrm{E}}` describes the ratio of the most energetic muon :math:`E_{\mathrm{max}}` in a bundle to the total energy :math:`E_{\mathrm{tot}}` of the bundle:
+
+.. _leadingness:
+.. math:: 
+
+    L_{\mathrm{E}} = \frac{E_{\mathrm{max}}}{E_{\mathrm{tot}}}
+
+Since all muons in a bundle propagate close to each other, it is not possible to 
 reconstruct the energies of the individual muons in a bundle. 
 
 Nevertheless, in this analysis, we reconstruct the energy of the leading muon using neural networks. This is fundamentally aided by two physical phenomena. 
@@ -173,7 +180,7 @@ The training data are based on four old CORSIKA datasets. Further information ar
 * 22187 
 
 .. _reconstrected_properties:
-Reconstructed properties 
+Reconstructed properties
 ++++++++++++++++++++++++ 
 
 As mentioned above, analyzing the prompt component of the atmospheric muon flux requires reconstructions of several properties like energy, direction and 
@@ -187,7 +194,8 @@ Energy
 * ``bundle_energy_at_entry``: Muon bundle energy at the detector entry
 * ``muon_energy_first_mctree``: Leading muon energy at surface 
 * ``bundle_energy_in_mctree``: Muon bundle energy at surface
-Track geometry  
+
+Track geometry
 --------------
 * ``Length``: Propagation length of muon in the ice 
 * ``LengthInDetector``: Propagation length of muon in the detector
@@ -199,6 +207,7 @@ Track geometry
 * ``entry_pos_y``: y position of muon at the detector entry
 * ``entry_pos_z``: z position of muon at the detector entry
 * ``entry_pos_t``: Time of muon at the detector entry
+
 Direction 
 ---------
 * ``zenith``: Zenith angle of muon 
@@ -210,90 +219,51 @@ Direction
 Network evaluation 
 ++++++++++++++++++
 
-In the following, the evaluation of the networks is shown. Each figure contains two plots. The left plots show the evaluation of all events, 
-the right plot shows an uncertainty cut applied on the estimated uncertainty by the network. The evaluation is performed on our own extended 
-history simulation dataset (datasets 30010 - 30013). Each plot has the network prediction on the y-axis and the true value on the x-axis. 
-In general, networks are trained with 
-3 or 9 inputs and a time window of 6ms or the internal DNN time window cleaning is applied to the *SplitInIceDSTPulses*. 
-The runtime prediction 
-is presented for the usage of a GPU. The preprocessing runtime represents the time needed to create the input features for the network based on the 
-input pulses. 
-
 As described in :ref:`Selection <selection paragraph>`, 4 different networks are used for the selection. Due to the high statistics at low energies, a very 
-fast reconstruction is necessary to remove low-energetic muons. This is done by a network using only 3 input features and a time window 
-cleaning of 6ms, referred to as *precut network*. This network is only used to reconstruct the muon bundle energy at surface.
-The other 3 networks use 9 input features and the internal DNN cleaning, since comparisons have shown an improved prediction for all properties when using 
-9 instead of 3 inputs. These comparisons can be found in :ref:`Appendix/Network evaluation <network evaluation paragraph>`.
+fast reconstruction is necessary to remove low-energetic muons. This is done by a network using only 3 input features referred to as *precut network*. This network is only used to reconstruct the muon bundle energy at surface.
+The other 3 networks use 9 input features. A time window cleaning of 6ms is applied to the *SplitInIceDSTPulses*. 
 
 The networks used in this analysis are named:
 
-* ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``: 
-* ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``:
-* ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``:
-* ``DeepLearningReco_track_geometry_9inputs_uncleaned_01``:
+* Pre-cut: ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``
+* Energy: ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``
+* Track geometry: ``DeepLearningReco_track_geometry_9inputs_6ms_medium_01``
+* Direction: ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``
 
-In the following, the evaluation of these networks is shown.
+In the following, the evaluation of the networks is shown. The evaluation is performed on our new CORSIKA dataset. Each plot has the true value on the y-axis and the network prediction on the x-axis. The events are weighted to H3a, in the title of the figure the Spearman and Pearson correlation coefficients are given, and the ratio panel presents either the median difference, or the median of the relative difference between the true and reconstructed value. Orange crosses indicate the median and the 68% quantile in each bin.
+
+(Note: Comparisons have been performed for networks with and without the standard timewindow cleaning. In general, the the results without the 6ms cleaning are slightly better. However, to avoid after pulses and minimizing the influence of coincident 
+events, the 6ms cleaning is applied anyway. If you are interested in this, the comparisons can be found in :ref:`Appendix/Network evaluation <network evaluation paragraph>`.)
 
 
 Bundle energy at surface 
 ------------------------
 
-precut network:
-
 .. _DeepLearningReco_precut_bundle_energy_3inputs_6ms_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree:
-.. figure:: images/plots/model_evaluation/precut/DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01_vs_MCLabelsLeadingMuons_bundle_energy_in_mctree.png
+.. figure:: images/plots/model_evaluation/new/level3/reco_eval_bundle_energy_at_surface.png
+    :width: 600px
 
-    : The bundle energy at the surface is shown for the network ``DeepLearningReco_precut_surface_bundle_energy_3inputs_6ms_01``. It uses 3 inputs
-    and a 6ms time window.
+    : The bundle energy at the surface is shown on ``Level3``. 
 
-----
-
-.. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_in_mctree:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_in_mctree.png
-
-    : The bundle energy at the surface is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
 
 Bundle energy at entry 
 ----------------------
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_at_entry:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__bundle_energy_at_entry.png
+.. figure:: images/plots/model_evaluation/new/level3/reco_eval_bundle_energy.png
+    :width: 600px
 
-    : The bundle energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
-
-Leading muon energy at surface
-------------------------------
-
-.. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__muon_energy_first_mctree:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__muon_energy_first_mctree.png
-
-    : The leading muon energy at the surface is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The bundle energy at the entry is shown on ``Level3``.
 
 Leading muon energy at entry
 ----------------------------
 
 .. _DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__entry_energy:
-.. figure:: images/plots/model_evaluation/energy/leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02__entry_energy.png
+.. figure:: images/plots/model_evaluation/new/level3/reco_eval_leading_energy.png
+    :width: 600px
 
-    : The leading muon energy at the entry is shown for the network ``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The leading muon energy at the entry is shown on ``Level3``.
 
----- 
-
-The reconstruction of the leading muon is a difficult task, since the leading muon is accompanied by a bundle of muons. Thus, the emitted cherenkov light of the 
-leading muon is superimposed by the light of the other muons. In :numref:`true_muon_energy_fraction`, the true muon energy fraction is shown as a function of the true 
-bundle energy at entry. There is a clear correlation between the true muon energy fraction and the true bundle energy. The distribution is smeared. 
-In :numref:`recos_muon_energy_fraction`, the reconstructed muon energy fraction is shown as a function of the reconstructed bundle energy at entry. This distribution is less smeared. 
-Hence, the network seems to reconstruct the bundle energy and tries to refer to the leading muon energy. 
-
-.. _true_muon_energy_fraction:
-.. figure:: images/plots/model_evaluation/energy/true_muon_energy_fraction.png
-
-    : The true muon energy fraction is shown as a function of the true bundle energy, at entry.
-
-.. _recos_muon_energy_fraction:
-.. figure:: images/plots/model_evaluation/energy/reco_muon_energy_fraction.png
-
-    : The reconstructed muon energy fraction is shown as a function of the true bundle energy, at entry.
 
 Track geometry
 --------------
@@ -325,72 +295,83 @@ The propagation length inside the detector is determined using
 **Center time:**
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_t:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_t.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_center_time.png
+    :width: 600px
 
-    : The center time is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The center time is shown on ``Level4``.
 
 **Entry time:** 
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_t:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_t.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_entry_time.png
+    :width: 600px
 
-    : The entry time is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The entry time is shown on ``Level4``.
 
 **Center position x:**
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_x:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_x.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_center_x.png
+    :width: 600px
 
-    : The center position x is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The center position x is shown on ``Level4``.
 
 **Center position y:**
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_y:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_y.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_center_y.png
+    :width: 600px
 
-    : The center position y is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The center position y is shown on ``Level4``.
 
 **Center position z:**
 
 .. _track_geometry_9inputs_uncleaned_01__center_pos_z:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__center_pos_z.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_center_z.png
+    :width: 600px
 
-    : The center position z is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The center position z is shown on ``Level4``.
 
 **Entry position x:**
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_x:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_x.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_entry_x.png
+    :width: 600px
 
-    : The entry position x is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The entry position x is shown on ``Level4``.
 
 **Entry position y:**
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_y:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_y.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_entry_y.png
+    :width: 600px
 
-    : The entry position y is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The entry position y is shown on ``Level4``.
 
 **Entry position z:**
 
 .. _track_geometry_9inputs_uncleaned_01__entry_pos_z:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__entry_pos_z.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_entry_z.png
+    :width: 600px
 
-    : The entry position z is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The entry position z is shown on ``Level4``.
 
 **Total track length:**
 
 .. _track_geometry_9inputs_uncleaned_01__Length:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__Length.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_length.png
+    :width: 600px
 
-    : The track length is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The total track length is shown on ``Level4``.
+
 
 **Track length in detector:**
 
 .. _track_geometry_9inputs_uncleaned_01__LengthInDetector:
-.. figure:: images/plots/model_evaluation/track_geometry/track_geometry_9inputs_uncleaned_01__LengthInDetector.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_length_in_detector.png
+    :width: 600px
 
-    : The track length in the detector is shown for the network ``DeepLearningREco_track_geometry_9inputs_uncleaned_01``. It uses 9 inputs and the internal DNN time window cleaning.
+    : The track length in the detector is shown on ``Level4``.
 
 Direction 
 ---------
@@ -398,18 +379,18 @@ Direction
 **Zenith angle:**
 
 .. _direction_9inputs_6ms_medium_02_03__zenith:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03__zenith.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_zenith_L4.png
+    :width: 600px
 
-    : The zenith angle is shown for the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``. It uses 9 inputs and a 6ms time window.
-
+    : The zenith angle is shown on ``Level4``.
 
 **Azimuth angle:**
 
 .. _direction_9inputs_6ms_medium_02_03__azimuth:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03__azimuth.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_azimuth.png
+    :width: 600px
 
-    : The azimuth angle is shown for the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``. It uses 9 inputs and a 6ms time window.
-
+    : The azimuth angle is shown on ``Level4``.
 
 **Angular resolution:**
 
@@ -425,9 +406,10 @@ The angular resolution is defined as the opening angle :math:`\Delta \Psi` betwe
 with the azimuth angles :math:`\phi_{\mathrm{true}},\,\phi_{\mathrm{pred}}` and zenith angles :math:`\theta_{\mathrm{true}},\,\theta_{\mathrm{pred}}`
 
 .. _direction_9inputs_6ms_medium_02_03_angular_resolution:
-.. figure:: images/plots/model_evaluation/direction/direction_9inputs_6ms_medium_02_03_angular_resolution.png
+.. figure:: images/plots/model_evaluation/new/level4/reco_eval_direction_spherical.png
+    :width: 600px
 
-    : The angular resolution is shown for the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03``. It uses 9 inputs and a 6ms time window.
+    : The angular resolution is shown on ``Level4``.
 
 
 .. _SplineMPE vs DNN paragraph:
@@ -435,42 +417,32 @@ with the azimuth angles :math:`\phi_{\mathrm{true}},\,\phi_{\mathrm{pred}}` and 
 SplineMPE vs. DNN 
 ----------------- 
 
-The improvement of SplineMPE to the reconstructed direction is shown below. The DNN only reconstruction is shown 
-in red and the network ``DeepLearningReco_direction_9inputs_6ms_medium_02_03`` is used. On the one hand, 
-this network is used as a direction seed for SplineMPE. The center position and time are provided by the network 
-``DeepLearningReco_track_geometry_9inputs_uncleaned_01`` and the energy is given by 
-``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_large_log_02`` as the muon entry energy.
-Furthermore, also the default OnlineL2 reconstructions are shown. :numref:`spline mpe all` shows the median angular resolution, 
-which is around :math:`1^\circ` for all reconstructions. The SplineMPE reconstructions are slightly better.
+In :numref:`spline mpe all`, the traditional reconstruction SplineMPE is compared to the DNN direction reconstruction on ``Level5``.
+Here, OnlineL2 and four different SplineMPE reconstructions are shown. The SplineMPE reconstructions are seeded with the DNN best-fit.
+For energies below 100 TeV, the median angular resolution of the DNN performs better than the SplineMPE reconstructions. For energies up to 5 PeV, both method provide similar results, towards higher energies, the statistics becomes low. However, all reconstructions 
+perform very similar within the uncertainties.
 
 .. _spline mpe all:
-.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_all.png 
+.. figure:: images/plots/model_evaluation/new/traditional_vs_ML/reco_eval_direction_comparison_H3a_spherical_level5.png
+    :width: 600px
 
-    : The median angular resolution with a 90% containment is shown for all reconstructions.
-
-
-The improvement of SplineMPE with the DNN seeds is shown in :numref:`spline mpe sub`. At energies around :math:`1\,\mathrm{PeV}` there 
-is a small improvement, but the :math:`90\,\%` containment is smallest for the DNN only reconstruction.
-
-.. _spline mpe sub:
-.. figure:: images/plots/evaluate_SplineMPE/angular_resolution_sub.png 
-
-    : The median angular resolution with a 90% containment is shown for DNN seeds only.
+    : The median angular resolution with a 68% interval is shown for different reconstructions on ``Level5``. The DNN only reconstruction is shown in blue, the OnlineL2 reconstruction in orange, and the other four SplineMPE reconstructions are 
+    seeded with the DNN best-fit. All reconstructions perform very similar within the uncertainties.
 
 
-
-As seen above, the runtime prediction for the directional network is 6ms per event. 
-The duration of applying the method SplineMPE to an event is shown in :numref:`spline mpe duration`. The application using the recommended settings is 690ms, which 
-2 orders of magnitude higher.
-
-.. _spline mpe duration:
-.. figure:: images/plots/evaluate_SplineMPE/duration_spline_mpe.png
-
-    : The time taken to reconstruct the direction per event using SplineMPE is displayed.
-
+The duration of applying the method SplineMPE to an event is shown in :numref:`spline mpe duration`, and compared to the DNN runtime predictions. The runtime of the DNN for the directional prediction is about 60ms (on a CPU), and the runtime for SplineMPE using the 
+recommended setting is about 830ms. Thus, the DNN is more than one order of magnitude faster than SplineMPE. 
 Since we are interested in an overall atmospheric muon flux, we are not interested in the best possible angular resolution, 
 which is necessary for example in a point source analysis. Given the additional time needed for the SplineMPE reconstruction
-and the wider contours, we decided to use the DNN only reconstructions for the directional reconstruction.
+and the similar performance, we decided to use the DNN only reconstructions for the directional reconstruction.
+
+.. _spline mpe duration:
+.. figure:: images/plots/model_evaluation/new/traditional_vs_ML/duration_spline_mpe_level5.png
+    :width: 600px
+
+    : The duration of applying SplineMPE to an event and the runtime for the four DNNs are shown on ``Level5``. 
+
+
 
 
 

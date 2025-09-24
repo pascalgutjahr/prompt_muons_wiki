@@ -3,6 +3,77 @@ Q & A
 
 In this section, a collection of all questions and answers from the presentations is given. The presentations are listed :ref:`here <main paragraph>`.
 
+September 17, 2025
+==================
+
+`Q (Anatoli): What is the impact of the hadronic interaction model on your unfolding?` 
+
+A: This is an important question, however, it is technically not possible to perform the unfolding with different hadronic interaction models, since we would need to simulate several datasets with different hadronic interaction models. The current simulation I am using is based on SIBYLL 2.3d, and I have started the simulation 1,5 years ago, and it is still running. Thus, producing several CORSIKA sets is not feasible. Instead, we can estimate the impact of the hadronic interaction model based on MCEq. 
+In :numref:`mceq_hadronic_models`, the flux of muons at the surface is shown for different hadronic interaction models. The fluxes are calculated using MCEq assuming the GSF primary model. The ratio panel presents the total fluxes in relation to SIBYLL 2.3d. If we now look at :numref:`mceq_cr_models`, the flux of muons at the surface is shown for different primary models. The fluxes are calculated using MCEq assuming SIBYLL 2.3d as hadronic interaction model. The differences between the different hadronic interaction models are smaller than the differences between the different primary models. Hence, we can estimate that the impact of the hadronic interaction model on our unfolding is smaller than the impact of the primary model, and for the primary model we have 
+shown that there is no significant impact on the unfolding, as presented in :numref:`model_independence_full_sample`.
+
+.. _mceq_hadronic_models:
+.. figure:: images/plots/QA/mceq_hadronic_models.png
+      :width: 600px
+
+      : The flux of muons at the surface is shown for different hadronic interaction models. The fluxes are calculated using MCEq assuming the GSF primary model. The ratio panel presents the total fluxes in relation to SIBYLL 2.3d.
+
+.. _mceq_cr_models:
+.. figure:: images/plots/QA/mceq_cr_models.png
+      :width: 600px
+
+      : The flux of muons at the surface is shown for different primary models. The fluxes are calculated using MCEq assuming SIBYLL 2.3d as hadronic interaction model. The ratio panel presents the total fluxes in relation to H3a.
+
+
+August 15, 2025
+===============
+
+`Q (Dennis): Does a background event impact the reconstruction of the leading muon energy at entry?` 
+
+A: On slide 10, I have presented the reconstruction for events without a background event, for events with a leadingness below 0.1, and for a leadingness above 0.1. Given the statistics, there is no significant impact on the reconstruction. Since the networks are trained on events with background primaries, the networks have already seen these event signatures. 
+
+`Q (Stef): How do you treat the systematics now?` 
+
+A: The LLH minimization in the unfolding using minuit provides the full covariance matrix. This includes, the under and overflow bin, the actual unfolding bins, and the 5 ice systematics. I run the unfolding once. Then I take the best fit values of all 5 ice systematics and scale them them up and down by it's fitted uncertainty, coming from the covariance matrix. I then run the unfolding again with these fixed ice systematics. Scaling 5 systematics up and down results in 10 unfoldings in total. For example, the best fit of absorption is 1.01±0.01, then I fix it to 1.02 and 1.00. In this example, all other four systematics are fixed to their best fit value. Then I calculate a systematic uncertainty via 
+
+.. math::
+   \begin{equation*}
+      \sigma_{\mathrm{syst},j} = \sqrt{\sum_{i=1}^{N} (f_i - f_{\mathrm{baseline}})^2}
+   \end{equation*}
+
+with :math:`i` being the 10 unfoldings, :math:`f_{\mathrm{baseline}}` the initial unfolding, and :math:`f_i` the unfolding with one systematic scaled up or down. The total uncertainty is then calculated via
+
+.. math::
+   \begin{equation*}
+      \sigma_{\mathrm{total}} = \sqrt{\sigma_{\mathrm{stat}}^2 + \sum_{j=1}^{M}\sigma_{\mathrm{syst},j}^2}
+   \end{equation*}
+
+with :math:`j` referring to the different systematics (absorption, scattering, etc.) thus :math:`M` is 5.
+The statistical uncertainty is then estimated via the poisson distribution assuming :math:`\sqrt{N}` uncertainty in each bin.
+
+`Q (Dennis): The background event rate is quite high. It looks like your selection prefers events with background primaries. Do you know why and did you check the rates for your background distribution?`
+
+A: For my selection, with a leading muon energy at surface above 10 TeV, the background rate is 0.58 mHz, and the signal rate is 0.74 mHz. With a requirement that the coincident muon bundle at surface contributes at least to 10 % to the signal energy at surface, the background rate drops to 0.02 mHz. This 10 % estimate is chosen approximately, since the reconstruction of the leading muon energy would not be significantly impacted by a coincident muon bundle with a lower energy. I can't say, why the selection prefers events including a background primary. 
+
+June 27, 2025 
+=============
+
+`Q: How is leadingness reconstruction performed?` 
+
+A: DNN reconstruction. Leading energy divided by bundle energy at entry.
+
+----
+
+`Q: Sensitivity to different components of prompt?`
+
+A: Not with unfolding, it measures an inclusive flux. For forward, tested shape differences but probably not possible at our energies.
+
+----
+
+`Q (Dave): Could leadingness reco be useful for single/bundle separation, specifically for leading muon with faint bundle?` 
+
+A: Probably, might need training on sample including neutrinos.
+
 April 1, 2025 (CRWG review)
 ===========================
 
