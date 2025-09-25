@@ -34,7 +34,25 @@ to be removed.
 
 In a first step, several filters are investigated in regard 
 to the energy of the leading muon at surface and the cosine zenith angle. The muon filter results as the best choice, defining Level 3. Afterwards, a cut on the bundle energy at surface is applied to remove more low energy events, and DNN reconstructions for several properties are added. This defines Level 4.
-In level 5, quality cuts are applied to improve the data-MC agreement. At last, events with a minimum leadingness are selected. This is the Final Level.
+In level 5, quality cuts are applied to improve the data-MC agreement. At last, events with a minimum leadingness are selected. This is the Final Level. :numref:`selection_summary` presents a summary of the entire selection.
+
+.. _selection_summary:
+.. list-table:: Summary of the entire leading muon selection.
+  :header-rows: 1
+
+  * - Level
+    - Level 3
+    - Level 4
+    - Level 5
+    - Final Level
+  * - Selection 
+    - MuonFilter 
+    - Bundle energy at surface > 500 TeV 
+    - Data-MC quality cuts 
+    - Leadingness > 0.4
+
+
+
 The following sections describe the selection steps in detail.
 
 Level 3 
@@ -240,7 +258,7 @@ Hence, the MuonFilter is used.
 The rates after the application of the MuonFilter are shown in :numref:`level2_rate_muon_filter`. This results in a runtime of 150h per run with a processing time of 1s per event. This is still too long.
 
 .. _level2_rate_muon_filter:
-.. list-table:: Rates on level 2 after applying the muon filter for different primary models.
+.. list-table:: Rates on Level 3 after applying the muon filter for different primary models.
   :header-rows: 1
 
   * - Model
@@ -248,7 +266,7 @@ The rates after the application of the MuonFilter are shown in :numref:`level2_r
     - H4a
     - GST
     - GSF
-  * - Leve2 rate after muon / Hz
+  * - Level 3 / Hz
     - 18.43
     - 18.83
     - 17.41
@@ -368,7 +386,7 @@ and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
     - GST
     - GSF
     - Exp
-  * - Level 3 / mHz
+  * - Level 4 (test) / mHz
     - 173.4
     - 171.9
     - 164.3
@@ -385,7 +403,7 @@ and for a cut of :math:`500\,\mathrm{TeV}` in :numref:`level3_rate_500TeV`.
     - GST
     - GSF
     - Exp
-  * - Level 3 / mHz
+  * - Level 4 / mHz
     - 21.62
     - 21.09
     - 20.92
@@ -541,5 +559,5 @@ In :numref:`level5_rate`, the rates after applying the muon filter, the :math:`5
 Final Level
 +++++++++++
 
-At last, a cut on the leadingness (as defines in :ref:`leadingness`) is applied to improve the data-MC agreement of the proxy variable for the unfolding, the leading muon energy at entry. It is required, that the most energetic muon carries at least 
+At last, a cut on the leadingness (ratio between most energetic muon and total bundle energy) is applied to improve the data-MC agreement of the proxy variable for the unfolding, the leading muon energy at entry. It is required, that the most energetic muon carries at least 
 40% of the total energy of the muon bundle. 
