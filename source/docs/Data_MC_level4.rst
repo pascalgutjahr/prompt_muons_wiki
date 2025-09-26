@@ -4,6 +4,12 @@ Data-MC Level 4
 
 The data-mc comparisons are performed on level 4. From the years 2012, 2016 und 2020 the first and 15th day of each month is processed. This results in a total experimental livetime 
 of :math:`2487\,\mathrm{h}`. If a quality cut is applied on the reconstructed variable, this is indicated by a vertical black line and stated in the bottom panel. A list of all quality cuts can be found in :numref:`containment_cuts`, :numref:`neutrino_cuts` and :numref:`uncertainty_cuts`.
+All plots also include the impact of the neutrinos, which are treated as background in 
+this analysis. For the neutrino contamination, NuGen dataset for electrons, muons and taus 
+are weighted with both atmospheric fluxes and an astrophysical component. For the atmospheric flux, 
+the neutrinos are weighted with the respective cosmic-ray model. However, since the differences are very small, all predictions are presented in the same color (pink). For the astrophysical component, 
+a single power law (SPL) with a normalizatoin of n = 1.8e-18 and a spectral index of gamma = 2.52 is assumed, resulting from `Measurement of the astrophysical diffuse neutrino flux
+in a combined fit of IceCube’s high energy neutrino data <https://pos.sissa.it/444/1064/pdf>`_.
 
 .. note::
     In :numref:`level3_rate_500TeV` the rates for the different primary flux models are shown for level 4. There is a mismatch of the normalization of the data and the MC.
@@ -56,14 +62,18 @@ In :numref:`data_mc_L4_seasonal_variations_rescaled`, the rates are rescaled. Th
 
     : Rate per month for different primary flux models with scaled weights.
 
+
+.. note:: 
+    Some of the data-MC comparisons below are used to apply quality cuts. These cuts help to 
+    select well-reconstructed and contained events, and to reduce the neutrino contamination.
+    However, for the unfolding, only the leading muon energy at entry is utilized, and thus, 
+    data-MC mismatches in other variables do **not** affect the unfolding result.
+
 Energy 
 ------
 
-
 Bundle energy at entry 
 ++++++++++++++++++++++
-
-
 
 .. _data_mc_L4_bundle_energy_at_entry_GSF:
 .. figure:: images/plots/selection/new/level4/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_bundle_energy_at_entry_all_weightings.png

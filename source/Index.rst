@@ -101,8 +101,10 @@ List of presented talks:
    docs/Selection.rst
    docs/Data_MC_level4.rst
    docs/Data_MC_level5.rst
-   docs/Final_Level.rst
+   docs/Data_MC_Final_Level.rst
    docs/Analysis_unfolding.rst
+   docs/Analysis_burnsample.rst
+   docs/Analysis_full_sample.rst
    docs/QA.rst
    docs/NextSteps.rst
    docs/Appendix.rst

@@ -3,15 +3,20 @@ Data-MC Level5
 ##############
 
 The data-mc comparisons are performed on level 5. From the years 2012, 2016 und 2020 the first and 15th day of each month is processed. This results in a total experimental livetime 
-of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a vertical black line in the plots.
+of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a vertical black line in the plots. All plots also include the impact of the neutrinos, which are treated as background in 
+this analysis. For the neutrino contamination, NuGen dataset for electrons, muons and taus 
+are weighted with both atmospheric fluxes and an astrophysical component. For the atmospheric flux, 
+the neutrinos are weighted with the respective cosmic-ray model. However, since the differences are very small, all predictions are presented in the same color (pink). For the astrophysical component, 
+a single power law (SPL) with a normalizatoin of n = 1.8e-18 and a spectral index of gamma = 2.52 is assumed, taken from `Measurement of the astrophysical diffuse neutrino flux
+in a combined fit of IceCube’s high energy neutrino data <https://pos.sissa.it/444/1064/pdf>`_.
 
 .. note::
     In :numref:`level3_rate_500TeV` the rates for the different primary flux models are shown for level 4. There is a mismatch of the normalization of the data and the MC.
-    For the data-mc comparisons, the following plots use scaled weights. Therefore, the weights are normalized to the data for each weighting. This helps to analyze the shape of the different primary flux models. The rescaling is done based on the rates on level 4.
-    The rates and the rescaling factors are shown in :numref:`level4_rate_500TeV_with_scale_`.
+    For the data-mc comparisons, the following plots use scaled weights. Therefore, the weights are normalized to the data for each weighting. This helps to analyze the shape of the different primary flux models. The rescaling is done based on the rates on level 5.
+    The rates and the rescaling factors are shown in :numref:`level5_rate_scale`.
     Additional data-mc plots to investigate cuts and all primary flux models are dumped `here <https://drive.google.com/drive/u/1/folders/1I2AD9wdWzaljAYM9xC5AESsnW1lxuq96>`_. For the unfolding, only the relative transition from the reconstructed proxy to the target variable matters, thus the **normalization** is completely **negligible**.
 
-.. _level4_rate_500TeV_with_scale_:
+.. _level5_rate_scale:
 .. list-table:: Rates on level 4 after applying the muon filter and a :math:`500\,\mathrm{TeV}` bundle energy cut at surface for different primary models and level 5 with the quality cuts are shown. The rescale factors are the ratio between the experimental rate and the MC rate. The rescaling is done based on the rates on level 4.
   :header-rows: 1
 
@@ -27,7 +32,7 @@ of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a ve
     - 20.92
     - 14.07
     - 18.55
-  * - Rescale factor
+  * - Rescale factor L4
     - 0.86
     - 0.88
     - 0.89
@@ -39,6 +44,12 @@ of :math:`2487\,\mathrm{h}`. The quality cuts used for level 5 are shown as a ve
     - 14.79
     -  9.68
     - 12.36
+  * - Rescale factor L5
+    - 0.82
+    - 0.84
+    - 0.84
+    - 1.28
+    -
 
 Seasonal Variations 
 ------------------- 
@@ -62,25 +73,29 @@ In :numref:`data_mc_L5_seasonal_variations_rescaled`, the rates are rescaled. Th
 
     : Rate per month for different primary flux models with scaled weights.
 
+.. note::
+    The data-MC comparisons below are presented to investigate different properties of this dataset and
+    the new DNN reconstructions after the quality cuts have been applied. However, for the unfolding, only the leading muon energy at entry is utilized, and thus, 
+    data-MC mismatches in other variables do **not** affect the unfolding result.
 
 Energy 
 ------
 
-First of all, the energy distributions of the muon energy at surface and the reconstructed leading muon energy at entry is shown for the 
-four different primary flux models to see their impact. 
+.. First of all, the energy distributions of the muon energy at surface and the reconstructed leading muon energy at entry is shown for the 
+.. four different primary flux models to see their impact. 
 
-.. figure:: images/plots/data_mc/data_mc_level5/primary_flux_ratio_MCLabelsLeadingMuons_muon_energy_first_mctree.png
-    :width: 600px
+.. .. figure:: images/plots/data_mc/data_mc_level5/primary_flux_ratio_MCLabelsLeadingMuons_muon_energy_first_mctree.png
+..     :width: 600px
 
-    : Muon energy at surface for different primary flux models.
+..     : Muon energy at surface for different primary flux models.
 
-.. figure:: images/plots/data_mc/data_mc_level5/primary_flux_ratio_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy.png
-    :width: 600px
+.. .. figure:: images/plots/data_mc/data_mc_level5/primary_flux_ratio_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy.png
+..     :width: 600px
 
-    : Reconstructed muon energy at entry for different primary flux models
-    (``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``).
+..     : Reconstructed muon energy at entry for different primary flux models
+..     (``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``).
 
-----
+.. ----
 
 Bundle energy at entry 
 ++++++++++++++++++++++

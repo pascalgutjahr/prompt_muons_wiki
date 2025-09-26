@@ -1,7 +1,7 @@
 .. _unfolding paragraph:
 
-Analysis - Unfolding 
-####################
+Analysis - Unfolding Basics
+###########################
 
 The Concept of Unfolding
 ------------------------
@@ -249,21 +249,41 @@ Unfolding
 ---------
 
 In this analysis, we would like to unfold the energy of the leading muon at the surface. This variable is called our 
-target variable. For the unfolding, we need proxies, that correlate with our target. 
+**target** variable. For the unfolding, we need a **proxy** that correlates with our target. In this 
+analysis, the reconstructed energy of the leading muon at the detector entry is used as a proxy. Below, 
+both variables are presented for the four different primary models on final level, in :numref:`target_variable_MC` and :numref:`proxy_variable_MC`. A lifetime of 12 years is assumed to estimate the statistics that will be unblinded. The bottom panels show the ratio of the different models to H3a. As expected, the models show differences towards higher energies.
+Then, in :numref:`proxy_target_correlation`, the correlation between proxy and target is shown.
+
+Target Variable
+===============
+
+.. _target_variable_MC:
+.. figure:: images/plots/selection/new/finallevel/primary_flux_ratio_MCLabelsLeadingMuons_muon_energy_first_mctree.png
+    :width: 600px
+
+    : Muon energy at surface for different primary flux models, presented on final level. This is the **target** variable in the unfolding.
 
 Proxy Variable
 ==============
 
-At first, we need a proxy that correlates with the true physical quantity. In Figure :numref:`proxy_variable`, the muon energy of the 
-leading muon at entry is used as a proxy variable. The target is the energy of the leading muon at the surface. 
+.. _proxy_variable_MC:
+.. figure:: images/plots/selection/new/finallevel/primary_flux_ratio_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy.png
+    :width: 600px
+
+    : Reconstructed muon energy at entry for different primary flux models
+    (``DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02``), presented on final level. This is the **proxy** variable in the unfolding.
 
 
-.. _proxy_variable:
-.. figure:: images/plots/unfolding/proxy_target.png
+Proxy--Target Correlation
+=========================
+
+.. _proxy_target_correlation:
+.. figure:: images/plots/unfolding/new/DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_vs_MCLabelsLeadingMuons_muon_energy_first_mctree_weighted.png
   :width: 600px
 
   : Proxy variable for unfolding. Here, the muon energy of the leading muon at entry is used. The target is the leading muon energy 
-  at surface. The grey, dashed lines represent the binning for the proxy and target variable. This binning serves as an example. The final binning can change slightly. 
+  at surface. 
+
 
 
 Unfold Event Rate
@@ -426,7 +446,8 @@ Fit systematic impact on muon energy at entry (proxy)
 Each proxy bin is divided into three different datasets corresponding to the equidistant cuts on the 
 systematic parameter. Then, the ratio of the sub-datasets to the baseline dataset is calculated.
 These three ratios are fitted with a linear function. Therefore, at first a chi2 test is performed 
-if a constant :math:`y = 1` is compatible with the data with a p-value of 0.05. If this is not the case, a linear fit with the lowest slope that is compatible with the data under a p-value of 0.2 is performed. A requirement that the fit is going through the baseline point is added. This procedure is done instead of fitting all three ratios because the uncertainties on the ratios are large in some of the bins. In addition, some bins have very small uncertainties, which would lead to a large impact on the fit. This is caused by insufficient statistics in the sub-datasets. Hence, when fitting the ratios, some unphysical parametrization with either an extreme slope, or an offset is obtained.
+if a constant :math:`y = 1` is compatible with the data with a p-value of 0.05. If this is not the case, a linear fit with the lowest slope that is compatible with the data under a p-value of 0.05 is performed.
+The slope is adjusted in steps of 0.005. A requirement that the fit is going through the baseline point is added. This procedure is done instead of fitting all three ratios because the uncertainties on the ratios are large in some of the bins. In addition, some bins have very small uncertainties, which would lead to a large impact on the fit. This is caused by insufficient statistics in the sub-datasets. Hence, when fitting the ratios, some unphysical parametrization with either an extreme slope, or an offset is obtained.
 
 As an example, 3 bins (bin 0, 5 and 10 of 18 total bins) for each of the 5 systematics are shown below. A complete set of systematic fits can be found in the Google docs `here <https://drive.google.com/drive/u/1/folders/1j7sUN6sYLJ1CpdZGJgEuajQNcStbZRsr>`_. As expected from the distributions above, for Scattering, HoleIce p0 and HoleIce p1, most of the fits are compatible with a constant, thus they don't have an impact on my proxy variable. For Absorption and DOMEfficiency, in some bins there is an impact on the proxy variable, in some bins not.
 
@@ -519,6 +540,103 @@ As an example, 3 bins (bin 0, 5 and 10 of 18 total bins) for each of the 5 syste
   :width: 600px
 
   : Fit of the Scattering systematic on the muon energy at entry for bin 10. The dataset is divided into 3 systematic bins used to visualize the impact of the systematic on the proxy variable.
+
+
+.. _effective_area_paragraph:
+Effective area 
+--------------
+
+In this paragraph, the impact of the five different ice systeamtics on the effective area is presented both the the burnsample and the full sample. This differs, because the unfolded energy range is extended by one order of magnitude when using the full sample.  
+For each systematic, at the center of the sampling range, the dataset is split into two datasets. Then, the effective area is calculated on these two subsets, one referring to the systematics above the center 
+value (:math:`A_{\text{high}}`), one referring to the systematics below the center value (:math:`A_{\text{low}}`). Then, these two subsets are compared to 
+the baseline effective area (:math:`A_{\text{nominal}}`), where the entire dataset is utilized for. The systematic uncertainty is then 
+calculated by taking the maximum difference between the two subsets to the baseline per bin via 
+
+.. math::
+  \sigma_{\text{sys}} = \text{max}(A_{\text{nominal}} - A_{\text{low}}, A_{\text{high}} - A_{\text{nominal}})\,.
+
+This is done for the 5 ice systematics described above. The total systematic uncertainty is then calculated by adding the individual uncertainties in quadrature 
+
+.. math::
+  \sigma_{\text{sys,total}} = \sqrt{\sum_{i} \sigma_{\text{sys},i}^2}\,.
+
+Burnsample
+==========
+
+.. _effective_area_all_systematics:
+.. figure:: images/plots/unfolding/new/burnsample/effective_area/A_eff_systematics_H3a.png
+  :width: 600px
+
+  : The effective area is presented as a function of the muon energy at surface. Statistical uncertainties are calculated with the weights. The systematic uncertainties result from the variations in the effective area. This is shown for the burnsample binning. 
+
+.. _effective_area_absorption:
+.. figure:: images/plots/unfolding/new/burnsample/effective_area/A_eff_systematics_Absorption_H3a.png
+  :width: 600px 
+
+  : The impact of **Absorption** on the effective area is presented for the burnsample binning. 
+
+.. _effective_area_domefficiency:
+.. figure:: images/plots/unfolding/new/burnsample/effective_area/A_eff_systematics_DOMEfficiency_H3a.png
+  :width: 600px 
+
+  : The impact of **DOMEfficiency** on the effective area is presented for the burnsample binning. 
+
+.. _effective_area_holeicep0:
+.. figure:: images/plots/unfolding/new/burnsample/effective_area/A_eff_systematics_HoleIceForward_Unified_p0_H3a.png
+  :width: 600px 
+
+  : The impact of **HoleIce p0** on the effective area is presented for the burnsample binning. 
+
+.. _effective_area_holeicep1:
+.. figure:: images/plots/unfolding/new/burnsample/effective_area/A_eff_systematics_HoleIceForward_Unified_p1_H3a.png
+  :width: 600px 
+
+  : The impact of **HoleIce p1** on the effective area is presented for the burnsample binning. 
+
+.. _effective_area_scattering:
+.. figure:: images/plots/unfolding/new/burnsample/effective_area/A_eff_systematics_Scattering_H3a.png
+  :width: 600px 
+
+  : The impact of **Scattering** on the effective area is presented for the burnsample binning. 
+
+Full Sample
+===========
+
+.. _effective_area_all_systematics_full_sample:
+.. figure:: images/plots/unfolding/new/full_sample/effective_area/A_eff_systematics_H3a.png
+  :width: 600px
+
+  : The effective area is presented as a function of the muon energy at surface. Statistical uncertainties are calculated with the weights. The systematic uncertainties result from the variations in the effective area. This is shown for the full sample binning. 
+
+.. _effective_area_absorption_full_sample:
+.. figure:: images/plots/unfolding/new/full_sample/effective_area/A_eff_systematics_Absorption_H3a.png
+  :width: 600px 
+
+  : The impact of **Absorption** on the effective area is presented for the full sample binning. 
+
+.. _effective_area_domefficiency_full_sample:
+.. figure:: images/plots/unfolding/new/full_sample/effective_area/A_eff_systematics_DOMEfficiency_H3a.png
+  :width: 600px 
+
+  : The impact of **DOMEfficiency** on the effective area is presented for the full sample binning. 
+
+.. _effective_area_holeicep0_full_sample:
+.. figure:: images/plots/unfolding/new/full_sample/effective_area/A_eff_systematics_HoleIceForward_Unified_p0_H3a.png
+  :width: 600px 
+
+  : The impact of **HoleIce p0** on the effective area is presented for the full sample binning. 
+
+.. _effective_area_holeicep1_full_sample:
+.. figure:: images/plots/unfolding/new/full_sample/effective_area/A_eff_systematics_HoleIceForward_Unified_p1_H3a.png
+  :width: 600px 
+
+  : The impact of **HoleIce p1** on the effective area is presented for the full sample binning. 
+
+.. _effective_area_scattering_full_sample:
+.. figure:: images/plots/unfolding/new/full_sample/effective_area/A_eff_systematics_Scattering_H3a.png
+  :width: 600px 
+
+  : The impact of **Scattering** on the effective area is presented for the full sample binning. 
 
 
 Results: Unfolding with systematics

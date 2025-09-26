@@ -10,7 +10,7 @@ September 17, 2025
 
 A: This is an important question, however, it is technically not possible to perform the unfolding with different hadronic interaction models, since we would need to simulate several datasets with different hadronic interaction models. The current simulation I am using is based on SIBYLL 2.3d, and I have started the simulation 1,5 years ago, and it is still running. Thus, producing several CORSIKA sets is not feasible. Instead, we can estimate the impact of the hadronic interaction model based on MCEq. 
 In :numref:`mceq_hadronic_models`, the flux of muons at the surface is shown for different hadronic interaction models. The fluxes are calculated using MCEq assuming the GSF primary model. The ratio panel presents the total fluxes in relation to SIBYLL 2.3d. If we now look at :numref:`mceq_cr_models`, the flux of muons at the surface is shown for different primary models. The fluxes are calculated using MCEq assuming SIBYLL 2.3d as hadronic interaction model. The differences between the different hadronic interaction models are smaller than the differences between the different primary models. Hence, we can estimate that the impact of the hadronic interaction model on our unfolding is smaller than the impact of the primary model, and for the primary model we have 
-shown that there is no significant impact on the unfolding, as presented in :numref:`model_independence_full_sample`.
+shown that there is no significant impact on the unfolding, as presented in :numref:`full_sample_primary_model_shift`.
 
 .. _mceq_hadronic_models:
 .. figure:: images/plots/QA/mceq_hadronic_models.png
@@ -32,7 +32,7 @@ August 15, 2025
 
 A: On slide 10, I have presented the reconstruction for events without a background event, for events with a leadingness below 0.1, and for a leadingness above 0.1. Given the statistics, there is no significant impact on the reconstruction. Since the networks are trained on events with background primaries, the networks have already seen these event signatures. 
 
-`Q (Stef): How do you treat the systematics now?` 
+`Q (Stef): How do you propose to treat the systematics?` 
 
 A: The LLH minimization in the unfolding using minuit provides the full covariance matrix. This includes, the under and overflow bin, the actual unfolding bins, and the 5 ice systematics. I run the unfolding once. Then I take the best fit values of all 5 ice systematics and scale them them up and down by it's fitted uncertainty, coming from the covariance matrix. I then run the unfolding again with these fixed ice systematics. Scaling 5 systematics up and down results in 10 unfoldings in total. For example, the best fit of absorption is 1.01±0.01, then I fix it to 1.02 and 1.00. In this example, all other four systematics are fixed to their best fit value. Then I calculate a systematic uncertainty via 
 
@@ -50,10 +50,26 @@ with :math:`i` being the 10 unfoldings, :math:`f_{\mathrm{baseline}}` the initia
 
 with :math:`j` referring to the different systematics (absorption, scattering, etc.) thus :math:`M` is 5.
 The statistical uncertainty is then estimated via the poisson distribution assuming :math:`\sqrt{N}` uncertainty in each bin.
+I propose this uncertainty estimation, however, Anatoli has not fully agreed on this yet. Thus, for now, I stick with the systematic uncertainty estimation resulting from the effecetive area variations, as presented in :ref:`Unfolding/Effective Area <effective_area_paragraph>`. This estimation is more conservative since not fitted information are included in the effective area variations. A tighter uncertainty estimation utilizing the fitted ice parameter makes sense, and can also be included after the unblinding.
 
 `Q (Dennis): The background event rate is quite high. It looks like your selection prefers events with background primaries. Do you know why and did you check the rates for your background distribution?`
 
-A: For my selection, with a leading muon energy at surface above 10 TeV, the background rate is 0.58 mHz, and the signal rate is 0.74 mHz. With a requirement that the coincident muon bundle at surface contributes at least to 10 % to the signal energy at surface, the background rate drops to 0.02 mHz. This 10 % estimate is chosen approximately, since the reconstruction of the leading muon energy would not be significantly impacted by a coincident muon bundle with a lower energy. I can't say, why the selection prefers events including a background primary. 
+A: For my selection, with a leading muon energy at surface above 10 TeV, the background rate is 0.58 mHz, and the signal rate is 0.74 mHz. With a requirement that the coincident muon bundle at surface contributes at least to 10 % to the signal energy at surface, the background rate drops to 0.02 mHz. This 10 % estimate is chosen approximately, since the reconstruction of the leading muon energy would not be significantly impacted by a coincident muon bundle with a lower energy. I can't say, why the selection prefers events including a background primary. This was presented in `Systematics Update and Coincident Primaries <https://drive.google.com/file/d/1Oz50AvkDCoYXwE8-7bkFOhEX5IoPIYcC/view?usp=sharing>`_. 
+
+Figure :numref:`coincident_primary_asymmetry` shows the contribution of coincident events to the muon events at surface. The asymmetry :math:`a` is defined as
+
+.. math::
+   a = \frac{(E_{\text{leading}} - E_{\text{bundle,coinc}})}{(E_{\text{leading}} + E_{\text{bundle,coinc}}}
+
+with :math:`E_{\text{leading}}` being the leading muon energy at surface, and :math:`E_{\text{bundle,coinc}}` being the energy of the coincident muon bundle at surface. Thus, a value of 1 means that there is no coincident muon bundle, and a value of -1 means that the coincident muon bundle dominates over the target leading muon. The asymmetry is shown as a function of the leading muon energy at surface, the target unfolding variable. The plot shows that for leading muon energies above 10 TeV, there are almost no coincident bundles with higher energies than the target leading muon. For a few outlier events, 
+the coincident bundle contributes 25-50% to the total energy at surface. However, for most of the events, the coincident bundle contributes only a little, considering the yellow row at the top of the plot, based 
+on the logarithmic color scale. This is expected, since we have a powerlaw distribution and thus the higher the energy, the less often do these events occur, and thus the probability of having two high energetic primaries in one event is low. Since 10 TeV is the lower bound of the unfolding, the impact of coincident bundles is low/negligible.
+
+.. _coincident_primary_asymmetry:
+.. figure:: images/plots/QA/Muon_energy_at_surface_background_asymmetry_2D.png
+   :width: 600px 
+
+   : Contribution of coincident muon bundles to the target leading muon at surface. Below 10 TeV, the energy of the coincident bundle is higher than the target leading muon energy for most events. Above 10 TeV, the coincident bundle contributes only a little to the total energy at surface. Since 10 TeV is the lower bound of the unfolding, the impact of coincident bundles is negligible.
 
 June 27, 2025 
 =============
@@ -206,7 +222,7 @@ A: Systematics are explained :ref:`here <systematics_unfolding>`.
 
 `Q (Dennis): The data-MC section includes too many plots. I suggest to show these plots for only one primary model and move the others to a section in the appendix. This can be overwhelming for the reader.`
 
-A: TODO
+A: Now, all data-MC plots include all 4 primary weightings. 
 
 ----
 
@@ -443,7 +459,7 @@ March 1, 2024
 
 `Q (Frank): For the angular resolution, you can show a histogram of the angular difference between the true and the reconstructed direction.` 
 
-A: TODO 
+A: In principle, yes I could do that. However, we are not interested in the best angular solution here, and the resolution can be found in :numref:`direction_9inputs_6ms_medium_02_03_angular_resolution`.
 
 ----
 

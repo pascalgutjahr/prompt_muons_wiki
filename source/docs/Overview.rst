@@ -61,3 +61,15 @@ By enabling the ``EXTENDED HISTORY`` option in CORSIKA, the parent and grandpare
 Since the production of sufficiently large CORSIKA samples at high energies requires several months of computing time, this scaling method enables a forward folding approach without the need to rerun large-scale simulations for different hadronic interaction models. This saves resources and avoids the complexity of retuning interaction models, which typically requires close collaboration with the model builders.
 
 While the current analysis presented here is focused on the unfolding of the muon spectrum, we are also developing a forward folding approach using this scaling method, which will be presented in the near future. Stay tuned!
+
+Analysis Overview
++++++++++++++++++
+
+The Figure below represents an overview of the entire analysis chain. 
+At first, new simulations have been generated using CORSIKA. Then, all reconstructions are machine learning based, utilizing convolutional neural networks (CNNs). The event selection is done in 4 steps. At first, the muon filter is applied to select muons. Then, an energy cut is performed to remove low-energetic muons. To select well-reconstructed and contained events, data-MC quality cuts are performed. At last, a cut on the leadingness is applied to select events where the leading muon carries most of the energy of the muon bundle. This sample is then used to unfold the atmospheric muon flux. 
+
+.. _unfolding_overview:
+.. figure:: images/plots/unfolding_analysis_overview.png
+    :width: 1000px
+    
+    : Overview of the entire analysis chain. 

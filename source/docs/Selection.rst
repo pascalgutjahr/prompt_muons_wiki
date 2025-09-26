@@ -560,4 +560,12 @@ Final Level
 +++++++++++
 
 At last, a cut on the leadingness (ratio between most energetic muon and total bundle energy) is applied to improve the data-MC agreement of the proxy variable for the unfolding, the leading muon energy at entry. It is required, that the most energetic muon carries at least 
-40% of the total energy of the muon bundle. 
+40% of the total energy of the muon bundle. The data-MC agreement for the proxy variable used to unfold the atmospheric muon flux is presented on the burnsample dataset in :numref:`proxy_finallevel`. For all four different primary cosmic-ray models, the data agree with the MC prediction. A different slope is visible for the weightings, 
+however, this is expected. The different primary cosmic-ray models predict different fluxes and thus, different spectral indices. Per definition, this effect propagates 
+from the primary particle to the final reconstructed muon. Hence, a difference between the models is expected. 
+
+.. _proxy_finallevel:
+.. figure:: images/plots/selection/new/finallevel/data_mc_energy_hist_DeepLearningReco_leading_bundle_surface_leading_bundle_energy_OC_inputs9_6ms_large_log_02_entry_energy_NuGen_astro_atmo_all_weightings.png
+  :width: 600px 
+
+  : Proxy variable utilized to unfold the atmospheric muon flux at surface on the final selection stage.
