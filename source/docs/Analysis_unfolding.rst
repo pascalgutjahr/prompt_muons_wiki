@@ -290,11 +290,11 @@ Unfold Event Rate
 =================
 
 In Figure :numref:`unfolding_event_rate`, the unfolded event rate of the muon energy of the leading muon at the surface is shown for a 
-statistic of 10 years. The legend shows the used minimizer, here minuit, and the regularization strength, here :math:`\tau = None`.
+statistic of 12 years. The legend shows the used minimizer, here minuit, and the regularization strength, here :math:`\tau = None`. Unphysical oscillations are visible. This is due to the fact that no regularization is applied. The unfolding is performed without systematics.
 
 
 .. _unfolding_event_rate:
-.. figure:: images/plots/unfolding/event_rate.png
+.. figure:: images/plots/unfolding/new/full_sample/basics/unfolding_event_rate_no_systematics_no_tau.png
   :width: 600px 
 
   : Unfolded event rate of the muon energy of the leading muon at the surface. The true distribution using the entire dataset is shown 
@@ -306,25 +306,52 @@ Unfold Muon Flux
 
 For the unfolding of the muon flux at surface, an effective area is needed. This area is basically the information, 
 how many muons correspond to a certain event measured by the detector. The calculation of the effective area is 
-done similar to the analysis of stopping muons (`Stopping muons wiki <https://user-web.icecube.wisc.edu/~lwitthaus/StoppingMuonAnalysis/docs/Effective_Area/effective_area.html>`_). We build a ratio of all muons at surface generated in step 0 to the muons that are detected on our final level.
+done similar to the analysis of stopping muons (`Stopping muons wiki <https://user-web.icecube.wisc.edu/~lwitthaus/StoppingMuonAnalysis/docs/Effective_Area/effective_area.html>`_). We build a ratio of all muons at surface generated in step 0 to the muons that are detected on our final level. The effective 
+area used in this analysis is shown below in :ref:`effective_area_paragraph`, after systematics 
+have been introduced.
 
 In Figure :numref:`unfolding_muon_flux` the muon flux at surface is unfolded using the leading muon energy at entry as a proxy with classical binning. 
 
 .. _unfolding_muon_flux:
-.. figure:: images/plots/unfolding/muon_flux_gamma_0.png
+.. figure:: images/plots/unfolding/new/full_sample/basics/unfolding_flux_no_systematics.png
   :width: 600px
 
   : Unfolded differential muon flux at surface. The true distribution using the entire dataset is shown 
-  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
-  Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.  As expected, including an effective area leads to a powerlaw 
+  distribution. However, since no regularization is applied, unphysical oscillations are visible. The unfolding is performed without systematics.
 
-.. _unfolding_muon_flux_gamma_37:
-.. figure:: images/plots/unfolding/muon_flux_gamma_37.png
+.. .. _unfolding_muon_flux_gamma_37:
+.. .. figure:: images/plots/unfolding/muon_flux_gamma_37.png
+..   :width: 600px
+
+..   : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. The true distribution using the entire dataset is shown 
+..   in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+Regularization 
+==============
+
+To suppress the unphysical oscillations, a regularization is applied. The regularization strength
+tau is determined by finding the minimum of the global correlation
+
+.. math::
+    \rho = \sum_{i>j} V_{ij}\,,
+
+where V is the covariance matrix of the unfolded distribution, with i and j being the indices of the 
+unfolding bins. This does not include the under- and overflow bin. For the example shown above, the global correlation is presented in :numref:`tau_scan_no_systematics`. To avoid problems with jumps in the distribution, instead of the exact minimum, a rolling average with a window size of 8 is used to determine the optimal tau value. This results in a value of tau=0.001389 on MC. However, this needs to be determined for all changes in the unfolding, thus whenever the binning changes, the cosmic-ray models changes, the spectral index of the cosmic-ray flux changes, or the unfolding is applied to experimental data.
+
+.. _tau_scan_no_systematics:
+.. figure:: images/plots/unfolding/new/full_sample/basics/global_correlations_single_tau_mc_no_systematics.png
   :width: 600px
 
-  : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. The true distribution using the entire dataset is shown 
-  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+  : Global correlation as a function of the regularization parameter tau on MC. 
 
+When this regularization is applied, the unfolded muon flux looks as shown in :numref:`unfolding_muon_flux_tau`. The unphysical oscillations are suppressed.
+
+.. _unfolding_muon_flux_tau:
+.. figure:: images/plots/unfolding/new/full_sample/basics/unfolding_flux_no_systematics_tau_0.001389_optimized_mc.png
+  :width: 600px
+
+  : Unfolded differential muon flux at surface with regularization strength tau=0.001389.
 
 .. _systematics_unfolding:
 Systematics 
@@ -639,60 +666,79 @@ Full Sample
   : The impact of **Scattering** on the effective area is presented for the full sample binning. 
 
 
-Results: Unfolding with systematics
------------------------------------
+Unfolding with systematics
+--------------------------
 
-The muon flux is unfolded with the leading muon energy at entry as a proxy. All 5 systematics are included in the unfolding as described above. For the minimization, MCMC is used.
+In the figure below, everything discussed above is combined. The muon flux is unfolded with the leading muon energy at entry as a proxy. All 5 systematics are included in the unfolding as described above. For the minimization, minuit is used. The regularization strength has been optimized via the global correlation, resulting in a value of :math:`\tau = 0.001857`. This figure shows that the unfolding is able to recover the true distribution within the uncertainties. 
 
-In the following, the result is shown without applying any regularization. 
-
-.. _unfolding_muon_flux_systematics:
-.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_0.png
+.. figure:: images/plots/unfolding/new/full_sample/basics/unfolding_flux_systematics_gamma_0_tau_0.001857_optimized_mc.png
   :width: 600px
 
-  : Unfolded differential muon flux at surface with systematics. The true distribution using the entire dataset is shown 
-  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
-  Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+  : Unfolded differential muon flux at surface with systematics. A regularization of :math:`\tau = 0.001857` is used. The true distribution using the entire dataset is shown. 
 
-.. _unfolding_muon_flux_systematics_gamma_37:
-.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_3.7.png
-  :width: 600px
+CORSIKA vs. MCEq 
+----------------
 
-  : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. The true distribution using the entire dataset is shown 
-  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+In the figure below, a comparison between the muon flux at surface using CORSIKA simulation and MCEq predictions is shown. The CORSIKA simulation includes systematic uncerainties estimated via the 
+effective area, as described above. The ratio panel indicates that MCEq predicts a slightly higher flux compared to the CORSIKA simulation. However, both calculations are compatible within the uncertainties.
 
-The correlation between the systematics and the unfolded bins
-are shown in the following figure.
+.. figure:: images/plots/unfolding/new/full_sample/flux_comparison_simweights_GaisserH3a_stat_sys_unc_clean.png
+  :width: 600px 
 
-.. _correlation_systematics_unfolding:
-.. figure:: images/plots/unfolding/unfolding_systematics/corner.png
-  :width: 800px
-
-  : Correlation between the systematics and the unfolded bins. The first five bins represent the systematics, the next one is the underflow bin, followed by the unfolding bins, and the last bin is the overflow bin.
+  : Comparison of the muon flux at surface using CORSIKA simulation and MCEq predictions. The CORSIKA simulation is shown in blue, the MCEq prediction in grey. The statistical uncertainties (resulting from the MC weights) of the CORSIKA simulation are shown in blue, the systematic uncertainties in orange. The systematic uncertainties result from the variations in the effective area as described above. The primary model H3a is used fo both calculations, CORSIKA is simulated with SIBYLL 2.3d, MCEq is calculated with SIBYLL 2.3c. 
 
 
-In the following, the result for a regularization of :math:`\tau = 0.001` is shown.
+.. The muon flux is unfolded with the leading muon energy at entry as a proxy. All 5 systematics are included in the unfolding as described above. For the minimization, MCMC is used.
 
-.. _unfolding_muon_flux_systematics_tau001:
-.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_0_tau001.png
-  :width: 600px
+.. In the following, the result is shown without applying any regularization. 
 
-  : Unfolded differential muon flux at surface with systematics. A regularization of :math:`\tau = 0.001` is used. The true distribution using the entire dataset is shown 
-  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
-  Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+.. .. _unfolding_muon_flux_systematics:
+.. .. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_0.png
+..   :width: 600px
 
-.. _unfolding_muon_flux_systematics_gamma_37_tau001:
-.. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_3.7_tau001.png
-  :width: 600px
+..   : Unfolded differential muon flux at surface with systematics. The true distribution using the entire dataset is shown 
+..   in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
+..   Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
 
-  : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. A regularization of :math:`\tau = 0.001` is used. The true distribution using the entire dataset is shown 
-  in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+.. .. _unfolding_muon_flux_systematics_gamma_37:
+.. .. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_3.7.png
+..   :width: 600px
 
-The correlation between the systematics and the unfolded bins 
-are shown in the following figure. The regularization reduces the correlation.
+..   : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. The true distribution using the entire dataset is shown 
+..   in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
 
-.. _correlation_systematics_unfolding_tau001:
-.. figure:: images/plots/unfolding/unfolding_systematics/corner_tau001.png
-  :width: 800px
+.. The correlation between the systematics and the unfolded bins
+.. are shown in the following figure.
 
-  : Correlation between the systematics and the unfolded bins. A regularization of :math:`\tau = 0.001` is used. The first five bins represent the systematics, the next one is the underflow bin, followed by the unfolding bins, and the last bin is the overflow bin. 
+.. .. _correlation_systematics_unfolding:
+.. .. figure:: images/plots/unfolding/unfolding_systematics/corner.png
+..   :width: 800px
+
+..   : Correlation between the systematics and the unfolded bins. The first five bins represent the systematics, the next one is the underflow bin, followed by the unfolding bins, and the last bin is the overflow bin.
+
+
+.. In the following, the result for a regularization of :math:`\tau = 0.001` is shown.
+
+.. .. _unfolding_muon_flux_systematics_tau001:
+.. .. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_0_tau001.png
+..   :width: 600px
+
+..   : Unfolded differential muon flux at surface with systematics. A regularization of :math:`\tau = 0.001` is used. The true distribution using the entire dataset is shown 
+..   in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange.
+..   Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+.. .. _unfolding_muon_flux_systematics_gamma_37_tau001:
+.. .. figure:: images/plots/unfolding/unfolding_systematics/unfolding_flux_gamma_3.7_tau001.png
+..   :width: 600px
+
+..   : Unfolded differential muon flux at surface with an energy rescaling of :math:`\gamma = 3.7` to get more insights into the spectrum. A regularization of :math:`\tau = 0.001` is used. The true distribution using the entire dataset is shown 
+..   in blue, a bootstrapped sample is shown in green (used for the unfolding), and the unfolded distribution is shown in orange. For reference, a former flux measured by IceCube is shown black. Additionally, predictions from MCEq are included. These are divided into 3 parts. The grey dots represent the total muon flux contribution at surface. The ratio between MCEq and the unfolding is done at the energy expectation per bin. For this, the energy expectation per bin is calculated on MC using alle muons in step 0. The conventional component is shown in dashed, light-green, the prompt component in dashed, light-blue.
+
+.. The correlation between the systematics and the unfolded bins 
+.. are shown in the following figure. The regularization reduces the correlation.
+
+.. .. _correlation_systematics_unfolding_tau001:
+.. .. figure:: images/plots/unfolding/unfolding_systematics/corner_tau001.png
+..   :width: 800px
+
+..   : Correlation between the systematics and the unfolded bins. A regularization of :math:`\tau = 0.001` is used. The first five bins represent the systematics, the next one is the underflow bin, followed by the unfolding bins, and the last bin is the overflow bin. 

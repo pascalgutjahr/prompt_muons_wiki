@@ -42,7 +42,7 @@ resulting to the shifted weights :math:`w_{\text{s}}`. The results are shown in 
 .. figure:: images/plots/unfolding/new/burnsample/test_delta_gamma/unfolding_flux_systematics_gamma_shift_comparison.png
     :width: 600px 
 
-    : The impact of a shift in the spectral index of the cosmic-ray flux on the unfolded muon flux using the burnsample MC is investigated. The unfolding algorithm is trained on the nominal spectrum with H3a, and then the spectrum is varied by ±0.1. This re-weighting is achieved by multiplying the weight of each event by the the primary energy to the power of the shift in the spectral index. The ratio to the true H3a MC distribution is shown. Within the uncertainties, the results are compatible. Thus, the burnsample unfolding is robust against changes in the spectral index of the cosmic-ray flux.
+    : The impact of a shift in the spectral index of the cosmic-ray flux on the unfolded muon flux using the burnsample MC is investigated. The unfolding algorithm is trained on the nominal spectrum with H3a, and then the spectrum is varied by ±0.1. This re-weighting is achieved by multiplying the weight of each event by the the primary energy to the power of the shift in the spectral index. The ratio to the true H3a MC distribution is shown. The uncertainties come from the inverse of the Hesse matrix (not systematic scaling of the effective area is included here). Within the uncertainties, the results are compatible. Thus, the burnsample unfolding is robust against changes in the spectral index of the cosmic-ray flux.
 
 Secondly, the impact of the primary cosmic-ray model on the unfolded flux is studied. The unfolding algorithm is trained on the four different primary models, and then the same pseudo test dataset sampled from an H3a distribution is unfolded. The results are shown in :numref:`burnsample_primary_model_shift`. Within the uncertainties, the results are compatible. Thus, the burnsample unfolding is robust against changes in the primary cosmic-ray model.
 
@@ -50,7 +50,7 @@ Secondly, the impact of the primary cosmic-ray model on the unfolded flux is stu
 .. figure:: images/plots/unfolding/new/burnsample/test_primary_model/unfolding_flux_systematics_weight_col_shift_primary_models_comparison.png
     :width: 600px 
 
-    : Study of the impact of the primary cosmic-ray model on the unfolded flux using the burnsample MC. The unfolding algorithm is trained on the four different primary models, and then the same pseudo test dataset sampled from an H3a distribution is unfolded. The ratio to the true H3a MC distribution is shown. Within the uncertainties, the results are compatible. Thus, the burnsample unfolding is robust against changes in the primary cosmic-ray model.
+    : Study of the impact of the primary cosmic-ray model on the unfolded flux using the burnsample MC. The unfolding algorithm is trained on the four different primary models, and then the same pseudo test dataset sampled from an H3a distribution is unfolded. The ratio to the true H3a MC distribution is shown. The uncertainties come from the inverse of the Hesse matrix (not systematic scaling of the effective area is included here). Within the uncertainties, the results are compatible. Thus, the burnsample unfolding is robust against changes in the primary cosmic-ray model.
 
 Data
 ----
