@@ -52,6 +52,60 @@ Secondly, the impact of the primary cosmic-ray model on the unfolded flux is stu
 
     : Study of the impact of the primary cosmic-ray model on the unfolded flux on MC. The unfolding algorithm is trained on the four different primary models, and then the same pseudo test dataset sampled from an H3a distribution is unfolded. The ratio to the true H3a MC distribution is shown. The uncertainties come from the inverse of the Hesse matrix (not systematic scaling of the effective area is included here). Within the uncertainties, the results are compatible. Thus, the unfolding is robust against changes in the primary cosmic-ray model.
 
+Bias tests
+==========
+
+For the full sample, 12 years of data IC86 will be used. The unfolding is performed analogue to the burnsample unfolding. 
+However, the uncertainties are treated slightly different. 
+
+The total uncertainty on the unfolded flux is given by
+
+.. math::
+    \sigma_{\text{tot}} = \sqrt{\sigma_{\text{minuit}}^2 + \sigma_{\text{Aeff,stat}}^2 + \sigma_{\text{unf-bias}}^2}\,.
+
+Here, :math:`\sigma_{\text{minuit}}` is derived from the inverse of the Hessian matrix obtained in the Minuit fit. This fit also 
+includes the 5 in-ice systematics. :math:`\sigma_{\text{Aeff,stat}}` is the statistical uncertainty on the effective area, and :math:`\sigma_{\text{unf-bias}}` is the uncertainty due to a possible unfolding bias. This bias is presented in 
+:numref:`unfolding_bias_all_weightings_2`.
+
+.. _unfolding_bias_all_weightings_2:
+.. figure:: images/plots/one_page_summary/unfolding_flux_systematics_weight_col_shift_primary_models_comparison_zoom_ratio_to_mc_tauscan_tau_0.001916_matrix_all_models_full_MC.png
+    :width: 600px 
+
+    : Study of the unfolding bias for the full sample unfolding. The unfolding algorithm is trained on the four different primary models, and then the MC dataset weighted to a livetime of 12 years is unfolded. The ratio to the true MC distribution is shown. 
+    This is done for all 4 weightings, which then results in 16 unfoldings in total. Ideally, all lines would align with 1. However, some deviations are visible, which are considered as unfolding bias. The maximum deviation in each bin is taken as systematic uncertainty due to the unfolding bias.
+
+After including these additional uncertainties, the final unfolding result on MC is shown in :numref:`full_sample_final_unfolding_mc_with_bias`.
+
+.. _full_sample_final_unfolding_mc_with_bias:
+.. figure:: images/plots/unfolding/new/full_sample/unfolding_flux_mceq_02-1_H3a_SIBYLL23c_A_eff_unc_with_unfolding_systematics_4_models_CORSIKA_ratio_unfold_H3a.png
+    :width: 600px 
+
+    : Final unfolding result on MC including the uncertainty due to a possible unfolding bias. The unfolded data are compared to 
+    the true MC distribution assuming the cosmic-ray primary model H3a The total uncertainties :math:`\sigma_{\text{tot}}` are derived from the inverse of the Hesse matrix obtained in the Minuit fit (:math:`\sigma_{\text{minuit}}`), the statistical uncertainty on the effective area (:math:`\sigma_{\text{Aeff,stat}}`) and the uncertainty due to a possible unfolding bias (:math:`\sigma_{\text{unf-bias}}`). For all four unfoldings trained on the different primary models, the results are compatible with the true MC distribution within the uncertainties.
+
+For the final unfolding on data, four unfoldings trained on all 4 primary models will be performed. The results will then be averaged to obtain the best fit result. For the MC test using the H3a weighting, this is presented in :numref:`full_sample_final_unfolding_mc_4_models_average`. The total uncertainties are calculated as 
+
+.. math::
+
+    \begin{align}
+    \sigma_\mathrm{tot} &= \sqrt{\sigma_\mathrm{unf}^2 + \sigma_\mathrm{spread}^2} \\
+    \text{with} \quad
+    \sigma_\mathrm{unf} &= \frac{\sqrt{\sum \sigma_\mathrm{i}^2}}{N} \\
+    \sigma_\mathrm{spread} &= \mathrm{std}(f_i)
+    \end{align}
+
+with :math:`N = 4`, and :math:`\sigma_\mathrm{i}` being the total uncertainty of each unfolding, and being :math:`f_i` the unfolded flux of each unfolding. Here, :math:`\sigma_\mathrm{unf}` represents the average uncertainty due to the unfolding procedure, while :math:`\sigma_\mathrm{spread}` represents the spread of the different unfoldings trained on different primary models.
+
+.. _full_sample_final_unfolding_mc_4_models_average:
+.. figure:: images/plots/unfolding/new/full_sample/unfolding_flux_mceq_02-1_H3a_SIBYLL23c_A_eff_unc_with_unfolding_systematics_4_models_CORSIKA_ratio_unfold_H3a_average.png
+    :width: 600px
+
+    : The four unfoldings presented above are averaged to obtain the best fit result. The unfolded data are compared to 
+    the true MC distribution assuming the cosmic-ray primary model H3a. 
+
+
+
+.. _sensitivity_paragraph:
 Sensitivity Tests
 =================
 

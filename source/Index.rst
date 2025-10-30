@@ -44,6 +44,10 @@ List of presented talks:
 2025:
 +++++
 
+* 28 October: CR WG `Unfolding bias / unblinding plan <https://drive.google.com/drive/u/1/folders/1HlGzdDw0XoCkAHTiiiPDkwXDwDac_s5h>`_
+
+* 7 October: Fall Collaboration Meeting SLC `Overview of the entire unfolding analysis <https://events.icecube.wisc.edu/event/330/contributions/11282/attachments/8576/11420/pgutjahr_unfolding_muon_flux_Utah_2025.pdf>`_
+
 * 15 August: CR WG `Systematics Update and Coincident Primaries <https://drive.google.com/file/d/1Oz50AvkDCoYXwE8-7bkFOhEX5IoPIYcC/view?usp=sharing>`_
 
 * 27 June: CR WG `Leadingness cut <https://drive.google.com/drive/u/1/folders/1RPI4DAfbvJAiQ46jB9uCBNKfSaxC_HXt>`_
@@ -94,6 +98,7 @@ List of presented talks:
    :maxdepth: 12
    :glob:
 
+   docs/One_page_summary.rst
    docs/Overview.rst
    docs/Simulation.rst
    docs/PromptDefinition.rst

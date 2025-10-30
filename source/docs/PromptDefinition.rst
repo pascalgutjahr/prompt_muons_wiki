@@ -1,3 +1,5 @@
+.. _prompt_definition_paragraph: 
+
 Definition of the prompt component 
 ##################################
 

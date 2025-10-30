@@ -1,3 +1,5 @@
+.. _new_corsika_simulation_paragraph:
+
 New CORSIKA extended history simulations
 ########################################
 
