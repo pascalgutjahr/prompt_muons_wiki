@@ -194,17 +194,6 @@ The jump is accepted with a certain probability, following the concepts of a mod
 algorithm as implemented in the :math:`\texttt{EnsembleSampler}` of the :math:`\texttt{emcee}`
 python package. The new point is included in the sample.
 
-Parameter Optimization
-======================
-The regularization strength :math:`\tau` and the log-offset :math:`d` have to be optimized. This is done 
-by means of a simple grid search which aims to minimize the chi-squared distance between the unfolded result
-(on MC data) and the MC truth. The following metric is calculated for the individual unfoldings:
-
-.. math:: 
-  \begin{equation}
-    \chi^2 = \sum_\limits{i} \frac{(f_{\mathrm{true},i} - f_{\mathrm{unf},i})^2}{\sigma_{\mathrm{unf},i}^2}
-  \end{equation}
-
 
 .. _systematic_uncertainties_in_unfolding:
 Systematic Uncertainties

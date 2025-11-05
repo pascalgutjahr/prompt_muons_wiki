@@ -262,18 +262,18 @@ The fit minimizes the standard chi-squared function:
 
 where :math:`\sigma_i` denotes the per-bin uncertainty.
 
-For **asymmetric** uncertainties, both lower and upper errors can be supplied
-as a :math:`(2 \times N)` array:
+.. For **asymmetric** uncertainties, both lower and upper errors can be supplied
+.. as a :math:`(2 \times N)` array:
 
-.. math::
+.. .. math::
 
-    \sigma_i =
-    \begin{cases}
-      \sigma_i^+ & \text{if } d_i \ge m_i(\alpha, \beta) \\
-      \sigma_i^- & \text{if } d_i < m_i(\alpha, \beta)
-    \end{cases}
+..     \sigma_i =
+..     \begin{cases}
+..       \sigma_i^+ & \text{if } d_i \ge m_i(\alpha, \beta) \\
+..       \sigma_i^- & \text{if } d_i < m_i(\alpha, \beta)
+..     \end{cases}
 
-This allows the fitter to account for asymmetric confidence intervals in the data.
+.. This allows the fitter to account for asymmetric confidence intervals in the data.
 
 Fit Procedure
 -------------
