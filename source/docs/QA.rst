@@ -8,23 +8,46 @@ October/November 2025, (Collab review)
 
 `Q (Anatoli): What is the impact of the regularization strength on your unfolding results?`
 
-A: The regularization strength is determined by minimizing the bin-to-bin correlation of the unfolding bins. For this, a polynomial of fourth order is fitted to the global correlation. 
+A: The regularization strength is determined by minimizing the bin-to-bin correlation of the unfolding bins. For this, a polynomial of fourth order is fitted to the global correlation. I created a test to estimate the impact of the regularization strength. In addition to the minimum of the fitted polynomial, I also calculate a lower and upper :math:`\tau` value, where the global correlation is increased by :math:`0.5 \%`. In the example shown in 
+:numref:`tau_profile_lower_upper`, this results in a deviation larger than 20 % in the regularization strength. 
+
+.. _tau_profile_lower_upper:
+.. figure:: images/plots/QA/global_correlations_tau_profile_matrix_H3a_MC_GSF.png
+   :width: 600px
+
+   : Global correlation as a function of the regularization parameter tau.
+
+When I unfold with the lower, upper and best fit tau value, I obtain the results shown in :numref:`unfolding_bias_tau_profile_matrix_H3a_full_MC`. 
+
+.. _unfolding_bias_tau_profile_matrix_H3a_full_MC:
+.. figure:: images/plots/QA/unfolding_bias_tau_profile_matrix_H3a_full_MC.png
+   :width: 600px
+
+   : Impact of the variation of the regularization strength on the unfolding. 
+
+To estimate the impact of the regularization strength only, I then divide the unfolding results with the lower and upper tau by the unfolding with the best fit tau. This is shown in :numref:`unfolding_tau_impact_matrix_H3a_full_MC`. The impact is below 10 %. This impact is smaller than the statistical uncertainty per bin in :numref:`full_sample_uncertainties_breakdown`, thus, this uncertainty is not included as an additional systematic uncertainty.
+
+.. _unfolding_tau_impact_matrix_H3a_full_MC:
+.. figure:: images/plots/QA/unfolding_tau_profile_matrix_H3a_full_MC.png
+   :width: 600px
+
+   : Unfolded muon flux for lower and uppwer tau, divided by the unfolding with the best fit tau. This shows the impact of the regularization strength on the unfolding result.
 
 `Q (Anatoli): Can't you treat the regularizatipon strength as a free parameter in the unfolding?`
 
-A: 
+A: Treating the regularization strength as a free parameter in the unfolding is not possible. The Regularization term is added to the likelihood, thus, for the minimization of the likelihood the optimal regularization strength would always be infinity because it scales by :math:`1/\tau`. 
 
 `Q (Anatoli): It looks like the unfolding has a bias. Depending on the unfolding bin, there is a deviation between the true MC distribution and the unfolded MC distribution. How do you treat this bias?`
 
-A: 
+A: This is correct. The deviation is treated as a systematic uncertainty, and it is added in quadrature to the total uncertainty. The bias is presented in :numref:`unfolding_bias_all_weightings`.
 
 `Q (Anatoli): How do you determine the prompt component from your unfolded flux?`
 
-A: 
+A: A :math:`\chi^2` fit is performed. This is done for several assumptions (different primary models). The fit includes a normalization factor for the prompt and conventional component. More details are provided in :ref:`Flux Characterization <flux_characterization_paragraph>`. 
 
 `Q (Anatoli): Could you show the uncertainty contribution on each bin from the different systematics/sources?`
 
-A: 
+A: Yes, this is presented in :numref:`full_sample_uncertainties_breakdown`.
 
 September 17, 2025
 ==================

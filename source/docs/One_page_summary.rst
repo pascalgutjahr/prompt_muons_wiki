@@ -174,6 +174,7 @@ The final result is presented in :numref:`burnsample_final_unfolding_1`.
     : Unfolded muon flux at surface using the burnsample data with :math:`2487\,\mathrm{h}` of IceCube data. The unfolding is performed with tau=0.0029. The uncertainties are derived from the inverse of the Hessian matrix obtained in the Minuit fit and are further expanded to include the systematic variations of the effective area. The unfolded result is compared to predictions from MCEq using H3a, and SIBYLL 2.3c.
 
 
+.. _full_sample_unfolding_one_pager_paragraph:
 Full Sample Unfolding
 ---------------------
 
@@ -218,6 +219,7 @@ The uncertainties per bin are presented in :numref:`full_sample_uncertainties_br
 
     : Breakdown of the different uncertainty contributions per bin for the full 12 years sample unfolding. The minuit uncertainties are derived from the inverse of the Hessian matrix obtained in the Minuit fit and are further expanded to include the 5 in-ice systematics. This is the entire minuit error. It is then divided into a statistical error and the 5 systematics each. The statistical uncertainties of the effective area and the unfolding bias are also presented.
 
+.. _flux_characterization_paragraph:
 Flux characterization (LikelihoodFitter)
 ++++++++++++++++++++++++++++++++++++++++
 
