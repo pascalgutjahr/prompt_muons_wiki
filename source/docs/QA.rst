@@ -3,6 +3,29 @@ Q & A
 
 In this section, a collection of all questions and answers from the presentations is given. The presentations are listed :ref:`here <main paragraph>`.
 
+October/November 2025, (Collab review)
+======================================
+
+`Q (Anatoli): What is the impact of the regularization strength on your unfolding results?`
+
+A: The regularization strength is determined by minimizing the bin-to-bin correlation of the unfolding bins. For this, a polynomial of fourth order is fitted to the global correlation. 
+
+`Q (Anatoli): Can't you treat the regularizatipon strength as a free parameter in the unfolding?`
+
+A: 
+
+`Q (Anatoli): It looks like the unfolding has a bias. Depending on the unfolding bin, there is a deviation between the true MC distribution and the unfolded MC distribution. How do you treat this bias?`
+
+A: 
+
+`Q (Anatoli): How do you determine the prompt component from your unfolded flux?`
+
+A: 
+
+`Q (Anatoli): Could you show the uncertainty contribution on each bin from the different systematics/sources?`
+
+A: 
+
 September 17, 2025
 ==================
 
